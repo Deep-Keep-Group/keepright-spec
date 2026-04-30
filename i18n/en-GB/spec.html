@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KeepRight Spec</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0; padding: 2rem; background: Canvas; color: CanvasText; }
+    main { max-width: 48rem; margin: 0 auto; }
+    h1, h2, h3 { line-height: 1.15; margin: 2rem 0 0.75rem; }
+    h1:first-child { margin-top: 0; }
+    p, ul { margin: 0.75rem 0; }
+    li { margin: 0.25rem 0; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.94em; }
+  </style>
+</head>
+<body>
+  <main>
+<h1>KeepRight Spec</h1>
+<section>
+<h2>About You</h2>
+<p>Optional information about the responsible party.</p>
+<section class="spec-question">
+<h3>A1. Name</h3>
+<ul>
+<li>Answer type: <code>text</code></li>
+</ul>
+</section>
+<section class="spec-question">
+<h3>A2. Email</h3>
+<ul>
+<li>Answer type: <code>email</code></li>
+</ul>
+</section>
+<section class="spec-question">
+<h3>A3. Country</h3>
+<ul>
+<li>Answer type: <code>select</code></li>
+<li>Option source: countries; ISO 3166-1 country list; placeholder: Select a country</li>
+</ul>
+</section>
+</section>
+<section>
+<h2>The Material</h2>
+<section class="spec-group">
+<h3>Crux</h3>
+<section class="spec-question">
+<h4>M1. Is this digital, physical, or both?</h4>
+<ul>
+<li>Answer type: <code>radio</code></li>
+<li>Options:<ul>
+<li><code>digital</code>: Digital</li>
+<li><code>physical</code>: Physical</li>
+<li><code>both</code>: Both</li>
+</ul></li>
+</ul>
+</section>
+<section class="spec-question">
+<h4>M2. Are you the copyright holder?</h4>
+<ul>
+<li>Answer type: <code>radio</code></li>
+<li>Options:<ul>
+<li><code>yes</code>: Yes</li>
+<li><code>no</code>: No</li>
+<li><code>not_sure</code>: Not sure</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section class="spec-group">
+<h3>Details</h3>
+<section class="spec-question">
+<h4>M3. What should we call this material?</h4>
+<ul>
+<li>Answer type: <code>text</code></li>
+</ul>
+</section>
+<section class="spec-question">
+<h4>M4. What is it?</h4>
+<ul>
+<li>Answer type: <code>textarea</code></li>
+</ul>
+</section>
+<section class="spec-question">
+<h4>M4.1. Does it live online?</h4>
+<ul>
+<li>Answer type: <code>radio</code></li>
+<li>Shown when: condition `material_is_digital_or_both`</li>
+<li>Options:<ul>
+<li><code>urls</code>: Yes, I have a URL or URLs</li>
+<li><code>ids</code>: Yes, I have some IDs (e.g. DOI)</li>
+<li><code>no</code>: No</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>URL or URLs (text); shown when `m4_1` equals `urls`</li>
+<li>IDs (text); shown when `m4_1` equals `ids`</li>
+</ul></li>
+</ul>
+</section>
+<section class="spec-question">
+<h4>M4.2. Which file formats or file extensions are involved?</h4>
+<ul>
+<li>Answer type: <code>text</code></li>
+<li>Shown when: condition `material_is_digital_or_both`</li>
+<li>Placeholder: e.g. jpg, pdf, wav</li>
+</ul>
+</section>
+<section class="spec-question">
+<h4>M5. What&#x27;s your relationship to it?</h4>
+<ul>
+<li>Answer type: <code>checkboxes</code></li>
+<li>Options:<ul>
+<li><code>made</code>: I made it</li>
+<li><code>own</code>: I own it</li>
+<li><code>family</code>: I&#x27;m a family member of the creator</li>
+<li><code>steward</code>: I&#x27;m a designated steward</li>
+<li><code>community</code>: I&#x27;m a community member</li>
+<li><code>let_me_tell_you</code>: Let me tell you...</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>Tell us more (textarea); shown when `m5` contains `let_me_tell_you`</li>
+</ul></li>
+</ul>
+</section>
+<section class="spec-question">
+<h4>M6. Who made this, and who owns it now?</h4>
+<ul>
+<li>Answer type: <code>textarea</code></li>
+</ul>
+</section>
+<section class="spec-question">
+<h4>M7. What&#x27;s its copyright or licensing status, if you know?</h4>
+<ul>
+<li>Answer type: <code>radio</code></li>
+<li>Options:<ul>
+<li><code>all_rights_reserved</code>: All Rights Reserved</li>
+<li><code>open_license</code>: Open License (e.g. Creative Commons)</li>
+<li><code>public_domain</code>: Public Domain</li>
+<li><code>not_sure</code>: Not sure</li>
+<li><code>complicated</code>: It&#x27;s complicated...</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>Tell us more (textarea); shown when `m7` equals `complicated`</li>
+</ul></li>
+</ul>
+</section>
+<section class="spec-question">
+<h4>M8. Can you add any background on how, why, or when it was made? This will help future stewards understand the material. (optional)</h4>
+<ul>
+<li>Answer type: <code>textarea</code></li>
+</ul>
+</section>
+</section>
+</section>
+<section>
+<h2>Keep Right</h2>
+<section class="spec-question">
+<h3>KR1. Who would you love to take care of this?</h3>
+<ul>
+<li>Answer type: <code>checkboxes</code></li>
+<li>Options:<ul>
+<li><code>person</code>: A specific person</li>
+<li><code>institution</code>: A specific institution</li>
+<li><code>any_archive_or_library</code>: Any qualified archive or library</li>
+<li><code>any_steward</code>: Open to any steward</li>
+<li><code>it_depends</code>: It depends...</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>Name them (text); shown when `kr1` contains `person`</li>
+<li>Name it (text); shown when `kr1` contains `institution`</li>
+<li>Tell us more (textarea); shown when `kr1` contains `it_depends`</li>
+</ul></li>
+</ul>
+</section>
+<section class="spec-question">
+<h3>KR1.1. And where should it live?</h3>
+<ul>
+<li>Answer type: <code>text</code></li>
+<li>Shown when: condition `material_is_physical_or_both`</li>
+</ul>
+</section>
+<section class="spec-question">
+<h3>KR2. Who should be able to see it, and are there any conditions?</h3>
+<ul>
+<li>Answer type: <code>radio</code></li>
+<li>Options:<ul>
+<li><code>anyone</code>: Anyone</li>
+<li><code>researchers</code>: Researchers only</li>
+<li><code>family_or_designated_people</code>: Family or designated people only</li>
+<li><code>no_one_for_now</code>: No one for now</li>
+<li><code>complicated</code>: It&#x27;s complicated...</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>Tell us more (textarea); shown when `kr2` equals `complicated`</li>
+</ul></li>
+</ul>
+</section>
+<section class="spec-question">
+<h3>KR2.1. Until when? (optional)</h3>
+<ul>
+<li>Answer type: <code>text</code></li>
+<li>Placeholder: e.g. 10 years, after my death, 2075</li>
+</ul>
+</section>
+<section class="spec-question">
+<h3>KR3. What can your caretaker do with it?</h3>
+<ul>
+<li>Answer type: <code>checkboxes</code></li>
+<li>Shown when: condition `copyright_holder_yes_or_unsure`</li>
+<li>Options:<ul>
+<li><code>preserve_only</code>: Preserve only</li>
+<li><code>share_freely</code>: Share freely</li>
+<li><code>may_sell</code>: May sell</li>
+<li><code>your_call</code>: Your call</li>
+<li><code>do_not_care</code>: Don&#x27;t care</li>
+<li><code>may_destroy</code>: May destroy it</li>
+<li><code>it_depends</code>: It depends...</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>Add your conditions (text); shown when `kr3` contains `may_destroy`</li>
+<li>Tell us more (textarea); shown when `kr3` contains `it_depends`</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section>
+<h2>Copy Right</h2>
+<section class="spec-group">
+<p><em>Shown when: condition `material_is_digital_or_both`</em></p>
+<section class="spec-question">
+<h4>CR1. Can copies be made?</h4>
+<ul>
+<li>Answer type: <code>radio</code></li>
+<li>Options:<ul>
+<li><code>yes_freely</code>: Yes, freely</li>
+<li><code>yes_but</code>: Yes, but...</li>
+<li><code>no</code>: No</li>
+<li><code>do_not_care</code>: Don&#x27;t care</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>Tell us more (textarea); shown when `cr1` equals `yes_but`</li>
+</ul></li>
+</ul>
+</section>
+<section class="spec-question">
+<h4>CR2. What must copies preserve?</h4>
+<ul>
+<li>Answer type: <code>checkboxes</code></li>
+<li>Options:<ul>
+<li><code>original_file_format</code>: Original file format</li>
+<li><code>all_metadata</code>: All metadata</li>
+<li><code>folder_structure</code>: Folder structure</li>
+<li><code>file_names</code>: File names</li>
+<li><code>original_quality</code>: Original quality (no compression)</li>
+<li><code>it_depends</code>: It depends...</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>Tell us more (textarea); shown when `cr2` contains `it_depends`</li>
+</ul></li>
+</ul>
+</section>
+<section class="spec-question">
+<h4>CR3. Where can copies live?</h4>
+<ul>
+<li>Answer type: <code>radio</code></li>
+<li>Options:<ul>
+<li><code>anywhere</code>: Anywhere</li>
+<li><code>specific_countries</code>: Only in specific countries</li>
+<li><code>specific_institutions</code>: Only with specific institutions</li>
+<li><code>distributed_widely</code>: Distributed as widely as possible for safety</li>
+<li><code>let_me_tell_you</code>: Let me tell you...</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>List countries (text); shown when `cr3` equals `specific_countries`</li>
+<li>List institutions (text); shown when `cr3` equals `specific_institutions`</li>
+<li>Tell us more (textarea); shown when `cr3` equals `let_me_tell_you`</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section class="spec-group">
+<p><em>Shown when: condition `material_is_physical_or_both`</em></p>
+<section class="spec-question">
+<h4>CR4. Should this be digitised?</h4>
+<ul>
+<li>Answer type: <code>radio</code></li>
+<li>Options:<ul>
+<li><code>yes_please</code>: Yes, please</li>
+<li><code>qualified_institution_only</code>: Yes, but only by a qualified institution</li>
+<li><code>yes_but</code>: Yes, but...</li>
+<li><code>no</code>: No</li>
+<li><code>do_not_mind</code>: Don&#x27;t mind</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>Tell us more (textarea); shown when `cr4` equals `yes_but`</li>
+</ul></li>
+</ul>
+</section>
+<section class="spec-question">
+<h4>CR5. What must a digitised version preserve?</h4>
+<ul>
+<li>Answer type: <code>checkboxes</code></li>
+<li>Options:<ul>
+<li><code>original_colours</code>: Original colours</li>
+<li><code>full_resolution</code>: Full resolution</li>
+<li><code>both_sides</code>: Both sides</li>
+<li><code>physical_scale</code>: Physical scale</li>
+<li><code>all_accompanying_materials</code>: All accompanying materials (e.g. notes, packaging)</li>
+<li><code>let_me_tell_you</code>: Let me tell you...</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>Tell us more (textarea); shown when `cr5` contains `let_me_tell_you`</li>
+</ul></li>
+</ul>
+</section>
+<section class="spec-question">
+<h4>CR6. Where can digital copies live?</h4>
+<ul>
+<li>Answer type: <code>radio</code></li>
+<li>Options:<ul>
+<li><code>anywhere</code>: Anywhere</li>
+<li><code>specific_countries</code>: Only in specific countries</li>
+<li><code>specific_institutions</code>: Only with specific institutions</li>
+<li><code>distributed_widely</code>: Distributed as widely as possible for safety</li>
+<li><code>it_depends</code>: It depends...</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>List countries (text); shown when `cr6` equals `specific_countries`</li>
+<li>List institutions (text); shown when `cr6` equals `specific_institutions`</li>
+<li>Tell us more (textarea); shown when `cr6` equals `it_depends`</li>
+</ul></li>
+</ul>
+</section>
+</section>
+</section>
+<section>
+<h2>Machine Right</h2>
+<p>KeepRight expresses intentions. It is not legally binding, but it gives future stewards something real to honour.</p>
+<section class="spec-question">
+<h3>MR1. Can machines analyse or index this material?</h3>
+<ul>
+<li>Answer type: <code>radio</code></li>
+<li>Options:<ul>
+<li><code>yes_freely</code>: Yes, freely</li>
+<li><code>preservation_only</code>: Yes, for preservation purposes only</li>
+<li><code>yes_but</code>: Yes, but...</li>
+<li><code>no</code>: No</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>Tell us more (textarea); shown when `mr1` equals `yes_but`</li>
+</ul></li>
+</ul>
+</section>
+<section class="spec-question">
+<h3>MR2. Can this material be used to train AI?</h3>
+<ul>
+<li>Answer type: <code>radio</code></li>
+<li>Options:<ul>
+<li><code>yes</code>: Yes</li>
+<li><code>non_commercial_only</code>: Yes, but not for commercial purposes</li>
+<li><code>yes_but</code>: Yes, but...</li>
+<li><code>no</code>: No</li>
+<li><code>do_not_mind</code>: Don&#x27;t mind</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>Tell us more (textarea); shown when `mr2` equals `yes_but`</li>
+</ul></li>
+</ul>
+</section>
+<section class="spec-question">
+<h3>MR3. If this material is used by an AI, what matters to you?</h3>
+<ul>
+<li>Answer type: <code>checkboxes</code></li>
+<li>Options:<ul>
+<li><code>attribution</code>: Attribution (I want to be credited)</li>
+<li><code>transparency</code>: Transparency (I want to know how it was used)</li>
+<li><code>copy_of_outputs</code>: A copy of anything produced using it</li>
+<li><code>nothing_in_particular</code>: Nothing in particular</li>
+<li><code>complicated</code>: It&#x27;s complicated...</li>
+</ul></li>
+<li>Follow-ups:<ul>
+<li>Tell us more (textarea); shown when `mr3` contains `complicated`</li>
+</ul></li>
+</ul>
+</section>
+</section>
+  </main>
+</body>
+</html>

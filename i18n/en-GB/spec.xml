@@ -1,0 +1,1287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<keepRightSpec schemaVersion="0.0.1" specVersion="2026-04" locale="en-GB">
+  <title>KeepRight Spec</title>
+  <logic>
+    <conditions>
+      <condition id="material_is_digital_or_both">
+        <any>
+          <condition>
+            <fieldCondition field="m1" equals="digital"/>
+          </condition>
+          <condition>
+            <fieldCondition field="m1" equals="both"/>
+          </condition>
+        </any>
+      </condition>
+      <condition id="material_is_physical_or_both">
+        <any>
+          <condition>
+            <fieldCondition field="m1" equals="physical"/>
+          </condition>
+          <condition>
+            <fieldCondition field="m1" equals="both"/>
+          </condition>
+        </any>
+      </condition>
+      <condition id="copyright_holder_yes_or_unsure">
+        <any>
+          <condition>
+            <fieldCondition field="m2" equals="yes"/>
+          </condition>
+          <condition>
+            <fieldCondition field="m2" equals="not_sure"/>
+          </condition>
+        </any>
+      </condition>
+    </conditions>
+  </logic>
+  <sections>
+    <section id="about_you">
+      <title>About You</title>
+      <description>Optional information about the responsible party.</description>
+      <items>
+        <item id="a1" kind="question" answerType="text" displayCode="A1">
+          <label>Name</label>
+        </item>
+        <item id="a2" kind="question" answerType="email" displayCode="A2">
+          <label>Email</label>
+        </item>
+        <item id="a3" kind="question" answerType="select" displayCode="A3" optionSource="countries">
+          <label>Country</label>
+          <options>
+            <option value="Afghanistan">
+              <label>Afghanistan</label>
+            </option>
+            <option value="Albania">
+              <label>Albania</label>
+            </option>
+            <option value="Algeria">
+              <label>Algeria</label>
+            </option>
+            <option value="Andorra">
+              <label>Andorra</label>
+            </option>
+            <option value="Angola">
+              <label>Angola</label>
+            </option>
+            <option value="Antigua and Barbuda">
+              <label>Antigua and Barbuda</label>
+            </option>
+            <option value="Argentina">
+              <label>Argentina</label>
+            </option>
+            <option value="Armenia">
+              <label>Armenia</label>
+            </option>
+            <option value="Australia">
+              <label>Australia</label>
+            </option>
+            <option value="Austria">
+              <label>Austria</label>
+            </option>
+            <option value="Azerbaijan">
+              <label>Azerbaijan</label>
+            </option>
+            <option value="Bahamas">
+              <label>Bahamas</label>
+            </option>
+            <option value="Bahrain">
+              <label>Bahrain</label>
+            </option>
+            <option value="Bangladesh">
+              <label>Bangladesh</label>
+            </option>
+            <option value="Barbados">
+              <label>Barbados</label>
+            </option>
+            <option value="Belarus">
+              <label>Belarus</label>
+            </option>
+            <option value="Belgium">
+              <label>Belgium</label>
+            </option>
+            <option value="Belize">
+              <label>Belize</label>
+            </option>
+            <option value="Benin">
+              <label>Benin</label>
+            </option>
+            <option value="Bhutan">
+              <label>Bhutan</label>
+            </option>
+            <option value="Bolivia">
+              <label>Bolivia</label>
+            </option>
+            <option value="Bosnia and Herzegovina">
+              <label>Bosnia and Herzegovina</label>
+            </option>
+            <option value="Botswana">
+              <label>Botswana</label>
+            </option>
+            <option value="Brazil">
+              <label>Brazil</label>
+            </option>
+            <option value="Brunei">
+              <label>Brunei</label>
+            </option>
+            <option value="Bulgaria">
+              <label>Bulgaria</label>
+            </option>
+            <option value="Burkina Faso">
+              <label>Burkina Faso</label>
+            </option>
+            <option value="Burundi">
+              <label>Burundi</label>
+            </option>
+            <option value="Cabo Verde">
+              <label>Cabo Verde</label>
+            </option>
+            <option value="Cambodia">
+              <label>Cambodia</label>
+            </option>
+            <option value="Cameroon">
+              <label>Cameroon</label>
+            </option>
+            <option value="Canada">
+              <label>Canada</label>
+            </option>
+            <option value="Central African Republic">
+              <label>Central African Republic</label>
+            </option>
+            <option value="Chad">
+              <label>Chad</label>
+            </option>
+            <option value="Chile">
+              <label>Chile</label>
+            </option>
+            <option value="China">
+              <label>China</label>
+            </option>
+            <option value="Colombia">
+              <label>Colombia</label>
+            </option>
+            <option value="Comoros">
+              <label>Comoros</label>
+            </option>
+            <option value="Congo">
+              <label>Congo</label>
+            </option>
+            <option value="Costa Rica">
+              <label>Costa Rica</label>
+            </option>
+            <option value="Croatia">
+              <label>Croatia</label>
+            </option>
+            <option value="Cuba">
+              <label>Cuba</label>
+            </option>
+            <option value="Cyprus">
+              <label>Cyprus</label>
+            </option>
+            <option value="Czech Republic">
+              <label>Czech Republic</label>
+            </option>
+            <option value="Denmark">
+              <label>Denmark</label>
+            </option>
+            <option value="Djibouti">
+              <label>Djibouti</label>
+            </option>
+            <option value="Dominica">
+              <label>Dominica</label>
+            </option>
+            <option value="Dominican Republic">
+              <label>Dominican Republic</label>
+            </option>
+            <option value="Ecuador">
+              <label>Ecuador</label>
+            </option>
+            <option value="Egypt">
+              <label>Egypt</label>
+            </option>
+            <option value="El Salvador">
+              <label>El Salvador</label>
+            </option>
+            <option value="Equatorial Guinea">
+              <label>Equatorial Guinea</label>
+            </option>
+            <option value="Eritrea">
+              <label>Eritrea</label>
+            </option>
+            <option value="Estonia">
+              <label>Estonia</label>
+            </option>
+            <option value="Eswatini">
+              <label>Eswatini</label>
+            </option>
+            <option value="Ethiopia">
+              <label>Ethiopia</label>
+            </option>
+            <option value="Fiji">
+              <label>Fiji</label>
+            </option>
+            <option value="Finland">
+              <label>Finland</label>
+            </option>
+            <option value="France">
+              <label>France</label>
+            </option>
+            <option value="Gabon">
+              <label>Gabon</label>
+            </option>
+            <option value="Gambia">
+              <label>Gambia</label>
+            </option>
+            <option value="Georgia">
+              <label>Georgia</label>
+            </option>
+            <option value="Germany">
+              <label>Germany</label>
+            </option>
+            <option value="Ghana">
+              <label>Ghana</label>
+            </option>
+            <option value="Greece">
+              <label>Greece</label>
+            </option>
+            <option value="Grenada">
+              <label>Grenada</label>
+            </option>
+            <option value="Guatemala">
+              <label>Guatemala</label>
+            </option>
+            <option value="Guinea">
+              <label>Guinea</label>
+            </option>
+            <option value="Guinea-Bissau">
+              <label>Guinea-Bissau</label>
+            </option>
+            <option value="Guyana">
+              <label>Guyana</label>
+            </option>
+            <option value="Haiti">
+              <label>Haiti</label>
+            </option>
+            <option value="Honduras">
+              <label>Honduras</label>
+            </option>
+            <option value="Hungary">
+              <label>Hungary</label>
+            </option>
+            <option value="Iceland">
+              <label>Iceland</label>
+            </option>
+            <option value="India">
+              <label>India</label>
+            </option>
+            <option value="Indonesia">
+              <label>Indonesia</label>
+            </option>
+            <option value="Iran">
+              <label>Iran</label>
+            </option>
+            <option value="Iraq">
+              <label>Iraq</label>
+            </option>
+            <option value="Ireland">
+              <label>Ireland</label>
+            </option>
+            <option value="Israel">
+              <label>Israel</label>
+            </option>
+            <option value="Italy">
+              <label>Italy</label>
+            </option>
+            <option value="Jamaica">
+              <label>Jamaica</label>
+            </option>
+            <option value="Japan">
+              <label>Japan</label>
+            </option>
+            <option value="Jordan">
+              <label>Jordan</label>
+            </option>
+            <option value="Kazakhstan">
+              <label>Kazakhstan</label>
+            </option>
+            <option value="Kenya">
+              <label>Kenya</label>
+            </option>
+            <option value="Kiribati">
+              <label>Kiribati</label>
+            </option>
+            <option value="Kuwait">
+              <label>Kuwait</label>
+            </option>
+            <option value="Kyrgyzstan">
+              <label>Kyrgyzstan</label>
+            </option>
+            <option value="Laos">
+              <label>Laos</label>
+            </option>
+            <option value="Latvia">
+              <label>Latvia</label>
+            </option>
+            <option value="Lebanon">
+              <label>Lebanon</label>
+            </option>
+            <option value="Lesotho">
+              <label>Lesotho</label>
+            </option>
+            <option value="Liberia">
+              <label>Liberia</label>
+            </option>
+            <option value="Libya">
+              <label>Libya</label>
+            </option>
+            <option value="Liechtenstein">
+              <label>Liechtenstein</label>
+            </option>
+            <option value="Lithuania">
+              <label>Lithuania</label>
+            </option>
+            <option value="Luxembourg">
+              <label>Luxembourg</label>
+            </option>
+            <option value="Madagascar">
+              <label>Madagascar</label>
+            </option>
+            <option value="Malawi">
+              <label>Malawi</label>
+            </option>
+            <option value="Malaysia">
+              <label>Malaysia</label>
+            </option>
+            <option value="Maldives">
+              <label>Maldives</label>
+            </option>
+            <option value="Mali">
+              <label>Mali</label>
+            </option>
+            <option value="Malta">
+              <label>Malta</label>
+            </option>
+            <option value="Marshall Islands">
+              <label>Marshall Islands</label>
+            </option>
+            <option value="Mauritania">
+              <label>Mauritania</label>
+            </option>
+            <option value="Mauritius">
+              <label>Mauritius</label>
+            </option>
+            <option value="Mexico">
+              <label>Mexico</label>
+            </option>
+            <option value="Micronesia">
+              <label>Micronesia</label>
+            </option>
+            <option value="Moldova">
+              <label>Moldova</label>
+            </option>
+            <option value="Monaco">
+              <label>Monaco</label>
+            </option>
+            <option value="Mongolia">
+              <label>Mongolia</label>
+            </option>
+            <option value="Montenegro">
+              <label>Montenegro</label>
+            </option>
+            <option value="Morocco">
+              <label>Morocco</label>
+            </option>
+            <option value="Mozambique">
+              <label>Mozambique</label>
+            </option>
+            <option value="Myanmar">
+              <label>Myanmar</label>
+            </option>
+            <option value="Namibia">
+              <label>Namibia</label>
+            </option>
+            <option value="Nauru">
+              <label>Nauru</label>
+            </option>
+            <option value="Nepal">
+              <label>Nepal</label>
+            </option>
+            <option value="Netherlands">
+              <label>Netherlands</label>
+            </option>
+            <option value="New Zealand">
+              <label>New Zealand</label>
+            </option>
+            <option value="Nicaragua">
+              <label>Nicaragua</label>
+            </option>
+            <option value="Niger">
+              <label>Niger</label>
+            </option>
+            <option value="Nigeria">
+              <label>Nigeria</label>
+            </option>
+            <option value="North Korea">
+              <label>North Korea</label>
+            </option>
+            <option value="North Macedonia">
+              <label>North Macedonia</label>
+            </option>
+            <option value="Norway">
+              <label>Norway</label>
+            </option>
+            <option value="Oman">
+              <label>Oman</label>
+            </option>
+            <option value="Pakistan">
+              <label>Pakistan</label>
+            </option>
+            <option value="Palau">
+              <label>Palau</label>
+            </option>
+            <option value="Panama">
+              <label>Panama</label>
+            </option>
+            <option value="Papua New Guinea">
+              <label>Papua New Guinea</label>
+            </option>
+            <option value="Paraguay">
+              <label>Paraguay</label>
+            </option>
+            <option value="Peru">
+              <label>Peru</label>
+            </option>
+            <option value="Philippines">
+              <label>Philippines</label>
+            </option>
+            <option value="Poland">
+              <label>Poland</label>
+            </option>
+            <option value="Portugal">
+              <label>Portugal</label>
+            </option>
+            <option value="Qatar">
+              <label>Qatar</label>
+            </option>
+            <option value="Romania">
+              <label>Romania</label>
+            </option>
+            <option value="Russia">
+              <label>Russia</label>
+            </option>
+            <option value="Rwanda">
+              <label>Rwanda</label>
+            </option>
+            <option value="Saint Kitts and Nevis">
+              <label>Saint Kitts and Nevis</label>
+            </option>
+            <option value="Saint Lucia">
+              <label>Saint Lucia</label>
+            </option>
+            <option value="Saint Vincent and the Grenadines">
+              <label>Saint Vincent and the Grenadines</label>
+            </option>
+            <option value="Samoa">
+              <label>Samoa</label>
+            </option>
+            <option value="San Marino">
+              <label>San Marino</label>
+            </option>
+            <option value="Sao Tome and Principe">
+              <label>Sao Tome and Principe</label>
+            </option>
+            <option value="Saudi Arabia">
+              <label>Saudi Arabia</label>
+            </option>
+            <option value="Senegal">
+              <label>Senegal</label>
+            </option>
+            <option value="Serbia">
+              <label>Serbia</label>
+            </option>
+            <option value="Seychelles">
+              <label>Seychelles</label>
+            </option>
+            <option value="Sierra Leone">
+              <label>Sierra Leone</label>
+            </option>
+            <option value="Singapore">
+              <label>Singapore</label>
+            </option>
+            <option value="Slovakia">
+              <label>Slovakia</label>
+            </option>
+            <option value="Slovenia">
+              <label>Slovenia</label>
+            </option>
+            <option value="Solomon Islands">
+              <label>Solomon Islands</label>
+            </option>
+            <option value="Somalia">
+              <label>Somalia</label>
+            </option>
+            <option value="South Africa">
+              <label>South Africa</label>
+            </option>
+            <option value="South Korea">
+              <label>South Korea</label>
+            </option>
+            <option value="South Sudan">
+              <label>South Sudan</label>
+            </option>
+            <option value="Spain">
+              <label>Spain</label>
+            </option>
+            <option value="Sri Lanka">
+              <label>Sri Lanka</label>
+            </option>
+            <option value="Sudan">
+              <label>Sudan</label>
+            </option>
+            <option value="Suriname">
+              <label>Suriname</label>
+            </option>
+            <option value="Sweden">
+              <label>Sweden</label>
+            </option>
+            <option value="Switzerland">
+              <label>Switzerland</label>
+            </option>
+            <option value="Syria">
+              <label>Syria</label>
+            </option>
+            <option value="Taiwan">
+              <label>Taiwan</label>
+            </option>
+            <option value="Tajikistan">
+              <label>Tajikistan</label>
+            </option>
+            <option value="Tanzania">
+              <label>Tanzania</label>
+            </option>
+            <option value="Thailand">
+              <label>Thailand</label>
+            </option>
+            <option value="Timor-Leste">
+              <label>Timor-Leste</label>
+            </option>
+            <option value="Togo">
+              <label>Togo</label>
+            </option>
+            <option value="Tonga">
+              <label>Tonga</label>
+            </option>
+            <option value="Trinidad and Tobago">
+              <label>Trinidad and Tobago</label>
+            </option>
+            <option value="Tunisia">
+              <label>Tunisia</label>
+            </option>
+            <option value="Turkey">
+              <label>Turkey</label>
+            </option>
+            <option value="Turkmenistan">
+              <label>Turkmenistan</label>
+            </option>
+            <option value="Tuvalu">
+              <label>Tuvalu</label>
+            </option>
+            <option value="Uganda">
+              <label>Uganda</label>
+            </option>
+            <option value="Ukraine">
+              <label>Ukraine</label>
+            </option>
+            <option value="United Arab Emirates">
+              <label>United Arab Emirates</label>
+            </option>
+            <option value="United Kingdom">
+              <label>United Kingdom</label>
+            </option>
+            <option value="United States">
+              <label>United States</label>
+            </option>
+            <option value="Uruguay">
+              <label>Uruguay</label>
+            </option>
+            <option value="Uzbekistan">
+              <label>Uzbekistan</label>
+            </option>
+            <option value="Vanuatu">
+              <label>Vanuatu</label>
+            </option>
+            <option value="Vatican City">
+              <label>Vatican City</label>
+            </option>
+            <option value="Venezuela">
+              <label>Venezuela</label>
+            </option>
+            <option value="Vietnam">
+              <label>Vietnam</label>
+            </option>
+            <option value="Yemen">
+              <label>Yemen</label>
+            </option>
+            <option value="Zambia">
+              <label>Zambia</label>
+            </option>
+            <option value="Zimbabwe">
+              <label>Zimbabwe</label>
+            </option>
+          </options>
+        </item>
+      </items>
+    </section>
+    <section id="material">
+      <title>The Material</title>
+      <items>
+        <item id="material_crux" kind="group">
+          <title>Crux</title>
+          <items>
+            <item id="m1" kind="question" answerType="radio" displayCode="M1">
+              <label>Is this digital, physical, or both?</label>
+              <options>
+                <option value="digital">
+                  <label>Digital</label>
+                </option>
+                <option value="physical">
+                  <label>Physical</label>
+                </option>
+                <option value="both">
+                  <label>Both</label>
+                </option>
+              </options>
+            </item>
+            <item id="m2" kind="question" answerType="radio" displayCode="M2">
+              <label>Are you the copyright holder?</label>
+              <options>
+                <option value="yes">
+                  <label>Yes</label>
+                </option>
+                <option value="no">
+                  <label>No</label>
+                </option>
+                <option value="not_sure">
+                  <label>Not sure</label>
+                </option>
+              </options>
+            </item>
+          </items>
+        </item>
+        <item id="material_details" kind="group">
+          <title>Details</title>
+          <items>
+            <item id="m3" kind="question" answerType="text" displayCode="M3">
+              <label>What should we call this material?</label>
+            </item>
+            <item id="m4" kind="question" answerType="textarea" displayCode="M4">
+              <label>What is it?</label>
+              <ui>
+                <rows>3</rows>
+              </ui>
+            </item>
+            <item id="m4_1" kind="question" answerType="radio" displayCode="M4.1">
+              <label>Does it live online?</label>
+              <visibleWhen>
+                <ref>material_is_digital_or_both</ref>
+              </visibleWhen>
+              <options>
+                <option value="urls">
+                  <label>Yes, I have a URL or URLs</label>
+                </option>
+                <option value="ids">
+                  <label>Yes, I have some IDs (e.g. DOI)</label>
+                </option>
+                <option value="no">
+                  <label>No</label>
+                </option>
+              </options>
+              <followups>
+                <item id="m4_1_urls" kind="question" answerType="text">
+                  <label>URL or URLs</label>
+                  <placeholder>Paste URLs here</placeholder>
+                  <visibleWhen>
+                    <fieldCondition field="m4_1" equals="urls"/>
+                  </visibleWhen>
+                </item>
+                <item id="m4_1_ids" kind="question" answerType="text">
+                  <label>IDs</label>
+                  <placeholder>Paste IDs here</placeholder>
+                  <visibleWhen>
+                    <fieldCondition field="m4_1" equals="ids"/>
+                  </visibleWhen>
+                </item>
+              </followups>
+            </item>
+            <item id="m4_2" kind="question" answerType="text" displayCode="M4.2">
+              <label>Which file formats or file extensions are involved?</label>
+              <placeholder>e.g. jpg, pdf, wav</placeholder>
+              <visibleWhen>
+                <ref>material_is_digital_or_both</ref>
+              </visibleWhen>
+            </item>
+            <item id="m5" kind="question" answerType="checkboxes" displayCode="M5">
+              <label>What's your relationship to it?</label>
+              <options>
+                <option value="made">
+                  <label>I made it</label>
+                </option>
+                <option value="own">
+                  <label>I own it</label>
+                </option>
+                <option value="family">
+                  <label>I'm a family member of the creator</label>
+                </option>
+                <option value="steward">
+                  <label>I'm a designated steward</label>
+                </option>
+                <option value="community">
+                  <label>I'm a community member</label>
+                </option>
+                <option value="let_me_tell_you">
+                  <label>Let me tell you...</label>
+                </option>
+              </options>
+              <followups>
+                <item id="m5_let_me_tell_you_detail" kind="question" answerType="textarea">
+                  <label>Tell us more</label>
+                  <visibleWhen>
+                    <fieldCondition field="m5" contains="let_me_tell_you"/>
+                  </visibleWhen>
+                  <ui>
+                    <rows>2</rows>
+                  </ui>
+                </item>
+              </followups>
+            </item>
+            <item id="m6" kind="question" answerType="textarea" displayCode="M6">
+              <label>Who made this, and who owns it now?</label>
+              <ui>
+                <rows>3</rows>
+              </ui>
+            </item>
+            <item id="m7" kind="question" answerType="radio" displayCode="M7">
+              <label>What's its copyright or licensing status, if you know?</label>
+              <options>
+                <option value="all_rights_reserved">
+                  <label>All Rights Reserved</label>
+                </option>
+                <option value="open_license">
+                  <label>Open License (e.g. Creative Commons)</label>
+                </option>
+                <option value="public_domain">
+                  <label>Public Domain</label>
+                </option>
+                <option value="not_sure">
+                  <label>Not sure</label>
+                </option>
+                <option value="complicated">
+                  <label>It's complicated...</label>
+                </option>
+              </options>
+              <followups>
+                <item id="m7_complicated_detail" kind="question" answerType="textarea">
+                  <label>Tell us more</label>
+                  <visibleWhen>
+                    <fieldCondition field="m7" equals="complicated"/>
+                  </visibleWhen>
+                  <ui>
+                    <rows>2</rows>
+                  </ui>
+                </item>
+              </followups>
+            </item>
+            <item id="m8" kind="question" answerType="textarea" displayCode="M8">
+              <label>Can you add any background on how, why, or when it was made? This will help future stewards understand the material.</label>
+              <optionalLabel>optional</optionalLabel>
+              <ui>
+                <rows>5</rows>
+              </ui>
+            </item>
+          </items>
+        </item>
+      </items>
+    </section>
+    <section id="keep_right">
+      <title>Keep Right</title>
+      <items>
+        <item id="kr1" kind="question" answerType="checkboxes" displayCode="KR1">
+          <label>Who would you love to take care of this?</label>
+          <options>
+            <option value="person">
+              <label>A specific person</label>
+            </option>
+            <option value="institution">
+              <label>A specific institution</label>
+            </option>
+            <option value="any_archive_or_library">
+              <label>Any qualified archive or library</label>
+            </option>
+            <option value="any_steward">
+              <label>Open to any steward</label>
+            </option>
+            <option value="it_depends">
+              <label>It depends...</label>
+            </option>
+          </options>
+          <followups>
+            <item id="kr1_person_name" kind="question" answerType="text">
+              <label>Name them</label>
+              <placeholder>Name them</placeholder>
+              <visibleWhen>
+                <fieldCondition field="kr1" contains="person"/>
+              </visibleWhen>
+            </item>
+            <item id="kr1_institution_name" kind="question" answerType="text">
+              <label>Name it</label>
+              <placeholder>Name it</placeholder>
+              <visibleWhen>
+                <fieldCondition field="kr1" contains="institution"/>
+              </visibleWhen>
+            </item>
+            <item id="kr1_it_depends_detail" kind="question" answerType="textarea">
+              <label>Tell us more</label>
+              <visibleWhen>
+                <fieldCondition field="kr1" contains="it_depends"/>
+              </visibleWhen>
+              <ui>
+                <rows>2</rows>
+              </ui>
+            </item>
+          </followups>
+        </item>
+        <item id="kr1_1" kind="question" answerType="text" displayCode="KR1.1">
+          <label>And where should it live?</label>
+          <visibleWhen>
+            <ref>material_is_physical_or_both</ref>
+          </visibleWhen>
+        </item>
+        <item id="kr2" kind="question" answerType="radio" displayCode="KR2">
+          <label>Who should be able to see it, and are there any conditions?</label>
+          <options>
+            <option value="anyone">
+              <label>Anyone</label>
+            </option>
+            <option value="researchers">
+              <label>Researchers only</label>
+            </option>
+            <option value="family_or_designated_people">
+              <label>Family or designated people only</label>
+            </option>
+            <option value="no_one_for_now">
+              <label>No one for now</label>
+            </option>
+            <option value="complicated">
+              <label>It's complicated...</label>
+            </option>
+          </options>
+          <followups>
+            <item id="kr2_complicated_detail" kind="question" answerType="textarea">
+              <label>Tell us more</label>
+              <visibleWhen>
+                <fieldCondition field="kr2" equals="complicated"/>
+              </visibleWhen>
+              <ui>
+                <rows>2</rows>
+              </ui>
+            </item>
+          </followups>
+        </item>
+        <item id="kr2_1" kind="question" answerType="text" displayCode="KR2.1">
+          <label>Until when?</label>
+          <optionalLabel>optional</optionalLabel>
+          <placeholder>e.g. 10 years, after my death, 2075</placeholder>
+        </item>
+        <item id="kr3" kind="question" answerType="checkboxes" displayCode="KR3">
+          <label>What can your caretaker do with it?</label>
+          <visibleWhen>
+            <ref>copyright_holder_yes_or_unsure</ref>
+          </visibleWhen>
+          <labelVariants>
+            <variant>
+              <when>
+                <fieldCondition field="m2" equals="not_sure"/>
+              </when>
+              <label>What would you wish a caretaker to be allowed to do with it?</label>
+            </variant>
+          </labelVariants>
+          <options>
+            <option value="preserve_only">
+              <label>Preserve only</label>
+            </option>
+            <option value="share_freely">
+              <label>Share freely</label>
+            </option>
+            <option value="may_sell">
+              <label>May sell</label>
+            </option>
+            <option value="your_call">
+              <label>Your call</label>
+            </option>
+            <option value="do_not_care">
+              <label>Don't care</label>
+            </option>
+            <option value="may_destroy">
+              <label>May destroy it</label>
+            </option>
+            <option value="it_depends">
+              <label>It depends...</label>
+            </option>
+          </options>
+          <followups>
+            <item id="kr3_may_destroy_conditions" kind="question" answerType="text">
+              <label>Add your conditions</label>
+              <placeholder>Under what conditions, or when?</placeholder>
+              <visibleWhen>
+                <fieldCondition field="kr3" contains="may_destroy"/>
+              </visibleWhen>
+            </item>
+            <item id="kr3_it_depends_detail" kind="question" answerType="textarea">
+              <label>Tell us more</label>
+              <visibleWhen>
+                <fieldCondition field="kr3" contains="it_depends"/>
+              </visibleWhen>
+              <ui>
+                <rows>2</rows>
+              </ui>
+            </item>
+          </followups>
+        </item>
+      </items>
+    </section>
+    <section id="copy_right">
+      <title>Copy Right</title>
+      <items>
+        <item id="copy_right_digital" kind="group">
+          <visibleWhen>
+            <ref>material_is_digital_or_both</ref>
+          </visibleWhen>
+          <items>
+            <item id="cr1" kind="question" answerType="radio" displayCode="CR1">
+              <label>Can copies be made?</label>
+              <options>
+                <option value="yes_freely">
+                  <label>Yes, freely</label>
+                </option>
+                <option value="yes_but">
+                  <label>Yes, but...</label>
+                </option>
+                <option value="no">
+                  <label>No</label>
+                </option>
+                <option value="do_not_care">
+                  <label>Don't care</label>
+                </option>
+              </options>
+              <followups>
+                <item id="cr1_yes_but_detail" kind="question" answerType="textarea">
+                  <label>Tell us more</label>
+                  <visibleWhen>
+                    <fieldCondition field="cr1" equals="yes_but"/>
+                  </visibleWhen>
+                  <ui>
+                    <rows>2</rows>
+                  </ui>
+                </item>
+              </followups>
+            </item>
+            <item id="cr2" kind="question" answerType="checkboxes" displayCode="CR2">
+              <label>What must copies preserve?</label>
+              <options>
+                <option value="original_file_format">
+                  <label>Original file format</label>
+                </option>
+                <option value="all_metadata">
+                  <label>All metadata</label>
+                </option>
+                <option value="folder_structure">
+                  <label>Folder structure</label>
+                </option>
+                <option value="file_names">
+                  <label>File names</label>
+                </option>
+                <option value="original_quality">
+                  <label>Original quality (no compression)</label>
+                </option>
+                <option value="it_depends">
+                  <label>It depends...</label>
+                </option>
+              </options>
+              <followups>
+                <item id="cr2_it_depends_detail" kind="question" answerType="textarea">
+                  <label>Tell us more</label>
+                  <visibleWhen>
+                    <fieldCondition field="cr2" contains="it_depends"/>
+                  </visibleWhen>
+                  <ui>
+                    <rows>2</rows>
+                  </ui>
+                </item>
+              </followups>
+            </item>
+            <item id="cr3" kind="question" answerType="radio" displayCode="CR3">
+              <label>Where can copies live?</label>
+              <options>
+                <option value="anywhere">
+                  <label>Anywhere</label>
+                </option>
+                <option value="specific_countries">
+                  <label>Only in specific countries</label>
+                </option>
+                <option value="specific_institutions">
+                  <label>Only with specific institutions</label>
+                </option>
+                <option value="distributed_widely">
+                  <label>Distributed as widely as possible for safety</label>
+                </option>
+                <option value="let_me_tell_you">
+                  <label>Let me tell you...</label>
+                </option>
+              </options>
+              <followups>
+                <item id="cr3_specific_countries_detail" kind="question" answerType="text">
+                  <label>List countries</label>
+                  <placeholder>List countries</placeholder>
+                  <visibleWhen>
+                    <fieldCondition field="cr3" equals="specific_countries"/>
+                  </visibleWhen>
+                </item>
+                <item id="cr3_specific_institutions_detail" kind="question" answerType="text">
+                  <label>List institutions</label>
+                  <placeholder>List institutions</placeholder>
+                  <visibleWhen>
+                    <fieldCondition field="cr3" equals="specific_institutions"/>
+                  </visibleWhen>
+                </item>
+                <item id="cr3_let_me_tell_you_detail" kind="question" answerType="textarea">
+                  <label>Tell us more</label>
+                  <visibleWhen>
+                    <fieldCondition field="cr3" equals="let_me_tell_you"/>
+                  </visibleWhen>
+                  <ui>
+                    <rows>2</rows>
+                  </ui>
+                </item>
+              </followups>
+            </item>
+          </items>
+        </item>
+        <item id="copy_right_physical" kind="group">
+          <visibleWhen>
+            <ref>material_is_physical_or_both</ref>
+          </visibleWhen>
+          <items>
+            <item id="cr4" kind="question" answerType="radio" displayCode="CR4">
+              <label>Should this be digitised?</label>
+              <options>
+                <option value="yes_please">
+                  <label>Yes, please</label>
+                </option>
+                <option value="qualified_institution_only">
+                  <label>Yes, but only by a qualified institution</label>
+                </option>
+                <option value="yes_but">
+                  <label>Yes, but...</label>
+                </option>
+                <option value="no">
+                  <label>No</label>
+                </option>
+                <option value="do_not_mind">
+                  <label>Don't mind</label>
+                </option>
+              </options>
+              <followups>
+                <item id="cr4_yes_but_detail" kind="question" answerType="textarea">
+                  <label>Tell us more</label>
+                  <visibleWhen>
+                    <fieldCondition field="cr4" equals="yes_but"/>
+                  </visibleWhen>
+                  <ui>
+                    <rows>2</rows>
+                  </ui>
+                </item>
+              </followups>
+            </item>
+            <item id="cr5" kind="question" answerType="checkboxes" displayCode="CR5">
+              <label>What must a digitised version preserve?</label>
+              <options>
+                <option value="original_colours">
+                  <label>Original colours</label>
+                </option>
+                <option value="full_resolution">
+                  <label>Full resolution</label>
+                </option>
+                <option value="both_sides">
+                  <label>Both sides</label>
+                </option>
+                <option value="physical_scale">
+                  <label>Physical scale</label>
+                </option>
+                <option value="all_accompanying_materials">
+                  <label>All accompanying materials (e.g. notes, packaging)</label>
+                </option>
+                <option value="let_me_tell_you">
+                  <label>Let me tell you...</label>
+                </option>
+              </options>
+              <followups>
+                <item id="cr5_let_me_tell_you_detail" kind="question" answerType="textarea">
+                  <label>Tell us more</label>
+                  <visibleWhen>
+                    <fieldCondition field="cr5" contains="let_me_tell_you"/>
+                  </visibleWhen>
+                  <ui>
+                    <rows>2</rows>
+                  </ui>
+                </item>
+              </followups>
+            </item>
+            <item id="cr6" kind="question" answerType="radio" displayCode="CR6">
+              <label>Where can digital copies live?</label>
+              <options>
+                <option value="anywhere">
+                  <label>Anywhere</label>
+                </option>
+                <option value="specific_countries">
+                  <label>Only in specific countries</label>
+                </option>
+                <option value="specific_institutions">
+                  <label>Only with specific institutions</label>
+                </option>
+                <option value="distributed_widely">
+                  <label>Distributed as widely as possible for safety</label>
+                </option>
+                <option value="it_depends">
+                  <label>It depends...</label>
+                </option>
+              </options>
+              <followups>
+                <item id="cr6_specific_countries_detail" kind="question" answerType="text">
+                  <label>List countries</label>
+                  <placeholder>List countries</placeholder>
+                  <visibleWhen>
+                    <fieldCondition field="cr6" equals="specific_countries"/>
+                  </visibleWhen>
+                </item>
+                <item id="cr6_specific_institutions_detail" kind="question" answerType="text">
+                  <label>List institutions</label>
+                  <placeholder>List institutions</placeholder>
+                  <visibleWhen>
+                    <fieldCondition field="cr6" equals="specific_institutions"/>
+                  </visibleWhen>
+                </item>
+                <item id="cr6_it_depends_detail" kind="question" answerType="textarea">
+                  <label>Tell us more</label>
+                  <visibleWhen>
+                    <fieldCondition field="cr6" equals="it_depends"/>
+                  </visibleWhen>
+                  <ui>
+                    <rows>2</rows>
+                  </ui>
+                </item>
+              </followups>
+            </item>
+          </items>
+        </item>
+      </items>
+    </section>
+    <section id="machine_right">
+      <title>Machine Right</title>
+      <items>
+        <item id="machine_right_note" kind="note">
+          <text>KeepRight expresses intentions. It is not legally binding, but it gives future stewards something real to honour.</text>
+        </item>
+        <item id="mr1" kind="question" answerType="radio" displayCode="MR1">
+          <label>Can machines analyse or index this material?</label>
+          <options>
+            <option value="yes_freely">
+              <label>Yes, freely</label>
+            </option>
+            <option value="preservation_only">
+              <label>Yes, for preservation purposes only</label>
+            </option>
+            <option value="yes_but">
+              <label>Yes, but...</label>
+            </option>
+            <option value="no">
+              <label>No</label>
+            </option>
+          </options>
+          <followups>
+            <item id="mr1_yes_but_detail" kind="question" answerType="textarea">
+              <label>Tell us more</label>
+              <visibleWhen>
+                <fieldCondition field="mr1" equals="yes_but"/>
+              </visibleWhen>
+              <ui>
+                <rows>2</rows>
+              </ui>
+            </item>
+          </followups>
+        </item>
+        <item id="mr2" kind="question" answerType="radio" displayCode="MR2">
+          <label>Can this material be used to train AI?</label>
+          <options>
+            <option value="yes">
+              <label>Yes</label>
+            </option>
+            <option value="non_commercial_only">
+              <label>Yes, but not for commercial purposes</label>
+            </option>
+            <option value="yes_but">
+              <label>Yes, but...</label>
+            </option>
+            <option value="no">
+              <label>No</label>
+            </option>
+            <option value="do_not_mind">
+              <label>Don't mind</label>
+            </option>
+          </options>
+          <followups>
+            <item id="mr2_yes_but_detail" kind="question" answerType="textarea">
+              <label>Tell us more</label>
+              <visibleWhen>
+                <fieldCondition field="mr2" equals="yes_but"/>
+              </visibleWhen>
+              <ui>
+                <rows>2</rows>
+              </ui>
+            </item>
+          </followups>
+        </item>
+        <item id="mr3" kind="question" answerType="checkboxes" displayCode="MR3">
+          <label>If this material is used by an AI, what matters to you?</label>
+          <options>
+            <option value="attribution">
+              <label>Attribution (I want to be credited)</label>
+            </option>
+            <option value="transparency">
+              <label>Transparency (I want to know how it was used)</label>
+            </option>
+            <option value="copy_of_outputs">
+              <label>A copy of anything produced using it</label>
+            </option>
+            <option value="nothing_in_particular">
+              <label>Nothing in particular</label>
+            </option>
+            <option value="complicated">
+              <label>It's complicated...</label>
+            </option>
+          </options>
+          <followups>
+            <item id="mr3_complicated_detail" kind="question" answerType="textarea">
+              <label>Tell us more</label>
+              <visibleWhen>
+                <fieldCondition field="mr3" contains="complicated"/>
+              </visibleWhen>
+              <ui>
+                <rows>2</rows>
+              </ui>
+            </item>
+          </followups>
+        </item>
+      </items>
+    </section>
+  </sections>
+</keepRightSpec>

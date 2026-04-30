@@ -1,11 +1,11 @@
 {
   "meta": {
     "schemaVersion": "0.0.1",
-    "declarationVersion": "2026-04",
+    "specVersion": "2026-04",
     "defaultLocale": "en-GB",
     "supportedLocales": ["en-GB"],
     "title": {
-      "en-GB": "KeepRight Declaration Maker"
+      "en-GB": "KeepRight Spec"
     },
     "defaults": {
       "questionRequired": false
@@ -54,7 +54,7 @@
         "en-GB": "About You"
       },
       "description": {
-        "en-GB": "All optional, but recommended if you are the responsible party. All info will be visible to people who view the declaration."
+        "en-GB": "Optional information about the responsible party."
       },
       "items": [
         {
@@ -810,7 +810,7 @@
           "id": "machine_right_note",
           "kind": "note",
           "text": {
-            "en-GB": "A KeepRight declaration expresses your intentions. It is not legally binding, but it gives future stewards something real to honour."
+            "en-GB": "KeepRight expresses intentions. It is not legally binding, but it gives future stewards something real to honour."
           }
         },
         {
@@ -912,53 +912,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": "preview",
-      "title": {
-        "en-GB": "Preview"
-      },
-      "items": [
-        {
-          "id": "preview_summary",
-          "kind": "preview",
-          "label": {
-            "en-GB": "Generate a plain English summary of the declaration from all answers above."
-          },
-          "description": {
-            "en-GB": "User can go back and edit before submitting."
-          }
-        }
-      ]
-    },
-    {
-      "id": "submit",
-      "title": {
-        "en-GB": "Submit"
-      },
-      "items": [
-        {
-          "id": "submit_declaration",
-          "kind": "submit",
-          "label": {
-            "en-GB": "Submit declaration"
-          },
-          "description": {
-            "en-GB": "Creates a permanent declaration at keepright.info/declarations/[ID]."
-          },
-          "result": {
-            "type": "permanentDeclaration",
-            "urlTemplate": "https://keepright.info/declarations/{id}"
-          }
-        }
-      ]
     }
-  ],
-  "summary": {
-    "mode": "plain_english",
-    "locale": "en-GB",
-    "include": "answered_visible_questions",
-    "useOptionLabels": true,
-    "includeFollowupsWithParents": true
-  }
+  ]
 }

@@ -1,0 +1,5 @@
+/keepright-spec.code-workspace
+
+# Python
+__pycache__/
+*.py[cod]

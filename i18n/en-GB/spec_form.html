@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KeepRight Spec</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0; padding: 2rem; background: Canvas; color: CanvasText; }
+    main { max-width: 48rem; margin: 0 auto; }
+    h1, h2 { line-height: 1.15; }
+    section { border-top: 1px solid color-mix(in srgb, CanvasText 25%, transparent); padding: 1.5rem 0; }
+    fieldset { border: 1px solid color-mix(in srgb, CanvasText 25%, transparent); border-radius: 0.6rem; margin: 1rem 0; padding: 1rem; }
+    legend, .question-label { font-weight: 700; }
+    .field { margin: 1rem 0; }
+    .followup { margin: 0.75rem 0 0.75rem 1.5rem; }
+    input[type='text'], input[type='email'], textarea, select { box-sizing: border-box; display: block; margin-top: 0.35rem; max-width: 100%; width: 32rem; }
+    textarea { width: 40rem; }
+    .options { margin-top: 0.35rem; }
+    .options label { display: block; margin: 0.25rem 0; font-weight: 400; }
+    [hidden] { display: none !important; }
+    button { font: inherit; padding: 0.55rem 0.9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>KeepRight Spec</h1>
+    <form id="keepright-form">
+    <section class="field" data-spec-id="about_you">
+  <h2>About You</h2>
+  <p>Optional information about the responsible party.</p>
+<div class="field" data-spec-id="a1" data-display-code="A1">
+  <label id="a1-label" class="question-label" for="a1">A1. Name</label>
+  <input type="text" id="a1" name="a1">
+</div>
+<div class="field" data-spec-id="a2" data-display-code="A2">
+  <label id="a2-label" class="question-label" for="a2">A2. Email</label>
+  <input type="email" id="a2" name="a2">
+</div>
+<div class="field" data-spec-id="a3" data-display-code="A3">
+  <label id="a3-label" class="question-label" for="a3">A3. Country</label>
+  <select id="a3" name="a3">
+    <option value="">Select a country</option>
+    <option value="Afghanistan">Afghanistan</option>
+    <option value="Albania">Albania</option>
+    <option value="Algeria">Algeria</option>
+    <option value="Andorra">Andorra</option>
+    <option value="Angola">Angola</option>
+    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+    <option value="Argentina">Argentina</option>
+    <option value="Armenia">Armenia</option>
+    <option value="Australia">Australia</option>
+    <option value="Austria">Austria</option>
+    <option value="Azerbaijan">Azerbaijan</option>
+    <option value="Bahamas">Bahamas</option>
+    <option value="Bahrain">Bahrain</option>
+    <option value="Bangladesh">Bangladesh</option>
+    <option value="Barbados">Barbados</option>
+    <option value="Belarus">Belarus</option>
+    <option value="Belgium">Belgium</option>
+    <option value="Belize">Belize</option>
+    <option value="Benin">Benin</option>
+    <option value="Bhutan">Bhutan</option>
+    <option value="Bolivia">Bolivia</option>
+    <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+    <option value="Botswana">Botswana</option>
+    <option value="Brazil">Brazil</option>
+    <option value="Brunei">Brunei</option>
+    <option value="Bulgaria">Bulgaria</option>
+    <option value="Burkina Faso">Burkina Faso</option>
+    <option value="Burundi">Burundi</option>
+    <option value="Cabo Verde">Cabo Verde</option>
+    <option value="Cambodia">Cambodia</option>
+    <option value="Cameroon">Cameroon</option>
+    <option value="Canada">Canada</option>
+    <option value="Central African Republic">Central African Republic</option>
+    <option value="Chad">Chad</option>
+    <option value="Chile">Chile</option>
+    <option value="China">China</option>
+    <option value="Colombia">Colombia</option>
+    <option value="Comoros">Comoros</option>
+    <option value="Congo">Congo</option>
+    <option value="Costa Rica">Costa Rica</option>
+    <option value="Croatia">Croatia</option>
+    <option value="Cuba">Cuba</option>
+    <option value="Cyprus">Cyprus</option>
+    <option value="Czech Republic">Czech Republic</option>
+    <option value="Denmark">Denmark</option>
+    <option value="Djibouti">Djibouti</option>
+    <option value="Dominica">Dominica</option>
+    <option value="Dominican Republic">Dominican Republic</option>
+    <option value="Ecuador">Ecuador</option>
+    <option value="Egypt">Egypt</option>
+    <option value="El Salvador">El Salvador</option>
+    <option value="Equatorial Guinea">Equatorial Guinea</option>
+    <option value="Eritrea">Eritrea</option>
+    <option value="Estonia">Estonia</option>
+    <option value="Eswatini">Eswatini</option>
+    <option value="Ethiopia">Ethiopia</option>
+    <option value="Fiji">Fiji</option>
+    <option value="Finland">Finland</option>
+    <option value="France">France</option>
+    <option value="Gabon">Gabon</option>
+    <option value="Gambia">Gambia</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Germany">Germany</option>
+    <option value="Ghana">Ghana</option>
+    <option value="Greece">Greece</option>
+    <option value="Grenada">Grenada</option>
+    <option value="Guatemala">Guatemala</option>
+    <option value="Guinea">Guinea</option>
+    <option value="Guinea-Bissau">Guinea-Bissau</option>
+    <option value="Guyana">Guyana</option>
+    <option value="Haiti">Haiti</option>
+    <option value="Honduras">Honduras</option>
+    <option value="Hungary">Hungary</option>
+    <option value="Iceland">Iceland</option>
+    <option value="India">India</option>
+    <option value="Indonesia">Indonesia</option>
+    <option value="Iran">Iran</option>
+    <option value="Iraq">Iraq</option>
+    <option value="Ireland">Ireland</option>
+    <option value="Israel">Israel</option>
+    <option value="Italy">Italy</option>
+    <option value="Jamaica">Jamaica</option>
+    <option value="Japan">Japan</option>
+    <option value="Jordan">Jordan</option>
+    <option value="Kazakhstan">Kazakhstan</option>
+    <option value="Kenya">Kenya</option>
+    <option value="Kiribati">Kiribati</option>
+    <option value="Kuwait">Kuwait</option>
+    <option value="Kyrgyzstan">Kyrgyzstan</option>
+    <option value="Laos">Laos</option>
+    <option value="Latvia">Latvia</option>
+    <option value="Lebanon">Lebanon</option>
+    <option value="Lesotho">Lesotho</option>
+    <option value="Liberia">Liberia</option>
+    <option value="Libya">Libya</option>
+    <option value="Liechtenstein">Liechtenstein</option>
+    <option value="Lithuania">Lithuania</option>
+    <option value="Luxembourg">Luxembourg</option>
+    <option value="Madagascar">Madagascar</option>
+    <option value="Malawi">Malawi</option>
+    <option value="Malaysia">Malaysia</option>
+    <option value="Maldives">Maldives</option>
+    <option value="Mali">Mali</option>
+    <option value="Malta">Malta</option>
+    <option value="Marshall Islands">Marshall Islands</option>
+    <option value="Mauritania">Mauritania</option>
+    <option value="Mauritius">Mauritius</option>
+    <option value="Mexico">Mexico</option>
+    <option value="Micronesia">Micronesia</option>
+    <option value="Moldova">Moldova</option>
+    <option value="Monaco">Monaco</option>
+    <option value="Mongolia">Mongolia</option>
+    <option value="Montenegro">Montenegro</option>
+    <option value="Morocco">Morocco</option>
+    <option value="Mozambique">Mozambique</option>
+    <option value="Myanmar">Myanmar</option>
+    <option value="Namibia">Namibia</option>
+    <option value="Nauru">Nauru</option>
+    <option value="Nepal">Nepal</option>
+    <option value="Netherlands">Netherlands</option>
+    <option value="New Zealand">New Zealand</option>
+    <option value="Nicaragua">Nicaragua</option>
+    <option value="Niger">Niger</option>
+    <option value="Nigeria">Nigeria</option>
+    <option value="North Korea">North Korea</option>
+    <option value="North Macedonia">North Macedonia</option>
+    <option value="Norway">Norway</option>
+    <option value="Oman">Oman</option>
+    <option value="Pakistan">Pakistan</option>
+    <option value="Palau">Palau</option>
+    <option value="Panama">Panama</option>
+    <option value="Papua New Guinea">Papua New Guinea</option>
+    <option value="Paraguay">Paraguay</option>
+    <option value="Peru">Peru</option>
+    <option value="Philippines">Philippines</option>
+    <option value="Poland">Poland</option>
+    <option value="Portugal">Portugal</option>
+    <option value="Qatar">Qatar</option>
+    <option value="Romania">Romania</option>
+    <option value="Russia">Russia</option>
+    <option value="Rwanda">Rwanda</option>
+    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+    <option value="Saint Lucia">Saint Lucia</option>
+    <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+    <option value="Samoa">Samoa</option>
+    <option value="San Marino">San Marino</option>
+    <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+    <option value="Saudi Arabia">Saudi Arabia</option>
+    <option value="Senegal">Senegal</option>
+    <option value="Serbia">Serbia</option>
+    <option value="Seychelles">Seychelles</option>
+    <option value="Sierra Leone">Sierra Leone</option>
+    <option value="Singapore">Singapore</option>
+    <option value="Slovakia">Slovakia</option>
+    <option value="Slovenia">Slovenia</option>
+    <option value="Solomon Islands">Solomon Islands</option>
+    <option value="Somalia">Somalia</option>
+    <option value="South Africa">South Africa</option>
+    <option value="South Korea">South Korea</option>
+    <option value="South Sudan">South Sudan</option>
+    <option value="Spain">Spain</option>
+    <option value="Sri Lanka">Sri Lanka</option>
+    <option value="Sudan">Sudan</option>
+    <option value="Suriname">Suriname</option>
+    <option value="Sweden">Sweden</option>
+    <option value="Switzerland">Switzerland</option>
+    <option value="Syria">Syria</option>
+    <option value="Taiwan">Taiwan</option>
+    <option value="Tajikistan">Tajikistan</option>
+    <option value="Tanzania">Tanzania</option>
+    <option value="Thailand">Thailand</option>
+    <option value="Timor-Leste">Timor-Leste</option>
+    <option value="Togo">Togo</option>
+    <option value="Tonga">Tonga</option>
+    <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+    <option value="Tunisia">Tunisia</option>
+    <option value="Turkey">Turkey</option>
+    <option value="Turkmenistan">Turkmenistan</option>
+    <option value="Tuvalu">Tuvalu</option>
+    <option value="Uganda">Uganda</option>
+    <option value="Ukraine">Ukraine</option>
+    <option value="United Arab Emirates">United Arab Emirates</option>
+    <option value="United Kingdom">United Kingdom</option>
+    <option value="United States">United States</option>
+    <option value="Uruguay">Uruguay</option>
+    <option value="Uzbekistan">Uzbekistan</option>
+    <option value="Vanuatu">Vanuatu</option>
+    <option value="Vatican City">Vatican City</option>
+    <option value="Venezuela">Venezuela</option>
+    <option value="Vietnam">Vietnam</option>
+    <option value="Yemen">Yemen</option>
+    <option value="Zambia">Zambia</option>
+    <option value="Zimbabwe">Zimbabwe</option>
+  </select>
+</div>
+</section>
+    <section class="field" data-spec-id="material">
+  <h2>The Material</h2>
+<fieldset class="field" data-spec-id="material_crux">
+  <legend>Crux</legend>
+  <div class="field" data-spec-id="m1" data-display-code="M1">
+    <label id="m1-label" class="question-label" for="m1">M1. Is this digital, physical, or both?</label>
+    <div class="options" role="group" aria-labelledby="m1-label">
+      <label>
+        <input type="radio" id="m1-digital" name="m1" value="digital">
+        Digital
+      </label>
+      <label>
+        <input type="radio" id="m1-physical" name="m1" value="physical">
+        Physical
+      </label>
+      <label>
+        <input type="radio" id="m1-both" name="m1" value="both">
+        Both
+      </label>
+    </div>
+  </div>
+  <div class="field" data-spec-id="m2" data-display-code="M2">
+    <label id="m2-label" class="question-label" for="m2">M2. Are you the copyright holder?</label>
+    <div class="options" role="group" aria-labelledby="m2-label">
+      <label>
+        <input type="radio" id="m2-yes" name="m2" value="yes">
+        Yes
+      </label>
+      <label>
+        <input type="radio" id="m2-no" name="m2" value="no">
+        No
+      </label>
+      <label>
+        <input type="radio" id="m2-not_sure" name="m2" value="not_sure">
+        Not sure
+      </label>
+    </div>
+  </div>
+</fieldset>
+<fieldset class="field" data-spec-id="material_details">
+  <legend>Details</legend>
+  <div class="field" data-spec-id="m3" data-display-code="M3">
+    <label id="m3-label" class="question-label" for="m3">M3. What should we call this material?</label>
+    <input type="text" id="m3" name="m3">
+  </div>
+  <div class="field" data-spec-id="m4" data-display-code="M4">
+    <label id="m4-label" class="question-label" for="m4">M4. What is it?</label>
+    <textarea id="m4" name="m4" rows="3"></textarea>
+  </div>
+  <div class="field" data-spec-id="m4_1" data-display-code="M4.1" data-visible-when='{&quot;ref&quot;: &quot;material_is_digital_or_both&quot;}'>
+    <label id="m4_1-label" class="question-label" for="m4_1">M4.1. Does it live online?</label>
+    <div class="options" role="group" aria-labelledby="m4_1-label">
+      <label>
+        <input type="radio" id="m4_1-urls" name="m4_1" value="urls">
+        Yes, I have a URL or URLs
+      </label>
+      <label>
+        <input type="radio" id="m4_1-ids" name="m4_1" value="ids">
+        Yes, I have some IDs (e.g. DOI)
+      </label>
+      <label>
+        <input type="radio" id="m4_1-no" name="m4_1" value="no">
+        No
+      </label>
+    </div>
+    <div class="followup" data-spec-id="m4_1_urls" data-visible-when='{&quot;equals&quot;: &quot;urls&quot;, &quot;field&quot;: &quot;m4_1&quot;}'>
+      <label id="m4_1_urls-label" class="question-label" for="m4_1_urls">URL or URLs</label>
+      <input type="text" id="m4_1_urls" name="m4_1_urls" placeholder="Paste URLs here">
+    </div>
+    <div class="followup" data-spec-id="m4_1_ids" data-visible-when='{&quot;equals&quot;: &quot;ids&quot;, &quot;field&quot;: &quot;m4_1&quot;}'>
+      <label id="m4_1_ids-label" class="question-label" for="m4_1_ids">IDs</label>
+      <input type="text" id="m4_1_ids" name="m4_1_ids" placeholder="Paste IDs here">
+    </div>
+  </div>
+  <div class="field" data-spec-id="m4_2" data-display-code="M4.2" data-visible-when='{&quot;ref&quot;: &quot;material_is_digital_or_both&quot;}'>
+    <label id="m4_2-label" class="question-label" for="m4_2">M4.2. Which file formats or file extensions are involved?</label>
+    <input type="text" id="m4_2" name="m4_2" placeholder="e.g. jpg, pdf, wav">
+  </div>
+  <div class="field" data-spec-id="m5" data-display-code="M5">
+    <label id="m5-label" class="question-label" for="m5">M5. What&#x27;s your relationship to it?</label>
+    <div class="options" role="group" aria-labelledby="m5-label">
+      <label>
+        <input type="checkbox" id="m5-made" name="m5" value="made">
+        I made it
+      </label>
+      <label>
+        <input type="checkbox" id="m5-own" name="m5" value="own">
+        I own it
+      </label>
+      <label>
+        <input type="checkbox" id="m5-family" name="m5" value="family">
+        I&#x27;m a family member of the creator
+      </label>
+      <label>
+        <input type="checkbox" id="m5-steward" name="m5" value="steward">
+        I&#x27;m a designated steward
+      </label>
+      <label>
+        <input type="checkbox" id="m5-community" name="m5" value="community">
+        I&#x27;m a community member
+      </label>
+      <label>
+        <input type="checkbox" id="m5-let_me_tell_you" name="m5" value="let_me_tell_you">
+        Let me tell you...
+      </label>
+    </div>
+    <div class="followup" data-spec-id="m5_let_me_tell_you_detail" data-visible-when='{&quot;contains&quot;: &quot;let_me_tell_you&quot;, &quot;field&quot;: &quot;m5&quot;}'>
+      <label id="m5_let_me_tell_you_detail-label" class="question-label" for="m5_let_me_tell_you_detail">Tell us more</label>
+      <textarea id="m5_let_me_tell_you_detail" name="m5_let_me_tell_you_detail" rows="2"></textarea>
+    </div>
+  </div>
+  <div class="field" data-spec-id="m6" data-display-code="M6">
+    <label id="m6-label" class="question-label" for="m6">M6. Who made this, and who owns it now?</label>
+    <textarea id="m6" name="m6" rows="3"></textarea>
+  </div>
+  <div class="field" data-spec-id="m7" data-display-code="M7">
+    <label id="m7-label" class="question-label" for="m7">M7. What&#x27;s its copyright or licensing status, if you know?</label>
+    <div class="options" role="group" aria-labelledby="m7-label">
+      <label>
+        <input type="radio" id="m7-all_rights_reserved" name="m7" value="all_rights_reserved">
+        All Rights Reserved
+      </label>
+      <label>
+        <input type="radio" id="m7-open_license" name="m7" value="open_license">
+        Open License (e.g. Creative Commons)
+      </label>
+      <label>
+        <input type="radio" id="m7-public_domain" name="m7" value="public_domain">
+        Public Domain
+      </label>
+      <label>
+        <input type="radio" id="m7-not_sure" name="m7" value="not_sure">
+        Not sure
+      </label>
+      <label>
+        <input type="radio" id="m7-complicated" name="m7" value="complicated">
+        It&#x27;s complicated...
+      </label>
+    </div>
+    <div class="followup" data-spec-id="m7_complicated_detail" data-visible-when='{&quot;equals&quot;: &quot;complicated&quot;, &quot;field&quot;: &quot;m7&quot;}'>
+      <label id="m7_complicated_detail-label" class="question-label" for="m7_complicated_detail">Tell us more</label>
+      <textarea id="m7_complicated_detail" name="m7_complicated_detail" rows="2"></textarea>
+    </div>
+  </div>
+  <div class="field" data-spec-id="m8" data-display-code="M8">
+    <label id="m8-label" class="question-label" for="m8">M8. Can you add any background on how, why, or when it was made? This will help future stewards understand the material. (optional)</label>
+    <textarea id="m8" name="m8" rows="5"></textarea>
+  </div>
+</fieldset>
+</section>
+    <section class="field" data-spec-id="keep_right">
+  <h2>Keep Right</h2>
+<div class="field" data-spec-id="kr1" data-display-code="KR1">
+  <label id="kr1-label" class="question-label" for="kr1">KR1. Who would you love to take care of this?</label>
+  <div class="options" role="group" aria-labelledby="kr1-label">
+    <label>
+      <input type="checkbox" id="kr1-person" name="kr1" value="person">
+      A specific person
+    </label>
+    <label>
+      <input type="checkbox" id="kr1-institution" name="kr1" value="institution">
+      A specific institution
+    </label>
+    <label>
+      <input type="checkbox" id="kr1-any_archive_or_library" name="kr1" value="any_archive_or_library">
+      Any qualified archive or library
+    </label>
+    <label>
+      <input type="checkbox" id="kr1-any_steward" name="kr1" value="any_steward">
+      Open to any steward
+    </label>
+    <label>
+      <input type="checkbox" id="kr1-it_depends" name="kr1" value="it_depends">
+      It depends...
+    </label>
+  </div>
+  <div class="followup" data-spec-id="kr1_person_name" data-visible-when='{&quot;contains&quot;: &quot;person&quot;, &quot;field&quot;: &quot;kr1&quot;}'>
+    <label id="kr1_person_name-label" class="question-label" for="kr1_person_name">Name them</label>
+    <input type="text" id="kr1_person_name" name="kr1_person_name" placeholder="Name them">
+  </div>
+  <div class="followup" data-spec-id="kr1_institution_name" data-visible-when='{&quot;contains&quot;: &quot;institution&quot;, &quot;field&quot;: &quot;kr1&quot;}'>
+    <label id="kr1_institution_name-label" class="question-label" for="kr1_institution_name">Name it</label>
+    <input type="text" id="kr1_institution_name" name="kr1_institution_name" placeholder="Name it">
+  </div>
+  <div class="followup" data-spec-id="kr1_it_depends_detail" data-visible-when='{&quot;contains&quot;: &quot;it_depends&quot;, &quot;field&quot;: &quot;kr1&quot;}'>
+    <label id="kr1_it_depends_detail-label" class="question-label" for="kr1_it_depends_detail">Tell us more</label>
+    <textarea id="kr1_it_depends_detail" name="kr1_it_depends_detail" rows="2"></textarea>
+  </div>
+</div>
+<div class="field" data-spec-id="kr1_1" data-display-code="KR1.1" data-visible-when='{&quot;ref&quot;: &quot;material_is_physical_or_both&quot;}'>
+  <label id="kr1_1-label" class="question-label" for="kr1_1">KR1.1. And where should it live?</label>
+  <input type="text" id="kr1_1" name="kr1_1">
+</div>
+<div class="field" data-spec-id="kr2" data-display-code="KR2">
+  <label id="kr2-label" class="question-label" for="kr2">KR2. Who should be able to see it, and are there any conditions?</label>
+  <div class="options" role="group" aria-labelledby="kr2-label">
+    <label>
+      <input type="radio" id="kr2-anyone" name="kr2" value="anyone">
+      Anyone
+    </label>
+    <label>
+      <input type="radio" id="kr2-researchers" name="kr2" value="researchers">
+      Researchers only
+    </label>
+    <label>
+      <input type="radio" id="kr2-family_or_designated_people" name="kr2" value="family_or_designated_people">
+      Family or designated people only
+    </label>
+    <label>
+      <input type="radio" id="kr2-no_one_for_now" name="kr2" value="no_one_for_now">
+      No one for now
+    </label>
+    <label>
+      <input type="radio" id="kr2-complicated" name="kr2" value="complicated">
+      It&#x27;s complicated...
+    </label>
+  </div>
+  <div class="followup" data-spec-id="kr2_complicated_detail" data-visible-when='{&quot;equals&quot;: &quot;complicated&quot;, &quot;field&quot;: &quot;kr2&quot;}'>
+    <label id="kr2_complicated_detail-label" class="question-label" for="kr2_complicated_detail">Tell us more</label>
+    <textarea id="kr2_complicated_detail" name="kr2_complicated_detail" rows="2"></textarea>
+  </div>
+</div>
+<div class="field" data-spec-id="kr2_1" data-display-code="KR2.1">
+  <label id="kr2_1-label" class="question-label" for="kr2_1">KR2.1. Until when? (optional)</label>
+  <input type="text" id="kr2_1" name="kr2_1" placeholder="e.g. 10 years, after my death, 2075">
+</div>
+<div class="field" data-spec-id="kr3" data-display-code="KR3" data-visible-when='{&quot;ref&quot;: &quot;copyright_holder_yes_or_unsure&quot;}' data-label-variants='[{&quot;label&quot;: {&quot;en-GB&quot;: &quot;What would you wish a caretaker to be allowed to do with it?&quot;}, &quot;when&quot;: {&quot;equals&quot;: &quot;not_sure&quot;, &quot;field&quot;: &quot;m2&quot;}}]'>
+  <label id="kr3-label" class="question-label" for="kr3">KR3. What can your caretaker do with it?</label>
+  <div class="options" role="group" aria-labelledby="kr3-label">
+    <label>
+      <input type="checkbox" id="kr3-preserve_only" name="kr3" value="preserve_only">
+      Preserve only
+    </label>
+    <label>
+      <input type="checkbox" id="kr3-share_freely" name="kr3" value="share_freely">
+      Share freely
+    </label>
+    <label>
+      <input type="checkbox" id="kr3-may_sell" name="kr3" value="may_sell">
+      May sell
+    </label>
+    <label>
+      <input type="checkbox" id="kr3-your_call" name="kr3" value="your_call">
+      Your call
+    </label>
+    <label>
+      <input type="checkbox" id="kr3-do_not_care" name="kr3" value="do_not_care">
+      Don&#x27;t care
+    </label>
+    <label>
+      <input type="checkbox" id="kr3-may_destroy" name="kr3" value="may_destroy">
+      May destroy it
+    </label>
+    <label>
+      <input type="checkbox" id="kr3-it_depends" name="kr3" value="it_depends">
+      It depends...
+    </label>
+  </div>
+  <div class="followup" data-spec-id="kr3_may_destroy_conditions" data-visible-when='{&quot;contains&quot;: &quot;may_destroy&quot;, &quot;field&quot;: &quot;kr3&quot;}'>
+    <label id="kr3_may_destroy_conditions-label" class="question-label" for="kr3_may_destroy_conditions">Add your conditions</label>
+    <input type="text" id="kr3_may_destroy_conditions" name="kr3_may_destroy_conditions" placeholder="Under what conditions, or when?">
+  </div>
+  <div class="followup" data-spec-id="kr3_it_depends_detail" data-visible-when='{&quot;contains&quot;: &quot;it_depends&quot;, &quot;field&quot;: &quot;kr3&quot;}'>
+    <label id="kr3_it_depends_detail-label" class="question-label" for="kr3_it_depends_detail">Tell us more</label>
+    <textarea id="kr3_it_depends_detail" name="kr3_it_depends_detail" rows="2"></textarea>
+  </div>
+</div>
+</section>
+    <section class="field" data-spec-id="copy_right">
+  <h2>Copy Right</h2>
+<fieldset class="field" data-spec-id="copy_right_digital" data-visible-when='{&quot;ref&quot;: &quot;material_is_digital_or_both&quot;}'>
+  <div class="field" data-spec-id="cr1" data-display-code="CR1">
+    <label id="cr1-label" class="question-label" for="cr1">CR1. Can copies be made?</label>
+    <div class="options" role="group" aria-labelledby="cr1-label">
+      <label>
+        <input type="radio" id="cr1-yes_freely" name="cr1" value="yes_freely">
+        Yes, freely
+      </label>
+      <label>
+        <input type="radio" id="cr1-yes_but" name="cr1" value="yes_but">
+        Yes, but...
+      </label>
+      <label>
+        <input type="radio" id="cr1-no" name="cr1" value="no">
+        No
+      </label>
+      <label>
+        <input type="radio" id="cr1-do_not_care" name="cr1" value="do_not_care">
+        Don&#x27;t care
+      </label>
+    </div>
+    <div class="followup" data-spec-id="cr1_yes_but_detail" data-visible-when='{&quot;equals&quot;: &quot;yes_but&quot;, &quot;field&quot;: &quot;cr1&quot;}'>
+      <label id="cr1_yes_but_detail-label" class="question-label" for="cr1_yes_but_detail">Tell us more</label>
+      <textarea id="cr1_yes_but_detail" name="cr1_yes_but_detail" rows="2"></textarea>
+    </div>
+  </div>
+  <div class="field" data-spec-id="cr2" data-display-code="CR2">
+    <label id="cr2-label" class="question-label" for="cr2">CR2. What must copies preserve?</label>
+    <div class="options" role="group" aria-labelledby="cr2-label">
+      <label>
+        <input type="checkbox" id="cr2-original_file_format" name="cr2" value="original_file_format">
+        Original file format
+      </label>
+      <label>
+        <input type="checkbox" id="cr2-all_metadata" name="cr2" value="all_metadata">
+        All metadata
+      </label>
+      <label>
+        <input type="checkbox" id="cr2-folder_structure" name="cr2" value="folder_structure">
+        Folder structure
+      </label>
+      <label>
+        <input type="checkbox" id="cr2-file_names" name="cr2" value="file_names">
+        File names
+      </label>
+      <label>
+        <input type="checkbox" id="cr2-original_quality" name="cr2" value="original_quality">
+        Original quality (no compression)
+      </label>
+      <label>
+        <input type="checkbox" id="cr2-it_depends" name="cr2" value="it_depends">
+        It depends...
+      </label>
+    </div>
+    <div class="followup" data-spec-id="cr2_it_depends_detail" data-visible-when='{&quot;contains&quot;: &quot;it_depends&quot;, &quot;field&quot;: &quot;cr2&quot;}'>
+      <label id="cr2_it_depends_detail-label" class="question-label" for="cr2_it_depends_detail">Tell us more</label>
+      <textarea id="cr2_it_depends_detail" name="cr2_it_depends_detail" rows="2"></textarea>
+    </div>
+  </div>
+  <div class="field" data-spec-id="cr3" data-display-code="CR3">
+    <label id="cr3-label" class="question-label" for="cr3">CR3. Where can copies live?</label>
+    <div class="options" role="group" aria-labelledby="cr3-label">
+      <label>
+        <input type="radio" id="cr3-anywhere" name="cr3" value="anywhere">
+        Anywhere
+      </label>
+      <label>
+        <input type="radio" id="cr3-specific_countries" name="cr3" value="specific_countries">
+        Only in specific countries
+      </label>
+      <label>
+        <input type="radio" id="cr3-specific_institutions" name="cr3" value="specific_institutions">
+        Only with specific institutions
+      </label>
+      <label>
+        <input type="radio" id="cr3-distributed_widely" name="cr3" value="distributed_widely">
+        Distributed as widely as possible for safety
+      </label>
+      <label>
+        <input type="radio" id="cr3-let_me_tell_you" name="cr3" value="let_me_tell_you">
+        Let me tell you...
+      </label>
+    </div>
+    <div class="followup" data-spec-id="cr3_specific_countries_detail" data-visible-when='{&quot;equals&quot;: &quot;specific_countries&quot;, &quot;field&quot;: &quot;cr3&quot;}'>
+      <label id="cr3_specific_countries_detail-label" class="question-label" for="cr3_specific_countries_detail">List countries</label>
+      <input type="text" id="cr3_specific_countries_detail" name="cr3_specific_countries_detail" placeholder="List countries">
+    </div>
+    <div class="followup" data-spec-id="cr3_specific_institutions_detail" data-visible-when='{&quot;equals&quot;: &quot;specific_institutions&quot;, &quot;field&quot;: &quot;cr3&quot;}'>
+      <label id="cr3_specific_institutions_detail-label" class="question-label" for="cr3_specific_institutions_detail">List institutions</label>
+      <input type="text" id="cr3_specific_institutions_detail" name="cr3_specific_institutions_detail" placeholder="List institutions">
+    </div>
+    <div class="followup" data-spec-id="cr3_let_me_tell_you_detail" data-visible-when='{&quot;equals&quot;: &quot;let_me_tell_you&quot;, &quot;field&quot;: &quot;cr3&quot;}'>
+      <label id="cr3_let_me_tell_you_detail-label" class="question-label" for="cr3_let_me_tell_you_detail">Tell us more</label>
+      <textarea id="cr3_let_me_tell_you_detail" name="cr3_let_me_tell_you_detail" rows="2"></textarea>
+    </div>
+  </div>
+</fieldset>
+<fieldset class="field" data-spec-id="copy_right_physical" data-visible-when='{&quot;ref&quot;: &quot;material_is_physical_or_both&quot;}'>
+  <div class="field" data-spec-id="cr4" data-display-code="CR4">
+    <label id="cr4-label" class="question-label" for="cr4">CR4. Should this be digitised?</label>
+    <div class="options" role="group" aria-labelledby="cr4-label">
+      <label>
+        <input type="radio" id="cr4-yes_please" name="cr4" value="yes_please">
+        Yes, please
+      </label>
+      <label>
+        <input type="radio" id="cr4-qualified_institution_only" name="cr4" value="qualified_institution_only">
+        Yes, but only by a qualified institution
+      </label>
+      <label>
+        <input type="radio" id="cr4-yes_but" name="cr4" value="yes_but">
+        Yes, but...
+      </label>
+      <label>
+        <input type="radio" id="cr4-no" name="cr4" value="no">
+        No
+      </label>
+      <label>
+        <input type="radio" id="cr4-do_not_mind" name="cr4" value="do_not_mind">
+        Don&#x27;t mind
+      </label>
+    </div>
+    <div class="followup" data-spec-id="cr4_yes_but_detail" data-visible-when='{&quot;equals&quot;: &quot;yes_but&quot;, &quot;field&quot;: &quot;cr4&quot;}'>
+      <label id="cr4_yes_but_detail-label" class="question-label" for="cr4_yes_but_detail">Tell us more</label>
+      <textarea id="cr4_yes_but_detail" name="cr4_yes_but_detail" rows="2"></textarea>
+    </div>
+  </div>
+  <div class="field" data-spec-id="cr5" data-display-code="CR5">
+    <label id="cr5-label" class="question-label" for="cr5">CR5. What must a digitised version preserve?</label>
+    <div class="options" role="group" aria-labelledby="cr5-label">
+      <label>
+        <input type="checkbox" id="cr5-original_colours" name="cr5" value="original_colours">
+        Original colours
+      </label>
+      <label>
+        <input type="checkbox" id="cr5-full_resolution" name="cr5" value="full_resolution">
+        Full resolution
+      </label>
+      <label>
+        <input type="checkbox" id="cr5-both_sides" name="cr5" value="both_sides">
+        Both sides
+      </label>
+      <label>
+        <input type="checkbox" id="cr5-physical_scale" name="cr5" value="physical_scale">
+        Physical scale
+      </label>
+      <label>
+        <input type="checkbox" id="cr5-all_accompanying_materials" name="cr5" value="all_accompanying_materials">
+        All accompanying materials (e.g. notes, packaging)
+      </label>
+      <label>
+        <input type="checkbox" id="cr5-let_me_tell_you" name="cr5" value="let_me_tell_you">
+        Let me tell you...
+      </label>
+    </div>
+    <div class="followup" data-spec-id="cr5_let_me_tell_you_detail" data-visible-when='{&quot;contains&quot;: &quot;let_me_tell_you&quot;, &quot;field&quot;: &quot;cr5&quot;}'>
+      <label id="cr5_let_me_tell_you_detail-label" class="question-label" for="cr5_let_me_tell_you_detail">Tell us more</label>
+      <textarea id="cr5_let_me_tell_you_detail" name="cr5_let_me_tell_you_detail" rows="2"></textarea>
+    </div>
+  </div>
+  <div class="field" data-spec-id="cr6" data-display-code="CR6">
+    <label id="cr6-label" class="question-label" for="cr6">CR6. Where can digital copies live?</label>
+    <div class="options" role="group" aria-labelledby="cr6-label">
+      <label>
+        <input type="radio" id="cr6-anywhere" name="cr6" value="anywhere">
+        Anywhere
+      </label>
+      <label>
+        <input type="radio" id="cr6-specific_countries" name="cr6" value="specific_countries">
+        Only in specific countries
+      </label>
+      <label>
+        <input type="radio" id="cr6-specific_institutions" name="cr6" value="specific_institutions">
+        Only with specific institutions
+      </label>
+      <label>
+        <input type="radio" id="cr6-distributed_widely" name="cr6" value="distributed_widely">
+        Distributed as widely as possible for safety
+      </label>
+      <label>
+        <input type="radio" id="cr6-it_depends" name="cr6" value="it_depends">
+        It depends...
+      </label>
+    </div>
+    <div class="followup" data-spec-id="cr6_specific_countries_detail" data-visible-when='{&quot;equals&quot;: &quot;specific_countries&quot;, &quot;field&quot;: &quot;cr6&quot;}'>
+      <label id="cr6_specific_countries_detail-label" class="question-label" for="cr6_specific_countries_detail">List countries</label>
+      <input type="text" id="cr6_specific_countries_detail" name="cr6_specific_countries_detail" placeholder="List countries">
+    </div>
+    <div class="followup" data-spec-id="cr6_specific_institutions_detail" data-visible-when='{&quot;equals&quot;: &quot;specific_institutions&quot;, &quot;field&quot;: &quot;cr6&quot;}'>
+      <label id="cr6_specific_institutions_detail-label" class="question-label" for="cr6_specific_institutions_detail">List institutions</label>
+      <input type="text" id="cr6_specific_institutions_detail" name="cr6_specific_institutions_detail" placeholder="List institutions">
+    </div>
+    <div class="followup" data-spec-id="cr6_it_depends_detail" data-visible-when='{&quot;equals&quot;: &quot;it_depends&quot;, &quot;field&quot;: &quot;cr6&quot;}'>
+      <label id="cr6_it_depends_detail-label" class="question-label" for="cr6_it_depends_detail">Tell us more</label>
+      <textarea id="cr6_it_depends_detail" name="cr6_it_depends_detail" rows="2"></textarea>
+    </div>
+  </div>
+</fieldset>
+</section>
+    <section class="field" data-spec-id="machine_right">
+  <h2>Machine Right</h2>
+<p class="field" data-spec-id="machine_right_note">KeepRight expresses intentions. It is not legally binding, but it gives future stewards something real to honour.</p>
+<div class="field" data-spec-id="mr1" data-display-code="MR1">
+  <label id="mr1-label" class="question-label" for="mr1">MR1. Can machines analyse or index this material?</label>
+  <div class="options" role="group" aria-labelledby="mr1-label">
+    <label>
+      <input type="radio" id="mr1-yes_freely" name="mr1" value="yes_freely">
+      Yes, freely
+    </label>
+    <label>
+      <input type="radio" id="mr1-preservation_only" name="mr1" value="preservation_only">
+      Yes, for preservation purposes only
+    </label>
+    <label>
+      <input type="radio" id="mr1-yes_but" name="mr1" value="yes_but">
+      Yes, but...
+    </label>
+    <label>
+      <input type="radio" id="mr1-no" name="mr1" value="no">
+      No
+    </label>
+  </div>
+  <div class="followup" data-spec-id="mr1_yes_but_detail" data-visible-when='{&quot;equals&quot;: &quot;yes_but&quot;, &quot;field&quot;: &quot;mr1&quot;}'>
+    <label id="mr1_yes_but_detail-label" class="question-label" for="mr1_yes_but_detail">Tell us more</label>
+    <textarea id="mr1_yes_but_detail" name="mr1_yes_but_detail" rows="2"></textarea>
+  </div>
+</div>
+<div class="field" data-spec-id="mr2" data-display-code="MR2">
+  <label id="mr2-label" class="question-label" for="mr2">MR2. Can this material be used to train AI?</label>
+  <div class="options" role="group" aria-labelledby="mr2-label">
+    <label>
+      <input type="radio" id="mr2-yes" name="mr2" value="yes">
+      Yes
+    </label>
+    <label>
+      <input type="radio" id="mr2-non_commercial_only" name="mr2" value="non_commercial_only">
+      Yes, but not for commercial purposes
+    </label>
+    <label>
+      <input type="radio" id="mr2-yes_but" name="mr2" value="yes_but">
+      Yes, but...
+    </label>
+    <label>
+      <input type="radio" id="mr2-no" name="mr2" value="no">
+      No
+    </label>
+    <label>
+      <input type="radio" id="mr2-do_not_mind" name="mr2" value="do_not_mind">
+      Don&#x27;t mind
+    </label>
+  </div>
+  <div class="followup" data-spec-id="mr2_yes_but_detail" data-visible-when='{&quot;equals&quot;: &quot;yes_but&quot;, &quot;field&quot;: &quot;mr2&quot;}'>
+    <label id="mr2_yes_but_detail-label" class="question-label" for="mr2_yes_but_detail">Tell us more</label>
+    <textarea id="mr2_yes_but_detail" name="mr2_yes_but_detail" rows="2"></textarea>
+  </div>
+</div>
+<div class="field" data-spec-id="mr3" data-display-code="MR3">
+  <label id="mr3-label" class="question-label" for="mr3">MR3. If this material is used by an AI, what matters to you?</label>
+  <div class="options" role="group" aria-labelledby="mr3-label">
+    <label>
+      <input type="checkbox" id="mr3-attribution" name="mr3" value="attribution">
+      Attribution (I want to be credited)
+    </label>
+    <label>
+      <input type="checkbox" id="mr3-transparency" name="mr3" value="transparency">
+      Transparency (I want to know how it was used)
+    </label>
+    <label>
+      <input type="checkbox" id="mr3-copy_of_outputs" name="mr3" value="copy_of_outputs">
+      A copy of anything produced using it
+    </label>
+    <label>
+      <input type="checkbox" id="mr3-nothing_in_particular" name="mr3" value="nothing_in_particular">
+      Nothing in particular
+    </label>
+    <label>
+      <input type="checkbox" id="mr3-complicated" name="mr3" value="complicated">
+      It&#x27;s complicated...
+    </label>
+  </div>
+  <div class="followup" data-spec-id="mr3_complicated_detail" data-visible-when='{&quot;contains&quot;: &quot;complicated&quot;, &quot;field&quot;: &quot;mr3&quot;}'>
+    <label id="mr3_complicated_detail-label" class="question-label" for="mr3_complicated_detail">Tell us more</label>
+    <textarea id="mr3_complicated_detail" name="mr3_complicated_detail" rows="2"></textarea>
+  </div>
+</div>
+</section>
+    </form>
+  </main>
+<script>
+const specConfig = {"conditions": {"copyright_holder_yes_or_unsure": {"any": [{"equals": "yes", "field": "m2"}, {"equals": "not_sure", "field": "m2"}]}, "material_is_digital_or_both": {"any": [{"equals": "digital", "field": "m1"}, {"equals": "both", "field": "m1"}]}, "material_is_physical_or_both": {"any": [{"equals": "physical", "field": "m1"}, {"equals": "both", "field": "m1"}]}}};
+const form = document.getElementById("keepright-form");
+
+function fieldValues(fieldName) {
+  const controls = Array.from(form.elements).filter((control) => control.name === fieldName);
+  if (!controls.length) return [];
+  const first = controls[0];
+  if (first.type === "radio") {
+    const checked = controls.find((control) => control.checked);
+    return checked ? [checked.value] : [];
+  }
+  if (first.type === "checkbox") {
+    return controls.filter((control) => control.checked).map((control) => control.value);
+  }
+  return first.value ? [first.value] : [];
+}
+
+function evaluateCondition(condition) {
+  if (!condition) return true;
+  if (condition.ref) return evaluateCondition(specConfig.conditions[condition.ref]);
+  if (condition.any) return condition.any.some(evaluateCondition);
+  if (condition.all) return condition.all.every(evaluateCondition);
+  const values = fieldValues(condition.field);
+  if (Object.prototype.hasOwnProperty.call(condition, "equals")) {
+    return values.includes(condition.equals);
+  }
+  if (Object.prototype.hasOwnProperty.call(condition, "contains")) {
+    return values.includes(condition.contains);
+  }
+  return true;
+}
+
+function clearControls(container) {
+  container.querySelectorAll("input, textarea, select").forEach((control) => {
+    if (control.type === "radio" || control.type === "checkbox") {
+      control.checked = false;
+    } else {
+      control.value = "";
+    }
+  });
+}
+
+function applyVisibility() {
+  document.querySelectorAll("[data-visible-when]").forEach((element) => {
+    const condition = JSON.parse(element.dataset.visibleWhen);
+    const visible = evaluateCondition(condition);
+    if (element.hidden && visible) {
+      element.hidden = false;
+    } else if (!element.hidden && !visible) {
+      clearControls(element);
+      element.hidden = true;
+    }
+  });
+}
+
+function localized(value) {
+  return value && (value["en-GB"] || Object.values(value)[0] || "");
+}
+
+function applyLabelVariants() {
+  document.querySelectorAll("[data-label-variants]").forEach((element) => {
+    const variants = JSON.parse(element.dataset.labelVariants);
+    const label = element.querySelector(".question-label");
+    if (!label) return;
+    if (!label.dataset.defaultText) label.dataset.defaultText = label.textContent;
+    const match = variants.find((variant) => evaluateCondition(variant.when));
+    if (match) {
+      const code = element.dataset.displayCode;
+      const variantLabel = localized(match.label);
+      label.textContent = code ? `${code}. ${variantLabel}` : variantLabel;
+    } else {
+      label.textContent = label.dataset.defaultText;
+    }
+  });
+}
+
+function updateForm() {
+  applyVisibility();
+  applyLabelVariants();
+}
+
+form.addEventListener("input", updateForm);
+form.addEventListener("change", updateForm);
+
+updateForm();
+</script>
+</body>
+</html>

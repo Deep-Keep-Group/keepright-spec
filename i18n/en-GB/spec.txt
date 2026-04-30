@@ -1,0 +1,251 @@
+KeepRight Spec
+==============
+
+About You
+---------
+Optional information about the responsible party.
+
+A1. Name
+Answer type: text
+
+A2. Email
+Answer type: email
+
+A3. Country
+Answer type: select
+Option source: countries; ISO 3166-1 country list; placeholder: Select a country
+
+The Material
+------------
+Crux
+----
+
+  M1. Is this digital, physical, or both?
+  Answer type: radio
+  Options:
+  - Digital [digital]
+  - Physical [physical]
+  - Both [both]
+
+  M2. Are you the copyright holder?
+  Answer type: radio
+  Options:
+  - Yes [yes]
+  - No [no]
+  - Not sure [not_sure]
+
+Details
+-------
+
+  M3. What should we call this material?
+  Answer type: text
+
+  M4. What is it?
+  Answer type: textarea
+
+  M4.1. Does it live online?
+  Answer type: radio
+  Shown when: condition `material_is_digital_or_both`
+  Options:
+  - Yes, I have a URL or URLs [urls]
+  - Yes, I have some IDs (e.g. DOI) [ids]
+  - No [no]
+  Follow-ups:
+  - URL or URLs [text]; shown when `m4_1` equals `urls`
+  - IDs [text]; shown when `m4_1` equals `ids`
+
+  M4.2. Which file formats or file extensions are involved?
+  Answer type: text
+  Shown when: condition `material_is_digital_or_both`
+  Placeholder: e.g. jpg, pdf, wav
+
+  M5. What's your relationship to it?
+  Answer type: checkboxes
+  Options:
+  - I made it [made]
+  - I own it [own]
+  - I'm a family member of the creator [family]
+  - I'm a designated steward [steward]
+  - I'm a community member [community]
+  - Let me tell you... [let_me_tell_you]
+  Follow-ups:
+  - Tell us more [textarea]; shown when `m5` contains `let_me_tell_you`
+
+  M6. Who made this, and who owns it now?
+  Answer type: textarea
+
+  M7. What's its copyright or licensing status, if you know?
+  Answer type: radio
+  Options:
+  - All Rights Reserved [all_rights_reserved]
+  - Open License (e.g. Creative Commons) [open_license]
+  - Public Domain [public_domain]
+  - Not sure [not_sure]
+  - It's complicated... [complicated]
+  Follow-ups:
+  - Tell us more [textarea]; shown when `m7` equals `complicated`
+
+  M8. Can you add any background on how, why, or when it was made? This will help future stewards understand the material. (optional)
+  Answer type: textarea
+
+Keep Right
+----------
+KR1. Who would you love to take care of this?
+Answer type: checkboxes
+Options:
+- A specific person [person]
+- A specific institution [institution]
+- Any qualified archive or library [any_archive_or_library]
+- Open to any steward [any_steward]
+- It depends... [it_depends]
+Follow-ups:
+- Name them [text]; shown when `kr1` contains `person`
+- Name it [text]; shown when `kr1` contains `institution`
+- Tell us more [textarea]; shown when `kr1` contains `it_depends`
+
+KR1.1. And where should it live?
+Answer type: text
+Shown when: condition `material_is_physical_or_both`
+
+KR2. Who should be able to see it, and are there any conditions?
+Answer type: radio
+Options:
+- Anyone [anyone]
+- Researchers only [researchers]
+- Family or designated people only [family_or_designated_people]
+- No one for now [no_one_for_now]
+- It's complicated... [complicated]
+Follow-ups:
+- Tell us more [textarea]; shown when `kr2` equals `complicated`
+
+KR2.1. Until when? (optional)
+Answer type: text
+Placeholder: e.g. 10 years, after my death, 2075
+
+KR3. What can your caretaker do with it?
+Answer type: checkboxes
+Shown when: condition `copyright_holder_yes_or_unsure`
+Options:
+- Preserve only [preserve_only]
+- Share freely [share_freely]
+- May sell [may_sell]
+- Your call [your_call]
+- Don't care [do_not_care]
+- May destroy it [may_destroy]
+- It depends... [it_depends]
+Follow-ups:
+- Add your conditions [text]; shown when `kr3` contains `may_destroy`
+- Tell us more [textarea]; shown when `kr3` contains `it_depends`
+
+Copy Right
+----------
+Shown when: condition `material_is_digital_or_both`
+
+  CR1. Can copies be made?
+  Answer type: radio
+  Options:
+  - Yes, freely [yes_freely]
+  - Yes, but... [yes_but]
+  - No [no]
+  - Don't care [do_not_care]
+  Follow-ups:
+  - Tell us more [textarea]; shown when `cr1` equals `yes_but`
+
+  CR2. What must copies preserve?
+  Answer type: checkboxes
+  Options:
+  - Original file format [original_file_format]
+  - All metadata [all_metadata]
+  - Folder structure [folder_structure]
+  - File names [file_names]
+  - Original quality (no compression) [original_quality]
+  - It depends... [it_depends]
+  Follow-ups:
+  - Tell us more [textarea]; shown when `cr2` contains `it_depends`
+
+  CR3. Where can copies live?
+  Answer type: radio
+  Options:
+  - Anywhere [anywhere]
+  - Only in specific countries [specific_countries]
+  - Only with specific institutions [specific_institutions]
+  - Distributed as widely as possible for safety [distributed_widely]
+  - Let me tell you... [let_me_tell_you]
+  Follow-ups:
+  - List countries [text]; shown when `cr3` equals `specific_countries`
+  - List institutions [text]; shown when `cr3` equals `specific_institutions`
+  - Tell us more [textarea]; shown when `cr3` equals `let_me_tell_you`
+
+Shown when: condition `material_is_physical_or_both`
+
+  CR4. Should this be digitised?
+  Answer type: radio
+  Options:
+  - Yes, please [yes_please]
+  - Yes, but only by a qualified institution [qualified_institution_only]
+  - Yes, but... [yes_but]
+  - No [no]
+  - Don't mind [do_not_mind]
+  Follow-ups:
+  - Tell us more [textarea]; shown when `cr4` equals `yes_but`
+
+  CR5. What must a digitised version preserve?
+  Answer type: checkboxes
+  Options:
+  - Original colours [original_colours]
+  - Full resolution [full_resolution]
+  - Both sides [both_sides]
+  - Physical scale [physical_scale]
+  - All accompanying materials (e.g. notes, packaging) [all_accompanying_materials]
+  - Let me tell you... [let_me_tell_you]
+  Follow-ups:
+  - Tell us more [textarea]; shown when `cr5` contains `let_me_tell_you`
+
+  CR6. Where can digital copies live?
+  Answer type: radio
+  Options:
+  - Anywhere [anywhere]
+  - Only in specific countries [specific_countries]
+  - Only with specific institutions [specific_institutions]
+  - Distributed as widely as possible for safety [distributed_widely]
+  - It depends... [it_depends]
+  Follow-ups:
+  - List countries [text]; shown when `cr6` equals `specific_countries`
+  - List institutions [text]; shown when `cr6` equals `specific_institutions`
+  - Tell us more [textarea]; shown when `cr6` equals `it_depends`
+
+Machine Right
+-------------
+KeepRight expresses intentions. It is not legally binding, but it gives future stewards something real to honour.
+
+MR1. Can machines analyse or index this material?
+Answer type: radio
+Options:
+- Yes, freely [yes_freely]
+- Yes, for preservation purposes only [preservation_only]
+- Yes, but... [yes_but]
+- No [no]
+Follow-ups:
+- Tell us more [textarea]; shown when `mr1` equals `yes_but`
+
+MR2. Can this material be used to train AI?
+Answer type: radio
+Options:
+- Yes [yes]
+- Yes, but not for commercial purposes [non_commercial_only]
+- Yes, but... [yes_but]
+- No [no]
+- Don't mind [do_not_mind]
+Follow-ups:
+- Tell us more [textarea]; shown when `mr2` equals `yes_but`
+
+MR3. If this material is used by an AI, what matters to you?
+Answer type: checkboxes
+Options:
+- Attribution (I want to be credited) [attribution]
+- Transparency (I want to know how it was used) [transparency]
+- A copy of anything produced using it [copy_of_outputs]
+- Nothing in particular [nothing_in_particular]
+- It's complicated... [complicated]
+Follow-ups:
+- Tell us more [textarea]; shown when `mr3` contains `complicated`
