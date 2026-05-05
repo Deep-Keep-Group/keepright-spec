@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": "0.0.1",
-    "specVersion": "0.0.1",
+    "specVersion": "0.0.2",
     "release": "pre-alpha",
     "defaultLocale": "en-GB",
     "supportedLocales": ["en-GB"],
@@ -328,12 +328,19 @@
       },
       "items": [
         {
+          "id": "machine_right_note",
+          "kind": "note",
+          "text": {
+            "en-GB": "One line description for a facet."
+          }
+        },
+        {
           "id": "kr1",
           "kind": "question",
           "answerType": "checkboxes",
           "displayCode": "KR1",
           "label": {
-            "en-GB": "Who would you love to take care of this?"
+            "en-GB": "Who would you like to take care of this?"
           },
           "options": [
             { "value": "person", "label": { "en-GB": "A specific person" } },
@@ -468,7 +475,7 @@
                 "equals": "not_sure"
               },
               "label": {
-                "en-GB": "What would you wish a caretaker to be allowed to do with it?"
+                "en-GB": "What would you wish for a caretaker to do with it?"
               }
             }
           ],
@@ -523,6 +530,12 @@
       },
       "items": [
         {
+          "id": "copy_right_note",
+          "kind": "note",
+          "text": {
+            "en-GB": "Needs to be written."
+          }
+        },
           "id": "copy_right_digital",
           "kind": "group",
           "visibleWhen": {
@@ -811,7 +824,7 @@
           "id": "machine_right_note",
           "kind": "note",
           "text": {
-            "en-GB": "KeepRight expresses intentions. It is not legally binding, but it gives future stewards something real to honour."
+            "en-GB": "Needs to be written."
           }
         },
         {
