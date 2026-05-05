@@ -19,3 +19,48 @@ Regenerate them with:
 ```sh
 python3 scripts/render_spec.py
 ```
+
+# Various notes to the future
+
+`schemaVersion` this is the 'shape/grammar' of the `spec.json` - it deals with which field types exist and so on - basically everything on the **left** side of the ':' colons.
+
+`specVersion` is the 'content' of the `spec.json` - all the stuff on the **right** of the ':' colons. If we add or edit questions, answers or logic then we bump the `specVersion`
+
+In theory, if the schema hasn't changed, say we're on `1.0.23` and someone write a declaration against that and specVersion `1.0.5` - then we add more questions and answers and change others for a new release `1.1.0`, a _validator_ written to validate a version `1.0.23` could still pass a declaration writen for an earlier release.
+
+But if we added a new field to the spec like `data` then we'd bump the `schemaVersion`.
+
+`release` is a handy human version we can just talk about, even though the various versions may change.
+
+## Examples of what to change when
+
+### `schemaVersion`
+
+About `spec.json`'s **grammar** — what tooling needs to know how to parse.
+
+- **MAJOR** — a tool written for the previous schema may stop working.
+  - Renaming `answerType` → `inputType`.
+  - Removing support for a `kind` (e.g. dropping `note`).
+  - Changing how `visibleWhen` works (e.g. requiring an array).
+- **MINOR** — additive only; old tools keep working, just ignore new bits.
+  - New `answerType` like `date`.
+  - New optional field on a question, e.g. `helpText`.
+  - New condition operator like `notEquals`.
+- **PATCH** — schema-level cosmetic; comments, formatting, internal docs.
+
+### `specVersion`
+
+About the spec **content** — what an editor changes day-to-day.
+
+- **MAJOR** — a previous declaration may no longer validate.
+  - Removing a question.
+  - Renaming an `id` (`m1` → `material_kind`).
+  - Removing an option from a multi-choice question.
+  - Making an optional question required.
+- **MINOR** — additive; old declarations still valid.
+  - Adding a new optional question.
+  - Adding a new option to a question.
+  - Adding a follow-up.
+  - Adding a new section.
+- **PATCH** — meaning-preserving rewording.
+  - Fixing typos, clarifying labels, reordering options that have no semantic order.

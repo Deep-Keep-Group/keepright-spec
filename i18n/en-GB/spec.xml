@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<keepRightSpec schemaVersion="0.0.1" specVersion="2026-04" locale="en-GB">
+<keepRightSpec schemaVersion="0.0.1" specVersion="0.0.1" release="pre-alpha" locale="en-GB">
   <title>KeepRight Spec</title>
   <logic>
     <conditions>

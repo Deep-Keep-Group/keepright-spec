@@ -1,7 +1,8 @@
 {
   "meta": {
     "schemaVersion": "0.0.1",
-    "specVersion": "2026-04",
+    "specVersion": "0.0.1",
+    "release": "pre-alpha",
     "defaultLocale": "en-GB",
     "supportedLocales": ["en-GB"],
     "title": {

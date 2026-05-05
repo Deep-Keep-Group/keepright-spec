@@ -312,11 +312,20 @@ def write(path: Path, content: str) -> None:
     path.write_text(content.rstrip() + "\n", encoding="utf-8")
 
 
+def metadata_line(spec: dict[str, Any]) -> str:
+    meta = spec["meta"]
+    return (
+        f"Release: {meta.get('release', '')}; "
+        f"Spec version: {meta.get('specVersion', '')}; "
+        f"Schema version: {meta.get('schemaVersion', '')}"
+    )
+
+
 def render_txt(spec: dict[str, Any], locale: str) -> str:
     lines: list[str] = []
     title = local_text(spec["meta"].get("title"), locale)
     if title:
-        lines.extend([title, "=" * len(title), ""])
+        lines.extend([title, "=" * len(title), metadata_line(spec), ""])
 
     def add_question(item: dict[str, Any], indent: int) -> None:
         pad = " " * indent
@@ -375,7 +384,7 @@ def render_md(spec: dict[str, Any], locale: str) -> str:
     lines: list[str] = []
     title = local_text(spec["meta"].get("title"), locale)
     if title:
-        lines.extend([f"# {title}", ""])
+        lines.extend([f"# {title}", "", metadata_line(spec), ""])
 
     def add_question(item: dict[str, Any]) -> None:
         lines.append(f"**{label_for(item, locale)}**")
@@ -428,7 +437,10 @@ def render_md(spec: dict[str, Any], locale: str) -> str:
 
 def render_static_html(spec: dict[str, Any], locale: str) -> str:
     title = local_text(spec["meta"].get("title"), locale)
-    body: list[str] = [f"<h1>{html.escape(title)}</h1>"]
+    body: list[str] = [
+        f"<h1>{html.escape(title)}</h1>",
+        f"<p>{html.escape(metadata_line(spec))}</p>",
+    ]
     for section in spec["sections"]:
         body.append("<section>")
         body.append(f"<h2>{html.escape(title_for(section, locale))}</h2>")
@@ -522,6 +534,7 @@ def render_xml(spec: dict[str, Any], locale: str) -> str:
         {
             "schemaVersion": spec["meta"].get("schemaVersion", ""),
             "specVersion": spec["meta"].get("specVersion", ""),
+            "release": spec["meta"].get("release", ""),
             "locale": locale,
         },
     )
@@ -617,7 +630,11 @@ def render_item_xml(
 
 def render_form_html(spec: dict[str, Any], locale: str) -> str:
     title = local_text(spec["meta"].get("title"), locale)
-    content: list[str] = [f'<h1>{html.escape(title)}</h1>', '<form id="keepright-form">']
+    content: list[str] = [
+        f'<h1>{html.escape(title)}</h1>',
+        f"<p>{html.escape(metadata_line(spec))}</p>",
+        '<form id="keepright-form">',
+    ]
     for section in spec["sections"]:
         content.append(render_form_section(spec, section, locale))
     content.append("</form>")

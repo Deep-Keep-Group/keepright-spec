@@ -1,5 +1,7 @@
 # KeepRight Spec
 
+Release: pre-alpha; Spec version: 0.0.1; Schema version: 0.0.1
+
 ## About You
 
 Optional information about the responsible party.
