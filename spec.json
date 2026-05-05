@@ -536,6 +536,7 @@
             "en-GB": "Needs to be written."
           }
         },
+        {
           "id": "copy_right_digital",
           "kind": "group",
           "visibleWhen": {

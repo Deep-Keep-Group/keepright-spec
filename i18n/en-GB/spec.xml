@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<keepRightSpec schemaVersion="0.0.1" specVersion="0.0.1" release="pre-alpha" locale="en-GB">
+<keepRightSpec schemaVersion="0.0.1" specVersion="0.0.2" release="pre-alpha" locale="en-GB">
   <title>KeepRight Spec</title>
   <logic>
     <conditions>
@@ -805,8 +805,11 @@
     <section id="keep_right">
       <title>Keep Right</title>
       <items>
+        <item id="machine_right_note" kind="note">
+          <text>One line description for a facet.</text>
+        </item>
         <item id="kr1" kind="question" answerType="checkboxes" displayCode="KR1">
-          <label>Who would you love to take care of this?</label>
+          <label>Who would you like to take care of this?</label>
           <options>
             <option value="person">
               <label>A specific person</label>
@@ -902,7 +905,7 @@
               <when>
                 <fieldCondition field="m2" equals="not_sure"/>
               </when>
-              <label>What would you wish a caretaker to be allowed to do with it?</label>
+              <label>What would you wish for a caretaker to do with it?</label>
             </variant>
           </labelVariants>
           <options>
@@ -952,6 +955,9 @@
     <section id="copy_right">
       <title>Copy Right</title>
       <items>
+        <item id="copy_right_note" kind="note">
+          <text>Needs to be written.</text>
+        </item>
         <item id="copy_right_digital" kind="group">
           <visibleWhen>
             <ref>material_is_digital_or_both</ref>
@@ -1189,7 +1195,7 @@
       <title>Machine Right</title>
       <items>
         <item id="machine_right_note" kind="note">
-          <text>KeepRight expresses intentions. It is not legally binding, but it gives future stewards something real to honour.</text>
+          <text>Needs to be written.</text>
         </item>
         <item id="mr1" kind="question" answerType="radio" displayCode="MR1">
           <label>Can machines analyse or index this material?</label>

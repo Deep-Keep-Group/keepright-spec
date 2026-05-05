@@ -1,6 +1,6 @@
 KeepRight Spec
 ==============
-Release: pre-alpha; Spec version: 0.0.1; Schema version: 0.0.1
+Release: pre-alpha; Spec version: 0.0.2; Schema version: 0.0.1
 
 About You
 ---------
@@ -91,7 +91,9 @@ Details
 
 Keep Right
 ----------
-KR1. Who would you love to take care of this?
+One line description for a facet.
+
+KR1. Who would you like to take care of this?
 Answer type: checkboxes
 Options:
 - A specific person [person]
@@ -140,6 +142,8 @@ Follow-ups:
 
 Copy Right
 ----------
+Needs to be written.
+
 Shown when: condition `material_is_digital_or_both`
 
   CR1. Can copies be made?
@@ -217,7 +221,7 @@ Shown when: condition `material_is_physical_or_both`
 
 Machine Right
 -------------
-KeepRight expresses intentions. It is not legally binding, but it gives future stewards something real to honour.
+Needs to be written.
 
 MR1. Can machines analyse or index this material?
 Answer type: radio
