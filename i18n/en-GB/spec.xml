@@ -699,14 +699,12 @@
               <followups>
                 <item id="m4_1_urls" kind="question" answerType="text">
                   <label>URL or URLs</label>
-                  <placeholder>Paste URLs here</placeholder>
                   <visibleWhen>
                     <fieldCondition field="m4_1" equals="urls"/>
                   </visibleWhen>
                 </item>
                 <item id="m4_1_ids" kind="question" answerType="text">
                   <label>IDs</label>
-                  <placeholder>Paste IDs here</placeholder>
                   <visibleWhen>
                     <fieldCondition field="m4_1" equals="ids"/>
                   </visibleWhen>
@@ -715,7 +713,6 @@
             </item>
             <item id="m4_2" kind="question" answerType="text" displayCode="M4.2">
               <label>Which file formats or file extensions are involved?</label>
-              <placeholder>e.g. jpg, pdf, wav</placeholder>
               <visibleWhen>
                 <ref>material_is_digital_or_both</ref>
               </visibleWhen>
@@ -830,14 +827,12 @@
           <followups>
             <item id="kr1_person_name" kind="question" answerType="text">
               <label>Name them</label>
-              <placeholder>Name them</placeholder>
               <visibleWhen>
                 <fieldCondition field="kr1" contains="person"/>
               </visibleWhen>
             </item>
             <item id="kr1_institution_name" kind="question" answerType="text">
               <label>Name it</label>
-              <placeholder>Name it</placeholder>
               <visibleWhen>
                 <fieldCondition field="kr1" contains="institution"/>
               </visibleWhen>
@@ -893,7 +888,6 @@
         <item id="kr2_1" kind="question" answerType="text" displayCode="KR2.1">
           <label>Until when?</label>
           <optionalLabel>optional</optionalLabel>
-          <placeholder>e.g. 10 years, after my death, 2075</placeholder>
         </item>
         <item id="kr3" kind="question" answerType="checkboxes" displayCode="KR3">
           <label>What can your caretaker do with it?</label>
@@ -934,7 +928,6 @@
           <followups>
             <item id="kr3_may_destroy_conditions" kind="question" answerType="text">
               <label>Add your conditions</label>
-              <placeholder>Under what conditions, or when?</placeholder>
               <visibleWhen>
                 <fieldCondition field="kr3" contains="may_destroy"/>
               </visibleWhen>
@@ -1047,14 +1040,12 @@
               <followups>
                 <item id="cr3_specific_countries_detail" kind="question" answerType="text">
                   <label>List countries</label>
-                  <placeholder>List countries</placeholder>
                   <visibleWhen>
                     <fieldCondition field="cr3" equals="specific_countries"/>
                   </visibleWhen>
                 </item>
                 <item id="cr3_specific_institutions_detail" kind="question" answerType="text">
                   <label>List institutions</label>
-                  <placeholder>List institutions</placeholder>
                   <visibleWhen>
                     <fieldCondition field="cr3" equals="specific_institutions"/>
                   </visibleWhen>
@@ -1164,14 +1155,12 @@
               <followups>
                 <item id="cr6_specific_countries_detail" kind="question" answerType="text">
                   <label>List countries</label>
-                  <placeholder>List countries</placeholder>
                   <visibleWhen>
                     <fieldCondition field="cr6" equals="specific_countries"/>
                   </visibleWhen>
                 </item>
                 <item id="cr6_specific_institutions_detail" kind="question" answerType="text">
                   <label>List institutions</label>
-                  <placeholder>List institutions</placeholder>
                   <visibleWhen>
                     <fieldCondition field="cr6" equals="specific_institutions"/>
                   </visibleWhen>

@@ -19,10 +19,7 @@
     "optionSources": {
       "countries": {
         "type": "external",
-        "source": "ISO 3166-1 country list",
-        "placeholder": {
-          "en-GB": "Select a country"
-        }
+        "source": "ISO 3166-1 country list"
       }
     }
   },
@@ -183,9 +180,6 @@
                   "label": {
                     "en-GB": "URL or URLs"
                   },
-                  "placeholder": {
-                    "en-GB": "Paste URLs here"
-                  },
                   "visibleWhen": {
                     "field": "m4_1",
                     "equals": "urls"
@@ -197,9 +191,6 @@
                   "answerType": "text",
                   "label": {
                     "en-GB": "IDs"
-                  },
-                  "placeholder": {
-                    "en-GB": "Paste IDs here"
                   },
                   "visibleWhen": {
                     "field": "m4_1",
@@ -215,9 +206,6 @@
               "displayCode": "M4.2",
               "label": {
                 "en-GB": "Which file formats or file extensions are involved?"
-              },
-              "placeholder": {
-                "en-GB": "e.g. jpg, pdf, wav"
               },
               "visibleWhen": {
                 "ref": "material_is_digital_or_both"
@@ -357,9 +345,6 @@
               "label": {
                 "en-GB": "Name them"
               },
-              "placeholder": {
-                "en-GB": "Name them"
-              },
               "visibleWhen": {
                 "field": "kr1",
                 "contains": "person"
@@ -370,9 +355,6 @@
               "kind": "question",
               "answerType": "text",
               "label": {
-                "en-GB": "Name it"
-              },
-              "placeholder": {
                 "en-GB": "Name it"
               },
               "visibleWhen": {
@@ -452,9 +434,6 @@
           },
           "optionalLabel": {
             "en-GB": "optional"
-          },
-          "placeholder": {
-            "en-GB": "e.g. 10 years, after my death, 2075"
           }
         },
         {
@@ -495,9 +474,6 @@
               "answerType": "text",
               "label": {
                 "en-GB": "Add your conditions"
-              },
-              "placeholder": {
-                "en-GB": "Under what conditions, or when?"
               },
               "visibleWhen": {
                 "field": "kr3",
@@ -632,9 +608,6 @@
                   "label": {
                     "en-GB": "List countries"
                   },
-                  "placeholder": {
-                    "en-GB": "List countries"
-                  },
                   "visibleWhen": {
                     "field": "cr3",
                     "equals": "specific_countries"
@@ -645,9 +618,6 @@
                   "kind": "question",
                   "answerType": "text",
                   "label": {
-                    "en-GB": "List institutions"
-                  },
-                  "placeholder": {
                     "en-GB": "List institutions"
                   },
                   "visibleWhen": {
@@ -771,9 +741,6 @@
                   "label": {
                     "en-GB": "List countries"
                   },
-                  "placeholder": {
-                    "en-GB": "List countries"
-                  },
                   "visibleWhen": {
                     "field": "cr6",
                     "equals": "specific_countries"
@@ -784,9 +751,6 @@
                   "kind": "question",
                   "answerType": "text",
                   "label": {
-                    "en-GB": "List institutions"
-                  },
-                  "placeholder": {
                     "en-GB": "List institutions"
                   },
                   "visibleWhen": {

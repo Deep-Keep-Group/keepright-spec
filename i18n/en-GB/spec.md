@@ -17,7 +17,7 @@ Optional information about the responsible party.
 **A3. Country**
 
 - Answer type: `select`
-- Option source: countries; ISO 3166-1 country list; placeholder: Select a country
+- Option source: countries; ISO 3166-1 country list
 
 ## The Material
 
@@ -65,7 +65,6 @@ Optional information about the responsible party.
 
 - Answer type: `text`
 - Shown when: condition `material_is_digital_or_both`
-- Placeholder: e.g. jpg, pdf, wav
 
 **M5. What's your relationship to it?**
 
@@ -138,7 +137,6 @@ One line description for a facet.
 **KR2.1. Until when? (optional)**
 
 - Answer type: `text`
-- Placeholder: e.g. 10 years, after my death, 2075
 
 **KR3. What can your caretaker do with it?**
 

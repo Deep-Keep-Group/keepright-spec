@@ -242,10 +242,6 @@ def description_for(item: dict[str, Any], locale: str) -> str:
     return local_text(item.get("description"), locale)
 
 
-def placeholder_for(item: dict[str, Any], locale: str) -> str:
-    return local_text(item.get("placeholder"), locale)
-
-
 def condition_to_text(condition: dict[str, Any] | None) -> str:
     if not condition:
         return ""
@@ -286,20 +282,10 @@ def option_source_description(spec: dict[str, Any], source_name: str, locale: st
     parts = [source_name]
     if source.get("source"):
         parts.append(str(source["source"]))
-    placeholder = local_text(source.get("placeholder"), locale)
-    if placeholder:
-        parts.append(f"placeholder: {placeholder}")
     return "; ".join(parts)
 
 
-def select_placeholder(spec: dict[str, Any], item: dict[str, Any], locale: str) -> str:
-    item_placeholder = placeholder_for(item, locale)
-    if item_placeholder:
-        return item_placeholder
-    source_name = item.get("optionSource")
-    if source_name:
-        source = spec["meta"].get("optionSources", {}).get(source_name, {})
-        return local_text(source.get("placeholder"), locale)
+def select_empty_option_label() -> str:
     return "Select an option"
 
 
@@ -333,9 +319,6 @@ def render_txt(spec: dict[str, Any], locale: str) -> str:
         lines.append(f"{pad}Answer type: {item.get('answerType')}")
         if "visibleWhen" in item:
             lines.append(f"{pad}Shown when: {condition_to_text(item['visibleWhen'])}")
-        placeholder = placeholder_for(item, locale)
-        if placeholder:
-            lines.append(f"{pad}Placeholder: {placeholder}")
         if "optionSource" in item:
             lines.append(f"{pad}Option source: {option_source_description(spec, item['optionSource'], locale)}")
         options = question_options(spec, item, locale, expand_sources=False)
@@ -392,9 +375,6 @@ def render_md(spec: dict[str, Any], locale: str) -> str:
         lines.append(f"- Answer type: `{item.get('answerType')}`")
         if "visibleWhen" in item:
             lines.append(f"- Shown when: {condition_to_text(item['visibleWhen'])}")
-        placeholder = placeholder_for(item, locale)
-        if placeholder:
-            lines.append(f"- Placeholder: {placeholder}")
         if "optionSource" in item:
             lines.append(f"- Option source: {option_source_description(spec, item['optionSource'], locale)}")
         options = question_options(spec, item, locale, expand_sources=False)
@@ -473,9 +453,6 @@ def render_static_item(spec: dict[str, Any], item: dict[str, Any], locale: str, 
         parts.append(f"<li>Answer type: <code>{html.escape(str(item.get('answerType')))}</code></li>")
         if "visibleWhen" in item:
             parts.append(f"<li>Shown when: {html.escape(condition_to_text(item['visibleWhen']))}</li>")
-        placeholder = placeholder_for(item, locale)
-        if placeholder:
-            parts.append(f"<li>Placeholder: {html.escape(placeholder)}</li>")
         if "optionSource" in item:
             parts.append(f"<li>Option source: {html.escape(option_source_description(spec, item['optionSource'], locale))}</li>")
         options = question_options(spec, item, locale, expand_sources=False)
@@ -591,7 +568,7 @@ def render_item_xml(
     if "optionSource" in item:
         attrs["optionSource"] = item["optionSource"]
     element = ET.SubElement(parent, tag, attrs)
-    for key in ("title", "label", "description", "text", "optionalLabel", "placeholder"):
+    for key in ("title", "label", "description", "text", "optionalLabel"):
         if key in item:
             ET.SubElement(element, key).text = local_text(item[key], locale)
     if "visibleWhen" in item:
@@ -683,14 +660,14 @@ def render_form_question(spec: dict[str, Any], item: dict[str, Any], locale: str
     label_id = f"{question_id}-label"
     parts = [f'<div{attrs}>', f'  <label id="{label_id}" class="question-label" for="{question_id}">{html.escape(label_for(item, locale))}</label>']
     if answer_type in {"text", "email"}:
-        parts.append(f'  <input type="{answer_type}" id="{question_id}" name="{question_id}"{input_placeholder(item, locale)}>')
+        parts.append(f'  <input type="{answer_type}" id="{question_id}" name="{question_id}">')
     elif answer_type == "textarea":
         rows = int(item.get("ui", {}).get("rows", 3))
-        parts.append(f'  <textarea id="{question_id}" name="{question_id}" rows="{rows}"{input_placeholder(item, locale)}></textarea>')
+        parts.append(f'  <textarea id="{question_id}" name="{question_id}" rows="{rows}"></textarea>')
     elif answer_type == "select":
         parts.append(f'  <select id="{question_id}" name="{question_id}">')
-        placeholder = select_placeholder(spec, item, locale)
-        parts.append(f'    <option value="">{html.escape(placeholder)}</option>')
+        empty_option_label = select_empty_option_label()
+        parts.append(f'    <option value="">{html.escape(empty_option_label)}</option>')
         for option in question_options(spec, item, locale):
             value = html.escape(str(option["value"]))
             parts.append(f'    <option value="{value}">{html.escape(local_text(option.get("label"), locale))}</option>')
@@ -724,12 +701,6 @@ def form_attrs(item: dict[str, Any], classes: str = "field") -> str:
     if "labelVariants" in item:
         attrs.append(f"data-label-variants='{html.escape(json.dumps(item['labelVariants'], ensure_ascii=False, sort_keys=True), quote=True)}'")
     return " " + " ".join(attrs)
-
-
-def input_placeholder(item: dict[str, Any], locale: str) -> str:
-    placeholder = placeholder_for(item, locale)
-    return f' placeholder="{html.escape(placeholder)}"' if placeholder else ""
-
 
 def indent(text: str, spaces: int) -> str:
     prefix = " " * spaces
