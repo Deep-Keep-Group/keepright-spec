@@ -24,7 +24,15 @@ Declarations should record the exact `schemaVersion` and `specVersion` they were
 
 Schemas follow the same rough idea, but by `schemaVersion` rather than `specVersion`. The spec content may change lots of times while the grammar stays the same, so we do not need a new schema file for every spec content release.
 
-I should probably automate the whole versions thing tbh.
+When `specVersion` changes, run:
+
+```sh
+python3 scripts/version_spec.py
+```
+
+That script copies `spec.json` into `versions/` using the exact `specVersion`, refreshes the moving `latest` spec copies, and does the same for schemas using `schemaVersion`. If an exact version file already exists but the current file is different, the script stops rather than overwriting it. That usually means the version needs bumping first.
+
+If the schema changes, we still edit the live schema files by hand for now and bump `meta.schemaVersion` in `spec.json`. Then `scripts/version_spec.py` will snapshot those schema files under the new schema version.
 
 **Branch protection:** We maybe need to do something cool and good here.
 
