@@ -5,6 +5,7 @@ on:
     paths:
       - "spec.json"
       - "scripts/render_spec.py"
+      - "schemas/**"
       - ".github/workflows/spec-auto-render.yml"
 
 permissions:
@@ -28,6 +29,12 @@ jobs:
 
       - name: Validate spec.json
         run: python3 -m json.tool spec.json > /dev/null
+
+      - name: Install schema validator
+        run: python3 -m pip install check-jsonschema
+
+      - name: Validate spec schema
+        run: check-jsonschema --schemafile schemas/keepright-spec.schema.json spec.json
 
       - name: Render derivatives
         run: python3 scripts/render_spec.py

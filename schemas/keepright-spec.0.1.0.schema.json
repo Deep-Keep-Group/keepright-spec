@@ -1,0 +1,310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://keepright.info/schemas/keepright-spec.schema.json",
+  "title": "KeepRight Spec",
+  "type": "object",
+  "required": ["meta", "items"],
+  "properties": {
+    "meta": { "$ref": "#/$defs/meta" },
+    "logic": { "$ref": "#/$defs/logic" },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/section" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "semver": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "locale": {
+      "type": "string",
+      "pattern": "^[a-z]{2,3}(-[A-Z]{2})?$"
+    },
+    "localizedString": {
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {
+        "^[a-z]{2,3}(-[A-Z]{2})?$": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "meta": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "specVersion",
+        "release",
+        "defaultLocale",
+        "supportedLocales",
+        "title"
+      ],
+      "properties": {
+        "schemaVersion": { "$ref": "#/$defs/semver" },
+        "specVersion": { "$ref": "#/$defs/semver" },
+        "release": {
+          "type": "string",
+          "minLength": 1
+        },
+        "defaultLocale": { "$ref": "#/$defs/locale" },
+        "supportedLocales": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/locale" },
+          "uniqueItems": true
+        },
+        "title": { "$ref": "#/$defs/localizedString" },
+        "defaults": {
+          "type": "object",
+          "properties": {
+            "questionRequired": { "type": "boolean" }
+          },
+          "additionalProperties": true
+        },
+        "idConventions": {
+          "type": "object",
+          "properties": {
+            "fieldIds": { "type": "string" },
+            "optionValues": { "type": "string" }
+          },
+          "additionalProperties": true
+        },
+        "optionSources": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["type", "source"],
+            "properties": {
+              "type": { "type": "string" },
+              "source": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "logic": {
+      "type": "object",
+      "properties": {
+        "conditions": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/condition" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "condition": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["ref"],
+          "properties": {
+            "ref": { "$ref": "#/$defs/id" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["field", "equals"],
+          "properties": {
+            "field": { "$ref": "#/$defs/id" },
+            "equals": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["field", "contains"],
+          "properties": {
+            "field": { "$ref": "#/$defs/id" },
+            "contains": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["any"],
+          "properties": {
+            "any": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "$ref": "#/$defs/condition" }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["all"],
+          "properties": {
+            "all": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "$ref": "#/$defs/condition" }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "section": {
+      "type": "object",
+      "required": ["kind", "id", "title", "items"],
+      "properties": {
+        "kind": { "const": "section" },
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "$ref": "#/$defs/localizedString" },
+        "description": { "$ref": "#/$defs/localizedString" },
+        "visibleWhen": { "$ref": "#/$defs/condition" },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sectionChild" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "group": {
+      "type": "object",
+      "required": ["kind", "id", "items"],
+      "properties": {
+        "kind": { "const": "group" },
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "$ref": "#/$defs/localizedString" },
+        "description": { "$ref": "#/$defs/localizedString" },
+        "visibleWhen": { "$ref": "#/$defs/condition" },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/groupChild" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "note": {
+      "type": "object",
+      "required": ["kind", "id", "text"],
+      "properties": {
+        "kind": { "const": "note" },
+        "id": { "$ref": "#/$defs/id" },
+        "text": { "$ref": "#/$defs/localizedString" },
+        "visibleWhen": { "$ref": "#/$defs/condition" }
+      },
+      "additionalProperties": false
+    },
+    "question": {
+      "type": "object",
+      "required": ["kind", "id", "label", "answerType"],
+      "properties": {
+        "kind": { "const": "question" },
+        "id": { "$ref": "#/$defs/id" },
+        "label": { "$ref": "#/$defs/localizedString" },
+        "optionalLabel": { "$ref": "#/$defs/localizedString" },
+        "answerType": {
+          "enum": ["text", "email", "textarea", "radio", "checkboxes", "select"]
+        },
+        "options": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/option" }
+        },
+        "optionSource": { "$ref": "#/$defs/id" },
+        "visibleWhen": { "$ref": "#/$defs/condition" },
+        "labelVariants": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/labelVariant" }
+        },
+        "ui": { "$ref": "#/$defs/ui" },
+        "followups": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/followupChild" }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "answerType": { "enum": ["radio", "checkboxes", "select"] }
+            },
+            "required": ["answerType"]
+          },
+          "then": {
+            "anyOf": [
+              { "required": ["options"] },
+              { "required": ["optionSource"] }
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "option": {
+      "type": "object",
+      "required": ["value", "label"],
+      "properties": {
+        "value": { "$ref": "#/$defs/id" },
+        "label": { "$ref": "#/$defs/localizedString" }
+      },
+      "additionalProperties": false
+    },
+    "labelVariant": {
+      "type": "object",
+      "required": ["when", "label"],
+      "properties": {
+        "when": { "$ref": "#/$defs/condition" },
+        "label": { "$ref": "#/$defs/localizedString" }
+      },
+      "additionalProperties": false
+    },
+    "ui": {
+      "type": "object",
+      "properties": {
+        "rows": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "cols": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "sectionChild": {
+      "oneOf": [
+        { "$ref": "#/$defs/section" },
+        { "$ref": "#/$defs/group" },
+        { "$ref": "#/$defs/question" },
+        { "$ref": "#/$defs/note" }
+      ]
+    },
+    "groupChild": {
+      "oneOf": [
+        { "$ref": "#/$defs/group" },
+        { "$ref": "#/$defs/question" },
+        { "$ref": "#/$defs/note" }
+      ]
+    },
+    "followupChild": {
+      "oneOf": [
+        { "$ref": "#/$defs/question" },
+        { "$ref": "#/$defs/note" }
+      ]
+    }
+  }
+}
