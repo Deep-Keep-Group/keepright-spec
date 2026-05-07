@@ -18,36 +18,36 @@
 <body>
   <main>
 <h1>KeepRight Spec</h1>
-<p>Release: pre-alpha; Spec version: 0.0.2; Schema version: 0.0.1</p>
-<section>
+<p>Release: pre-alpha; Spec version: 0.0.2; Schema version: 0.1.0</p>
+<section class="spec-section">
 <h2>About You</h2>
 <p>Optional information about the responsible party.</p>
 <section class="spec-question">
-<h3>A1. Name</h3>
+<h3>Name</h3>
 <ul>
 <li>Answer type: <code>text</code></li>
 </ul>
 </section>
 <section class="spec-question">
-<h3>A2. Email</h3>
+<h3>Email</h3>
 <ul>
 <li>Answer type: <code>email</code></li>
 </ul>
 </section>
 <section class="spec-question">
-<h3>A3. Country</h3>
+<h3>Country</h3>
 <ul>
 <li>Answer type: <code>select</code></li>
 <li>Option source: countries; ISO 3166-1 country list</li>
 </ul>
 </section>
 </section>
-<section>
+<section class="spec-section">
 <h2>The Material</h2>
 <section class="spec-group">
 <h3>Crux</h3>
 <section class="spec-question">
-<h4>M1. Is this digital, physical, or both?</h4>
+<h4>Is this digital, physical, or both?</h4>
 <ul>
 <li>Answer type: <code>radio</code></li>
 <li>Options:<ul>
@@ -58,7 +58,7 @@
 </ul>
 </section>
 <section class="spec-question">
-<h4>M2. Are you the copyright holder?</h4>
+<h4>Are you the copyright holder?</h4>
 <ul>
 <li>Answer type: <code>radio</code></li>
 <li>Options:<ul>
@@ -72,19 +72,19 @@
 <section class="spec-group">
 <h3>Details</h3>
 <section class="spec-question">
-<h4>M3. What should we call this material?</h4>
+<h4>What should we call this material?</h4>
 <ul>
 <li>Answer type: <code>text</code></li>
 </ul>
 </section>
 <section class="spec-question">
-<h4>M4. What is it?</h4>
+<h4>What is it?</h4>
 <ul>
 <li>Answer type: <code>textarea</code></li>
 </ul>
 </section>
 <section class="spec-question">
-<h4>M4.1. Does it live online?</h4>
+<h4>Does it live online?</h4>
 <ul>
 <li>Answer type: <code>radio</code></li>
 <li>Shown when: condition `material_is_digital_or_both`</li>
@@ -100,14 +100,14 @@
 </ul>
 </section>
 <section class="spec-question">
-<h4>M4.2. Which file formats or file extensions are involved?</h4>
+<h4>Which file formats or file extensions are involved?</h4>
 <ul>
 <li>Answer type: <code>text</code></li>
 <li>Shown when: condition `material_is_digital_or_both`</li>
 </ul>
 </section>
 <section class="spec-question">
-<h4>M5. What&#x27;s your relationship to it?</h4>
+<h4>What&#x27;s your relationship to it?</h4>
 <ul>
 <li>Answer type: <code>checkboxes</code></li>
 <li>Options:<ul>
@@ -124,13 +124,13 @@
 </ul>
 </section>
 <section class="spec-question">
-<h4>M6. Who made this, and who owns it now?</h4>
+<h4>Who made this, and who owns it now?</h4>
 <ul>
 <li>Answer type: <code>textarea</code></li>
 </ul>
 </section>
 <section class="spec-question">
-<h4>M7. What&#x27;s its copyright or licensing status, if you know?</h4>
+<h4>What&#x27;s its copyright or licensing status, if you know?</h4>
 <ul>
 <li>Answer type: <code>radio</code></li>
 <li>Options:<ul>
@@ -146,18 +146,18 @@
 </ul>
 </section>
 <section class="spec-question">
-<h4>M8. Can you add any background on how, why, or when it was made? This will help future stewards understand the material. (optional)</h4>
+<h4>Can you add any background on how, why, or when it was made? This will help future stewards understand the material. (optional)</h4>
 <ul>
 <li>Answer type: <code>textarea</code></li>
 </ul>
 </section>
 </section>
 </section>
-<section>
+<section class="spec-section">
 <h2>Keep Right</h2>
 <p>One line description for a facet.</p>
 <section class="spec-question">
-<h3>KR1. Who would you like to take care of this?</h3>
+<h3>Who would you like to take care of this?</h3>
 <ul>
 <li>Answer type: <code>checkboxes</code></li>
 <li>Options:<ul>
@@ -175,14 +175,14 @@
 </ul>
 </section>
 <section class="spec-question">
-<h3>KR1.1. And where should it live?</h3>
+<h3>And where should it live?</h3>
 <ul>
 <li>Answer type: <code>text</code></li>
 <li>Shown when: condition `material_is_physical_or_both`</li>
 </ul>
 </section>
 <section class="spec-question">
-<h3>KR2. Who should be able to see it, and are there any conditions?</h3>
+<h3>Who should be able to see it, and are there any conditions?</h3>
 <ul>
 <li>Answer type: <code>radio</code></li>
 <li>Options:<ul>
@@ -198,13 +198,13 @@
 </ul>
 </section>
 <section class="spec-question">
-<h3>KR2.1. Until when? (optional)</h3>
+<h3>Until when? (optional)</h3>
 <ul>
 <li>Answer type: <code>text</code></li>
 </ul>
 </section>
 <section class="spec-question">
-<h3>KR3. What can your caretaker do with it?</h3>
+<h3>What can your caretaker do with it?</h3>
 <ul>
 <li>Answer type: <code>checkboxes</code></li>
 <li>Shown when: condition `copyright_holder_yes_or_unsure`</li>
@@ -224,13 +224,13 @@
 </ul>
 </section>
 </section>
-<section>
+<section class="spec-section">
 <h2>Copy Right</h2>
 <p>Needs to be written.</p>
 <section class="spec-group">
 <p><em>Shown when: condition `material_is_digital_or_both`</em></p>
 <section class="spec-question">
-<h4>CR1. Can copies be made?</h4>
+<h4>Can copies be made?</h4>
 <ul>
 <li>Answer type: <code>radio</code></li>
 <li>Options:<ul>
@@ -245,7 +245,7 @@
 </ul>
 </section>
 <section class="spec-question">
-<h4>CR2. What must copies preserve?</h4>
+<h4>What must copies preserve?</h4>
 <ul>
 <li>Answer type: <code>checkboxes</code></li>
 <li>Options:<ul>
@@ -262,7 +262,7 @@
 </ul>
 </section>
 <section class="spec-question">
-<h4>CR3. Where can copies live?</h4>
+<h4>Where can copies live?</h4>
 <ul>
 <li>Answer type: <code>radio</code></li>
 <li>Options:<ul>
@@ -283,7 +283,7 @@
 <section class="spec-group">
 <p><em>Shown when: condition `material_is_physical_or_both`</em></p>
 <section class="spec-question">
-<h4>CR4. Should this be digitised?</h4>
+<h4>Should this be digitised?</h4>
 <ul>
 <li>Answer type: <code>radio</code></li>
 <li>Options:<ul>
@@ -299,7 +299,7 @@
 </ul>
 </section>
 <section class="spec-question">
-<h4>CR5. What must a digitised version preserve?</h4>
+<h4>What must a digitised version preserve?</h4>
 <ul>
 <li>Answer type: <code>checkboxes</code></li>
 <li>Options:<ul>
@@ -316,7 +316,7 @@
 </ul>
 </section>
 <section class="spec-question">
-<h4>CR6. Where can digital copies live?</h4>
+<h4>Where can digital copies live?</h4>
 <ul>
 <li>Answer type: <code>radio</code></li>
 <li>Options:<ul>
@@ -335,11 +335,11 @@
 </section>
 </section>
 </section>
-<section>
+<section class="spec-section">
 <h2>Machine Right</h2>
 <p>Needs to be written.</p>
 <section class="spec-question">
-<h3>MR1. Can machines analyse or index this material?</h3>
+<h3>Can machines analyse or index this material?</h3>
 <ul>
 <li>Answer type: <code>radio</code></li>
 <li>Options:<ul>
@@ -354,7 +354,7 @@
 </ul>
 </section>
 <section class="spec-question">
-<h3>MR2. Can this material be used to train AI?</h3>
+<h3>Can this material be used to train AI?</h3>
 <ul>
 <li>Answer type: <code>radio</code></li>
 <li>Options:<ul>
@@ -370,7 +370,7 @@
 </ul>
 </section>
 <section class="spec-question">
-<h3>MR3. If this material is used by an AI, what matters to you?</h3>
+<h3>If this material is used by an AI, what matters to you?</h3>
 <ul>
 <li>Answer type: <code>checkboxes</code></li>
 <li>Options:<ul>

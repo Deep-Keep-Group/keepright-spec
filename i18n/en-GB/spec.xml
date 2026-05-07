@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<keepRightSpec schemaVersion="0.0.1" specVersion="0.0.2" release="pre-alpha" locale="en-GB">
+<keepRightSpec schemaVersion="0.1.0" specVersion="0.0.2" release="pre-alpha" locale="en-GB">
   <title>KeepRight Spec</title>
   <logic>
     <conditions>
@@ -35,18 +35,18 @@
       </condition>
     </conditions>
   </logic>
-  <sections>
-    <section id="about_you">
+  <items>
+    <item id="about_you" kind="section">
       <title>About You</title>
       <description>Optional information about the responsible party.</description>
       <items>
-        <item id="a1" kind="question" answerType="text" displayCode="A1">
+        <item id="a1" kind="question" answerType="text">
           <label>Name</label>
         </item>
-        <item id="a2" kind="question" answerType="email" displayCode="A2">
+        <item id="a2" kind="question" answerType="email">
           <label>Email</label>
         </item>
-        <item id="a3" kind="question" answerType="select" displayCode="A3" optionSource="countries">
+        <item id="a3" kind="question" answerType="select" optionSource="countries">
           <label>Country</label>
           <options>
             <option value="Afghanistan">
@@ -631,14 +631,14 @@
           </options>
         </item>
       </items>
-    </section>
-    <section id="material">
+    </item>
+    <item id="material" kind="section">
       <title>The Material</title>
       <items>
         <item id="material_crux" kind="group">
           <title>Crux</title>
           <items>
-            <item id="m1" kind="question" answerType="radio" displayCode="M1">
+            <item id="m1" kind="question" answerType="radio">
               <label>Is this digital, physical, or both?</label>
               <options>
                 <option value="digital">
@@ -652,7 +652,7 @@
                 </option>
               </options>
             </item>
-            <item id="m2" kind="question" answerType="radio" displayCode="M2">
+            <item id="m2" kind="question" answerType="radio">
               <label>Are you the copyright holder?</label>
               <options>
                 <option value="yes">
@@ -671,16 +671,16 @@
         <item id="material_details" kind="group">
           <title>Details</title>
           <items>
-            <item id="m3" kind="question" answerType="text" displayCode="M3">
+            <item id="m3" kind="question" answerType="text">
               <label>What should we call this material?</label>
             </item>
-            <item id="m4" kind="question" answerType="textarea" displayCode="M4">
+            <item id="m4" kind="question" answerType="textarea">
               <label>What is it?</label>
               <ui>
                 <rows>3</rows>
               </ui>
             </item>
-            <item id="m4_1" kind="question" answerType="radio" displayCode="M4.1">
+            <item id="m4_1" kind="question" answerType="radio">
               <label>Does it live online?</label>
               <visibleWhen>
                 <ref>material_is_digital_or_both</ref>
@@ -711,13 +711,13 @@
                 </item>
               </followups>
             </item>
-            <item id="m4_2" kind="question" answerType="text" displayCode="M4.2">
+            <item id="m4_2" kind="question" answerType="text">
               <label>Which file formats or file extensions are involved?</label>
               <visibleWhen>
                 <ref>material_is_digital_or_both</ref>
               </visibleWhen>
             </item>
-            <item id="m5" kind="question" answerType="checkboxes" displayCode="M5">
+            <item id="m5" kind="question" answerType="checkboxes">
               <label>What's your relationship to it?</label>
               <options>
                 <option value="made">
@@ -751,13 +751,13 @@
                 </item>
               </followups>
             </item>
-            <item id="m6" kind="question" answerType="textarea" displayCode="M6">
+            <item id="m6" kind="question" answerType="textarea">
               <label>Who made this, and who owns it now?</label>
               <ui>
                 <rows>3</rows>
               </ui>
             </item>
-            <item id="m7" kind="question" answerType="radio" displayCode="M7">
+            <item id="m7" kind="question" answerType="radio">
               <label>What's its copyright or licensing status, if you know?</label>
               <options>
                 <option value="all_rights_reserved">
@@ -788,7 +788,7 @@
                 </item>
               </followups>
             </item>
-            <item id="m8" kind="question" answerType="textarea" displayCode="M8">
+            <item id="m8" kind="question" answerType="textarea">
               <label>Can you add any background on how, why, or when it was made? This will help future stewards understand the material.</label>
               <optionalLabel>optional</optionalLabel>
               <ui>
@@ -798,14 +798,14 @@
           </items>
         </item>
       </items>
-    </section>
-    <section id="keep_right">
+    </item>
+    <item id="keep_right" kind="section">
       <title>Keep Right</title>
       <items>
         <item id="machine_right_note" kind="note">
           <text>One line description for a facet.</text>
         </item>
-        <item id="kr1" kind="question" answerType="checkboxes" displayCode="KR1">
+        <item id="kr1" kind="question" answerType="checkboxes">
           <label>Who would you like to take care of this?</label>
           <options>
             <option value="person">
@@ -848,13 +848,13 @@
             </item>
           </followups>
         </item>
-        <item id="kr1_1" kind="question" answerType="text" displayCode="KR1.1">
+        <item id="kr1_1" kind="question" answerType="text">
           <label>And where should it live?</label>
           <visibleWhen>
             <ref>material_is_physical_or_both</ref>
           </visibleWhen>
         </item>
-        <item id="kr2" kind="question" answerType="radio" displayCode="KR2">
+        <item id="kr2" kind="question" answerType="radio">
           <label>Who should be able to see it, and are there any conditions?</label>
           <options>
             <option value="anyone">
@@ -885,11 +885,11 @@
             </item>
           </followups>
         </item>
-        <item id="kr2_1" kind="question" answerType="text" displayCode="KR2.1">
+        <item id="kr2_1" kind="question" answerType="text">
           <label>Until when?</label>
           <optionalLabel>optional</optionalLabel>
         </item>
-        <item id="kr3" kind="question" answerType="checkboxes" displayCode="KR3">
+        <item id="kr3" kind="question" answerType="checkboxes">
           <label>What can your caretaker do with it?</label>
           <visibleWhen>
             <ref>copyright_holder_yes_or_unsure</ref>
@@ -944,8 +944,8 @@
           </followups>
         </item>
       </items>
-    </section>
-    <section id="copy_right">
+    </item>
+    <item id="copy_right" kind="section">
       <title>Copy Right</title>
       <items>
         <item id="copy_right_note" kind="note">
@@ -956,7 +956,7 @@
             <ref>material_is_digital_or_both</ref>
           </visibleWhen>
           <items>
-            <item id="cr1" kind="question" answerType="radio" displayCode="CR1">
+            <item id="cr1" kind="question" answerType="radio">
               <label>Can copies be made?</label>
               <options>
                 <option value="yes_freely">
@@ -984,7 +984,7 @@
                 </item>
               </followups>
             </item>
-            <item id="cr2" kind="question" answerType="checkboxes" displayCode="CR2">
+            <item id="cr2" kind="question" answerType="checkboxes">
               <label>What must copies preserve?</label>
               <options>
                 <option value="original_file_format">
@@ -1018,7 +1018,7 @@
                 </item>
               </followups>
             </item>
-            <item id="cr3" kind="question" answerType="radio" displayCode="CR3">
+            <item id="cr3" kind="question" answerType="radio">
               <label>Where can copies live?</label>
               <options>
                 <option value="anywhere">
@@ -1068,7 +1068,7 @@
             <ref>material_is_physical_or_both</ref>
           </visibleWhen>
           <items>
-            <item id="cr4" kind="question" answerType="radio" displayCode="CR4">
+            <item id="cr4" kind="question" answerType="radio">
               <label>Should this be digitised?</label>
               <options>
                 <option value="yes_please">
@@ -1099,7 +1099,7 @@
                 </item>
               </followups>
             </item>
-            <item id="cr5" kind="question" answerType="checkboxes" displayCode="CR5">
+            <item id="cr5" kind="question" answerType="checkboxes">
               <label>What must a digitised version preserve?</label>
               <options>
                 <option value="original_colours">
@@ -1133,7 +1133,7 @@
                 </item>
               </followups>
             </item>
-            <item id="cr6" kind="question" answerType="radio" displayCode="CR6">
+            <item id="cr6" kind="question" answerType="radio">
               <label>Where can digital copies live?</label>
               <options>
                 <option value="anywhere">
@@ -1179,14 +1179,14 @@
           </items>
         </item>
       </items>
-    </section>
-    <section id="machine_right">
+    </item>
+    <item id="machine_right" kind="section">
       <title>Machine Right</title>
       <items>
         <item id="machine_right_note" kind="note">
           <text>Needs to be written.</text>
         </item>
-        <item id="mr1" kind="question" answerType="radio" displayCode="MR1">
+        <item id="mr1" kind="question" answerType="radio">
           <label>Can machines analyse or index this material?</label>
           <options>
             <option value="yes_freely">
@@ -1214,7 +1214,7 @@
             </item>
           </followups>
         </item>
-        <item id="mr2" kind="question" answerType="radio" displayCode="MR2">
+        <item id="mr2" kind="question" answerType="radio">
           <label>Can this material be used to train AI?</label>
           <options>
             <option value="yes">
@@ -1245,7 +1245,7 @@
             </item>
           </followups>
         </item>
-        <item id="mr3" kind="question" answerType="checkboxes" displayCode="MR3">
+        <item id="mr3" kind="question" answerType="checkboxes">
           <label>If this material is used by an AI, what matters to you?</label>
           <options>
             <option value="attribution">
@@ -1277,6 +1277,6 @@
           </followups>
         </item>
       </items>
-    </section>
-  </sections>
+    </item>
+  </items>
 </keepRightSpec>

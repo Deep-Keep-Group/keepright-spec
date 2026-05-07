@@ -234,8 +234,7 @@ def label_for(item: dict[str, Any], locale: str) -> str:
     optional = local_text(item.get("optionalLabel"), locale)
     if optional:
         label = f"{label} ({optional})"
-    code = item.get("displayCode")
-    return f"{code}. {label}" if code else label
+    return label
 
 
 def description_for(item: dict[str, Any], locale: str) -> str:
@@ -339,7 +338,15 @@ def render_txt(spec: dict[str, Any], locale: str) -> str:
         for item in items:
             kind = item.get("kind")
             pad = " " * indent
-            if kind == "group":
+            if kind == "section":
+                heading = title_for(item, locale)
+                if heading:
+                    lines.extend([f"{pad}{heading}", f"{pad}{'-' * len(heading)}"])
+                description = description_for(item, locale)
+                if description:
+                    lines.extend([description, ""])
+                walk(iter_child_items(item), indent)
+            elif kind == "group":
                 group_title = title_for(item, locale)
                 if group_title:
                     lines.extend([f"{pad}{group_title}", f"{pad}{'-' * len(group_title)}"])
@@ -353,13 +360,7 @@ def render_txt(spec: dict[str, Any], locale: str) -> str:
             elif kind == "note":
                 lines.extend([f"{pad}{local_text(item.get('text'), locale)}", ""])
 
-    for section in spec["sections"]:
-        heading = title_for(section, locale)
-        lines.extend([heading, "-" * len(heading)])
-        description = description_for(section, locale)
-        if description:
-            lines.extend([description, ""])
-        walk(iter_child_items(section), 0)
+    walk(iter_child_items(spec), 0)
     return "\n".join(lines)
 
 
@@ -394,7 +395,13 @@ def render_md(spec: dict[str, Any], locale: str) -> str:
     def walk(items: list[dict[str, Any]], depth: int) -> None:
         for item in items:
             kind = item.get("kind")
-            if kind == "group":
+            if kind == "section":
+                lines.extend([f"{'#' * depth} {title_for(item, locale)}", ""])
+                description = description_for(item, locale)
+                if description:
+                    lines.extend([description, ""])
+                walk(iter_child_items(item), min(depth + 1, 6))
+            elif kind == "group":
                 group_title = title_for(item, locale)
                 if group_title:
                     lines.extend([f"{'#' * depth} {group_title}", ""])
@@ -406,12 +413,7 @@ def render_md(spec: dict[str, Any], locale: str) -> str:
             elif kind == "note":
                 lines.extend([local_text(item.get("text"), locale), ""])
 
-    for section in spec["sections"]:
-        lines.extend([f"## {title_for(section, locale)}", ""])
-        description = description_for(section, locale)
-        if description:
-            lines.extend([description, ""])
-        walk(iter_child_items(section), 3)
+    walk(iter_child_items(spec), 2)
     return "\n".join(lines)
 
 
@@ -421,25 +423,22 @@ def render_static_html(spec: dict[str, Any], locale: str) -> str:
         f"<h1>{html.escape(title)}</h1>",
         f"<p>{html.escape(metadata_line(spec))}</p>",
     ]
-    for section in spec["sections"]:
-        body.append("<section>")
-        body.append(f"<h2>{html.escape(title_for(section, locale))}</h2>")
-        description = description_for(section, locale)
-        if description:
-            body.append(f"<p>{html.escape(description)}</p>")
-        for item in iter_child_items(section):
-            body.append(render_static_item(spec, item, locale, 3))
-        body.append("</section>")
+    for item in iter_child_items(spec):
+        body.append(render_static_item(spec, item, locale, 2))
     return html_document(title, locale, "\n".join(body), presentation_css())
 
 
 def render_static_item(spec: dict[str, Any], item: dict[str, Any], locale: str, heading_level: int) -> str:
     kind = item.get("kind")
-    if kind == "group":
-        parts = ['<section class="spec-group">']
+    if kind in {"section", "group"}:
+        class_name = "spec-section" if kind == "section" else "spec-group"
+        parts = [f'<section class="{class_name}">']
         title = title_for(item, locale)
         if title:
             parts.append(f"<h{heading_level}>{html.escape(title)}</h{heading_level}>")
+        description = description_for(item, locale)
+        if description:
+            parts.append(f"<p>{html.escape(description)}</p>")
         if "visibleWhen" in item:
             parts.append(f"<p><em>Shown when: {html.escape(condition_to_text(item['visibleWhen']))}</em></p>")
         for child in iter_child_items(item):
@@ -517,9 +516,9 @@ def render_xml(spec: dict[str, Any], locale: str) -> str:
     )
     ET.SubElement(root, "title").text = local_text(spec["meta"].get("title"), locale)
     render_logic_xml(root, spec.get("logic", {}))
-    sections = ET.SubElement(root, "sections")
-    for section in spec["sections"]:
-        render_item_xml(sections, section, spec, locale, tag="section")
+    items = ET.SubElement(root, "items")
+    for item in iter_child_items(spec):
+        render_item_xml(items, item, spec, locale)
     rough = ET.tostring(root, encoding="utf-8")
     parsed = minidom.parseString(rough)
     return parsed.toprettyxml(indent="  ", encoding="utf-8").decode("utf-8")
@@ -563,8 +562,6 @@ def render_item_xml(
         attrs["kind"] = item["kind"]
     if "answerType" in item:
         attrs["answerType"] = item["answerType"]
-    if "displayCode" in item:
-        attrs["displayCode"] = item["displayCode"]
     if "optionSource" in item:
         attrs["optionSource"] = item["optionSource"]
     element = ET.SubElement(parent, tag, attrs)
@@ -612,8 +609,8 @@ def render_form_html(spec: dict[str, Any], locale: str) -> str:
         f"<p>{html.escape(metadata_line(spec))}</p>",
         '<form id="keepright-form">',
     ]
-    for section in spec["sections"]:
-        content.append(render_form_section(spec, section, locale))
+    for item in iter_child_items(spec):
+        content.append(render_form_item(spec, item, locale))
     content.append("</form>")
     body = "\n".join(f"    {line}" for line in content)
     config = {
@@ -638,6 +635,8 @@ def render_form_section(spec: dict[str, Any], section: dict[str, Any], locale: s
 def render_form_item(spec: dict[str, Any], item: dict[str, Any], locale: str) -> str:
     kind = item.get("kind")
     attrs = form_attrs(item)
+    if kind == "section":
+        return render_form_section(spec, item, locale)
     if kind == "group":
         parts = [f'<fieldset{attrs}>']
         title = title_for(item, locale)
@@ -694,8 +693,6 @@ def render_form_question(spec: dict[str, Any], item: dict[str, Any], locale: str
 
 def form_attrs(item: dict[str, Any], classes: str = "field") -> str:
     attrs = [f'class="{classes}"', f'data-spec-id="{html.escape(item["id"])}"']
-    if "displayCode" in item:
-        attrs.append(f'data-display-code="{html.escape(item["displayCode"])}"')
     if "visibleWhen" in item:
         attrs.append(f"data-visible-when='{html.escape(json.dumps(item['visibleWhen'], ensure_ascii=False, sort_keys=True), quote=True)}'")
     if "labelVariants" in item:
@@ -792,9 +789,8 @@ function applyLabelVariants() {
     if (!label.dataset.defaultText) label.dataset.defaultText = label.textContent;
     const match = variants.find((variant) => evaluateCondition(variant.when));
     if (match) {
-      const code = element.dataset.displayCode;
       const variantLabel = localized(match.label);
-      label.textContent = code ? `${code}. ${variantLabel}` : variantLabel;
+      label.textContent = variantLabel;
     } else {
       label.textContent = label.dataset.defaultText;
     }

@@ -1,10 +1,12 @@
 {
   "meta": {
-    "schemaVersion": "0.0.1",
+    "schemaVersion": "0.1.0",
     "specVersion": "0.0.2",
     "release": "pre-alpha",
     "defaultLocale": "en-GB",
-    "supportedLocales": ["en-GB"],
+    "supportedLocales": [
+      "en-GB"
+    ],
     "title": {
       "en-GB": "KeepRight Spec"
     },
@@ -13,8 +15,7 @@
     },
     "idConventions": {
       "fieldIds": "lower_snake_case",
-      "optionValues": "lower_snake_case",
-      "displayCodes": "designer-facing question numbers, such as M4.1 or KR1.1"
+      "optionValues": "lower_snake_case"
     },
     "optionSources": {
       "countries": {
@@ -27,26 +28,45 @@
     "conditions": {
       "material_is_digital_or_both": {
         "any": [
-          { "field": "m1", "equals": "digital" },
-          { "field": "m1", "equals": "both" }
+          {
+            "field": "m1",
+            "equals": "digital"
+          },
+          {
+            "field": "m1",
+            "equals": "both"
+          }
         ]
       },
       "material_is_physical_or_both": {
         "any": [
-          { "field": "m1", "equals": "physical" },
-          { "field": "m1", "equals": "both" }
+          {
+            "field": "m1",
+            "equals": "physical"
+          },
+          {
+            "field": "m1",
+            "equals": "both"
+          }
         ]
       },
       "copyright_holder_yes_or_unsure": {
         "any": [
-          { "field": "m2", "equals": "yes" },
-          { "field": "m2", "equals": "not_sure" }
+          {
+            "field": "m2",
+            "equals": "yes"
+          },
+          {
+            "field": "m2",
+            "equals": "not_sure"
+          }
         ]
       }
     }
   },
-  "sections": [
+  "items": [
     {
+      "kind": "section",
       "id": "about_you",
       "title": {
         "en-GB": "About You"
@@ -56,142 +76,180 @@
       },
       "items": [
         {
-          "id": "a1",
           "kind": "question",
-          "answerType": "text",
-          "displayCode": "A1",
+          "id": "a1",
           "label": {
             "en-GB": "Name"
-          }
+          },
+          "answerType": "text"
         },
         {
-          "id": "a2",
           "kind": "question",
-          "answerType": "email",
-          "displayCode": "A2",
+          "id": "a2",
           "label": {
             "en-GB": "Email"
-          }
+          },
+          "answerType": "email"
         },
         {
-          "id": "a3",
           "kind": "question",
-          "answerType": "select",
-          "displayCode": "A3",
+          "id": "a3",
           "label": {
             "en-GB": "Country"
           },
+          "answerType": "select",
           "optionSource": "countries"
         }
       ]
     },
     {
+      "kind": "section",
       "id": "material",
       "title": {
         "en-GB": "The Material"
       },
       "items": [
         {
-          "id": "material_crux",
           "kind": "group",
+          "id": "material_crux",
           "title": {
             "en-GB": "Crux"
           },
           "items": [
             {
-              "id": "m1",
               "kind": "question",
-              "answerType": "radio",
-              "displayCode": "M1",
+              "id": "m1",
               "label": {
                 "en-GB": "Is this digital, physical, or both?"
               },
+              "answerType": "radio",
               "options": [
-                { "value": "digital", "label": { "en-GB": "Digital" } },
-                { "value": "physical", "label": { "en-GB": "Physical" } },
-                { "value": "both", "label": { "en-GB": "Both" } }
+                {
+                  "value": "digital",
+                  "label": {
+                    "en-GB": "Digital"
+                  }
+                },
+                {
+                  "value": "physical",
+                  "label": {
+                    "en-GB": "Physical"
+                  }
+                },
+                {
+                  "value": "both",
+                  "label": {
+                    "en-GB": "Both"
+                  }
+                }
               ]
             },
             {
-              "id": "m2",
               "kind": "question",
-              "answerType": "radio",
-              "displayCode": "M2",
+              "id": "m2",
               "label": {
                 "en-GB": "Are you the copyright holder?"
               },
+              "answerType": "radio",
               "options": [
-                { "value": "yes", "label": { "en-GB": "Yes" } },
-                { "value": "no", "label": { "en-GB": "No" } },
-                { "value": "not_sure", "label": { "en-GB": "Not sure" } }
+                {
+                  "value": "yes",
+                  "label": {
+                    "en-GB": "Yes"
+                  }
+                },
+                {
+                  "value": "no",
+                  "label": {
+                    "en-GB": "No"
+                  }
+                },
+                {
+                  "value": "not_sure",
+                  "label": {
+                    "en-GB": "Not sure"
+                  }
+                }
               ]
             }
           ]
         },
         {
-          "id": "material_details",
           "kind": "group",
+          "id": "material_details",
           "title": {
             "en-GB": "Details"
           },
           "items": [
             {
-              "id": "m3",
               "kind": "question",
-              "answerType": "text",
-              "displayCode": "M3",
+              "id": "m3",
               "label": {
                 "en-GB": "What should we call this material?"
-              }
+              },
+              "answerType": "text"
             },
             {
-              "id": "m4",
               "kind": "question",
-              "answerType": "textarea",
-              "displayCode": "M4",
+              "id": "m4",
               "label": {
                 "en-GB": "What is it?"
               },
+              "answerType": "textarea",
               "ui": {
                 "rows": 3
               }
             },
             {
-              "id": "m4_1",
               "kind": "question",
-              "answerType": "radio",
-              "displayCode": "M4.1",
+              "id": "m4_1",
               "label": {
                 "en-GB": "Does it live online?"
               },
+              "answerType": "radio",
+              "options": [
+                {
+                  "value": "urls",
+                  "label": {
+                    "en-GB": "Yes, I have a URL or URLs"
+                  }
+                },
+                {
+                  "value": "ids",
+                  "label": {
+                    "en-GB": "Yes, I have some IDs (e.g. DOI)"
+                  }
+                },
+                {
+                  "value": "no",
+                  "label": {
+                    "en-GB": "No"
+                  }
+                }
+              ],
               "visibleWhen": {
                 "ref": "material_is_digital_or_both"
               },
-              "options": [
-                { "value": "urls", "label": { "en-GB": "Yes, I have a URL or URLs" } },
-                { "value": "ids", "label": { "en-GB": "Yes, I have some IDs (e.g. DOI)" } },
-                { "value": "no", "label": { "en-GB": "No" } }
-              ],
               "followups": [
                 {
-                  "id": "m4_1_urls",
                   "kind": "question",
-                  "answerType": "text",
+                  "id": "m4_1_urls",
                   "label": {
                     "en-GB": "URL or URLs"
                   },
+                  "answerType": "text",
                   "visibleWhen": {
                     "field": "m4_1",
                     "equals": "urls"
                   }
                 },
                 {
-                  "id": "m4_1_ids",
                   "kind": "question",
-                  "answerType": "text",
+                  "id": "m4_1_ids",
                   "label": {
                     "en-GB": "IDs"
                   },
+                  "answerType": "text",
                   "visibleWhen": {
                     "field": "m4_1",
                     "equals": "ids"
@@ -200,41 +258,69 @@
               ]
             },
             {
-              "id": "m4_2",
               "kind": "question",
-              "answerType": "text",
-              "displayCode": "M4.2",
+              "id": "m4_2",
               "label": {
                 "en-GB": "Which file formats or file extensions are involved?"
               },
+              "answerType": "text",
               "visibleWhen": {
                 "ref": "material_is_digital_or_both"
               }
             },
             {
-              "id": "m5",
               "kind": "question",
-              "answerType": "checkboxes",
-              "displayCode": "M5",
+              "id": "m5",
               "label": {
                 "en-GB": "What's your relationship to it?"
               },
+              "answerType": "checkboxes",
               "options": [
-                { "value": "made", "label": { "en-GB": "I made it" } },
-                { "value": "own", "label": { "en-GB": "I own it" } },
-                { "value": "family", "label": { "en-GB": "I'm a family member of the creator" } },
-                { "value": "steward", "label": { "en-GB": "I'm a designated steward" } },
-                { "value": "community", "label": { "en-GB": "I'm a community member" } },
-                { "value": "let_me_tell_you", "label": { "en-GB": "Let me tell you..." } }
+                {
+                  "value": "made",
+                  "label": {
+                    "en-GB": "I made it"
+                  }
+                },
+                {
+                  "value": "own",
+                  "label": {
+                    "en-GB": "I own it"
+                  }
+                },
+                {
+                  "value": "family",
+                  "label": {
+                    "en-GB": "I'm a family member of the creator"
+                  }
+                },
+                {
+                  "value": "steward",
+                  "label": {
+                    "en-GB": "I'm a designated steward"
+                  }
+                },
+                {
+                  "value": "community",
+                  "label": {
+                    "en-GB": "I'm a community member"
+                  }
+                },
+                {
+                  "value": "let_me_tell_you",
+                  "label": {
+                    "en-GB": "Let me tell you..."
+                  }
+                }
               ],
               "followups": [
                 {
-                  "id": "m5_let_me_tell_you_detail",
                   "kind": "question",
-                  "answerType": "textarea",
+                  "id": "m5_let_me_tell_you_detail",
                   "label": {
                     "en-GB": "Tell us more"
                   },
+                  "answerType": "textarea",
                   "visibleWhen": {
                     "field": "m5",
                     "contains": "let_me_tell_you"
@@ -246,40 +332,63 @@
               ]
             },
             {
-              "id": "m6",
               "kind": "question",
-              "answerType": "textarea",
-              "displayCode": "M6",
+              "id": "m6",
               "label": {
                 "en-GB": "Who made this, and who owns it now?"
               },
+              "answerType": "textarea",
               "ui": {
                 "rows": 3
               }
             },
             {
-              "id": "m7",
               "kind": "question",
-              "answerType": "radio",
-              "displayCode": "M7",
+              "id": "m7",
               "label": {
                 "en-GB": "What's its copyright or licensing status, if you know?"
               },
+              "answerType": "radio",
               "options": [
-                { "value": "all_rights_reserved", "label": { "en-GB": "All Rights Reserved" } },
-                { "value": "open_license", "label": { "en-GB": "Open License (e.g. Creative Commons)" } },
-                { "value": "public_domain", "label": { "en-GB": "Public Domain" } },
-                { "value": "not_sure", "label": { "en-GB": "Not sure" } },
-                { "value": "complicated", "label": { "en-GB": "It's complicated..." } }
+                {
+                  "value": "all_rights_reserved",
+                  "label": {
+                    "en-GB": "All Rights Reserved"
+                  }
+                },
+                {
+                  "value": "open_license",
+                  "label": {
+                    "en-GB": "Open License (e.g. Creative Commons)"
+                  }
+                },
+                {
+                  "value": "public_domain",
+                  "label": {
+                    "en-GB": "Public Domain"
+                  }
+                },
+                {
+                  "value": "not_sure",
+                  "label": {
+                    "en-GB": "Not sure"
+                  }
+                },
+                {
+                  "value": "complicated",
+                  "label": {
+                    "en-GB": "It's complicated..."
+                  }
+                }
               ],
               "followups": [
                 {
-                  "id": "m7_complicated_detail",
                   "kind": "question",
-                  "answerType": "textarea",
+                  "id": "m7_complicated_detail",
                   "label": {
                     "en-GB": "Tell us more"
                   },
+                  "answerType": "textarea",
                   "visibleWhen": {
                     "field": "m7",
                     "equals": "complicated"
@@ -291,13 +400,12 @@
               ]
             },
             {
-              "id": "m8",
               "kind": "question",
-              "answerType": "textarea",
-              "displayCode": "M8",
+              "id": "m8",
               "label": {
                 "en-GB": "Can you add any background on how, why, or when it was made? This will help future stewards understand the material."
               },
+              "answerType": "textarea",
               "optionalLabel": {
                 "en-GB": "optional"
               },
@@ -310,65 +418,90 @@
       ]
     },
     {
+      "kind": "section",
       "id": "keep_right",
       "title": {
         "en-GB": "Keep Right"
       },
       "items": [
         {
-          "id": "machine_right_note",
           "kind": "note",
+          "id": "machine_right_note",
           "text": {
             "en-GB": "One line description for a facet."
           }
         },
         {
-          "id": "kr1",
           "kind": "question",
-          "answerType": "checkboxes",
-          "displayCode": "KR1",
+          "id": "kr1",
           "label": {
             "en-GB": "Who would you like to take care of this?"
           },
+          "answerType": "checkboxes",
           "options": [
-            { "value": "person", "label": { "en-GB": "A specific person" } },
-            { "value": "institution", "label": { "en-GB": "A specific institution" } },
-            { "value": "any_archive_or_library", "label": { "en-GB": "Any qualified archive or library" } },
-            { "value": "any_steward", "label": { "en-GB": "Open to any steward" } },
-            { "value": "it_depends", "label": { "en-GB": "It depends..." } }
+            {
+              "value": "person",
+              "label": {
+                "en-GB": "A specific person"
+              }
+            },
+            {
+              "value": "institution",
+              "label": {
+                "en-GB": "A specific institution"
+              }
+            },
+            {
+              "value": "any_archive_or_library",
+              "label": {
+                "en-GB": "Any qualified archive or library"
+              }
+            },
+            {
+              "value": "any_steward",
+              "label": {
+                "en-GB": "Open to any steward"
+              }
+            },
+            {
+              "value": "it_depends",
+              "label": {
+                "en-GB": "It depends..."
+              }
+            }
           ],
           "followups": [
             {
-              "id": "kr1_person_name",
               "kind": "question",
-              "answerType": "text",
+              "id": "kr1_person_name",
               "label": {
                 "en-GB": "Name them"
               },
+              "answerType": "text",
               "visibleWhen": {
                 "field": "kr1",
                 "contains": "person"
               }
             },
             {
-              "id": "kr1_institution_name",
               "kind": "question",
-              "answerType": "text",
+              "id": "kr1_institution_name",
               "label": {
                 "en-GB": "Name it"
               },
+              "answerType": "text",
               "visibleWhen": {
                 "field": "kr1",
                 "contains": "institution"
               }
             },
             {
-              "id": "kr1_it_depends_detail",
               "kind": "question",
-              "answerType": "textarea",
+              "id": "kr1_it_depends_detail",
               "label": {
                 "en-GB": "Tell us more"
               },
+              "answerType": "textarea",
               "visibleWhen": {
                 "field": "kr1",
                 "contains": "it_depends"
@@ -380,40 +513,63 @@
           ]
         },
         {
-          "id": "kr1_1",
           "kind": "question",
-          "answerType": "text",
-          "displayCode": "KR1.1",
+          "id": "kr1_1",
           "label": {
             "en-GB": "And where should it live?"
           },
+          "answerType": "text",
           "visibleWhen": {
             "ref": "material_is_physical_or_both"
           }
         },
         {
-          "id": "kr2",
           "kind": "question",
-          "answerType": "radio",
-          "displayCode": "KR2",
+          "id": "kr2",
           "label": {
             "en-GB": "Who should be able to see it, and are there any conditions?"
           },
+          "answerType": "radio",
           "options": [
-            { "value": "anyone", "label": { "en-GB": "Anyone" } },
-            { "value": "researchers", "label": { "en-GB": "Researchers only" } },
-            { "value": "family_or_designated_people", "label": { "en-GB": "Family or designated people only" } },
-            { "value": "no_one_for_now", "label": { "en-GB": "No one for now" } },
-            { "value": "complicated", "label": { "en-GB": "It's complicated..." } }
+            {
+              "value": "anyone",
+              "label": {
+                "en-GB": "Anyone"
+              }
+            },
+            {
+              "value": "researchers",
+              "label": {
+                "en-GB": "Researchers only"
+              }
+            },
+            {
+              "value": "family_or_designated_people",
+              "label": {
+                "en-GB": "Family or designated people only"
+              }
+            },
+            {
+              "value": "no_one_for_now",
+              "label": {
+                "en-GB": "No one for now"
+              }
+            },
+            {
+              "value": "complicated",
+              "label": {
+                "en-GB": "It's complicated..."
+              }
+            }
           ],
           "followups": [
             {
-              "id": "kr2_complicated_detail",
               "kind": "question",
-              "answerType": "textarea",
+              "id": "kr2_complicated_detail",
               "label": {
                 "en-GB": "Tell us more"
               },
+              "answerType": "textarea",
               "visibleWhen": {
                 "field": "kr2",
                 "equals": "complicated"
@@ -425,25 +581,67 @@
           ]
         },
         {
-          "id": "kr2_1",
           "kind": "question",
-          "answerType": "text",
-          "displayCode": "KR2.1",
+          "id": "kr2_1",
           "label": {
             "en-GB": "Until when?"
           },
+          "answerType": "text",
           "optionalLabel": {
             "en-GB": "optional"
           }
         },
         {
-          "id": "kr3",
           "kind": "question",
-          "answerType": "checkboxes",
-          "displayCode": "KR3",
+          "id": "kr3",
           "label": {
             "en-GB": "What can your caretaker do with it?"
           },
+          "answerType": "checkboxes",
+          "options": [
+            {
+              "value": "preserve_only",
+              "label": {
+                "en-GB": "Preserve only"
+              }
+            },
+            {
+              "value": "share_freely",
+              "label": {
+                "en-GB": "Share freely"
+              }
+            },
+            {
+              "value": "may_sell",
+              "label": {
+                "en-GB": "May sell"
+              }
+            },
+            {
+              "value": "your_call",
+              "label": {
+                "en-GB": "Your call"
+              }
+            },
+            {
+              "value": "do_not_care",
+              "label": {
+                "en-GB": "Don't care"
+              }
+            },
+            {
+              "value": "may_destroy",
+              "label": {
+                "en-GB": "May destroy it"
+              }
+            },
+            {
+              "value": "it_depends",
+              "label": {
+                "en-GB": "It depends..."
+              }
+            }
+          ],
           "visibleWhen": {
             "ref": "copyright_holder_yes_or_unsure"
           },
@@ -458,35 +656,26 @@
               }
             }
           ],
-          "options": [
-            { "value": "preserve_only", "label": { "en-GB": "Preserve only" } },
-            { "value": "share_freely", "label": { "en-GB": "Share freely" } },
-            { "value": "may_sell", "label": { "en-GB": "May sell" } },
-            { "value": "your_call", "label": { "en-GB": "Your call" } },
-            { "value": "do_not_care", "label": { "en-GB": "Don't care" } },
-            { "value": "may_destroy", "label": { "en-GB": "May destroy it" } },
-            { "value": "it_depends", "label": { "en-GB": "It depends..." } }
-          ],
           "followups": [
             {
-              "id": "kr3_may_destroy_conditions",
               "kind": "question",
-              "answerType": "text",
+              "id": "kr3_may_destroy_conditions",
               "label": {
                 "en-GB": "Add your conditions"
               },
+              "answerType": "text",
               "visibleWhen": {
                 "field": "kr3",
                 "contains": "may_destroy"
               }
             },
             {
-              "id": "kr3_it_depends_detail",
               "kind": "question",
-              "answerType": "textarea",
+              "id": "kr3_it_depends_detail",
               "label": {
                 "en-GB": "Tell us more"
               },
+              "answerType": "textarea",
               "visibleWhen": {
                 "field": "kr3",
                 "contains": "it_depends"
@@ -500,47 +689,67 @@
       ]
     },
     {
+      "kind": "section",
       "id": "copy_right",
       "title": {
         "en-GB": "Copy Right"
       },
       "items": [
         {
-          "id": "copy_right_note",
           "kind": "note",
+          "id": "copy_right_note",
           "text": {
             "en-GB": "Needs to be written."
           }
         },
         {
-          "id": "copy_right_digital",
           "kind": "group",
+          "id": "copy_right_digital",
           "visibleWhen": {
             "ref": "material_is_digital_or_both"
           },
           "items": [
             {
-              "id": "cr1",
               "kind": "question",
-              "answerType": "radio",
-              "displayCode": "CR1",
+              "id": "cr1",
               "label": {
                 "en-GB": "Can copies be made?"
               },
+              "answerType": "radio",
               "options": [
-                { "value": "yes_freely", "label": { "en-GB": "Yes, freely" } },
-                { "value": "yes_but", "label": { "en-GB": "Yes, but..." } },
-                { "value": "no", "label": { "en-GB": "No" } },
-                { "value": "do_not_care", "label": { "en-GB": "Don't care" } }
+                {
+                  "value": "yes_freely",
+                  "label": {
+                    "en-GB": "Yes, freely"
+                  }
+                },
+                {
+                  "value": "yes_but",
+                  "label": {
+                    "en-GB": "Yes, but..."
+                  }
+                },
+                {
+                  "value": "no",
+                  "label": {
+                    "en-GB": "No"
+                  }
+                },
+                {
+                  "value": "do_not_care",
+                  "label": {
+                    "en-GB": "Don't care"
+                  }
+                }
               ],
               "followups": [
                 {
-                  "id": "cr1_yes_but_detail",
                   "kind": "question",
-                  "answerType": "textarea",
+                  "id": "cr1_yes_but_detail",
                   "label": {
                     "en-GB": "Tell us more"
                   },
+                  "answerType": "textarea",
                   "visibleWhen": {
                     "field": "cr1",
                     "equals": "yes_but"
@@ -552,29 +761,58 @@
               ]
             },
             {
-              "id": "cr2",
               "kind": "question",
-              "answerType": "checkboxes",
-              "displayCode": "CR2",
+              "id": "cr2",
               "label": {
                 "en-GB": "What must copies preserve?"
               },
+              "answerType": "checkboxes",
               "options": [
-                { "value": "original_file_format", "label": { "en-GB": "Original file format" } },
-                { "value": "all_metadata", "label": { "en-GB": "All metadata" } },
-                { "value": "folder_structure", "label": { "en-GB": "Folder structure" } },
-                { "value": "file_names", "label": { "en-GB": "File names" } },
-                { "value": "original_quality", "label": { "en-GB": "Original quality (no compression)" } },
-                { "value": "it_depends", "label": { "en-GB": "It depends..." } }
+                {
+                  "value": "original_file_format",
+                  "label": {
+                    "en-GB": "Original file format"
+                  }
+                },
+                {
+                  "value": "all_metadata",
+                  "label": {
+                    "en-GB": "All metadata"
+                  }
+                },
+                {
+                  "value": "folder_structure",
+                  "label": {
+                    "en-GB": "Folder structure"
+                  }
+                },
+                {
+                  "value": "file_names",
+                  "label": {
+                    "en-GB": "File names"
+                  }
+                },
+                {
+                  "value": "original_quality",
+                  "label": {
+                    "en-GB": "Original quality (no compression)"
+                  }
+                },
+                {
+                  "value": "it_depends",
+                  "label": {
+                    "en-GB": "It depends..."
+                  }
+                }
               ],
               "followups": [
                 {
-                  "id": "cr2_it_depends_detail",
                   "kind": "question",
-                  "answerType": "textarea",
+                  "id": "cr2_it_depends_detail",
                   "label": {
                     "en-GB": "Tell us more"
                   },
+                  "answerType": "textarea",
                   "visibleWhen": {
                     "field": "cr2",
                     "contains": "it_depends"
@@ -586,52 +824,76 @@
               ]
             },
             {
-              "id": "cr3",
               "kind": "question",
-              "answerType": "radio",
-              "displayCode": "CR3",
+              "id": "cr3",
               "label": {
                 "en-GB": "Where can copies live?"
               },
+              "answerType": "radio",
               "options": [
-                { "value": "anywhere", "label": { "en-GB": "Anywhere" } },
-                { "value": "specific_countries", "label": { "en-GB": "Only in specific countries" } },
-                { "value": "specific_institutions", "label": { "en-GB": "Only with specific institutions" } },
-                { "value": "distributed_widely", "label": { "en-GB": "Distributed as widely as possible for safety" } },
-                { "value": "let_me_tell_you", "label": { "en-GB": "Let me tell you..." } }
+                {
+                  "value": "anywhere",
+                  "label": {
+                    "en-GB": "Anywhere"
+                  }
+                },
+                {
+                  "value": "specific_countries",
+                  "label": {
+                    "en-GB": "Only in specific countries"
+                  }
+                },
+                {
+                  "value": "specific_institutions",
+                  "label": {
+                    "en-GB": "Only with specific institutions"
+                  }
+                },
+                {
+                  "value": "distributed_widely",
+                  "label": {
+                    "en-GB": "Distributed as widely as possible for safety"
+                  }
+                },
+                {
+                  "value": "let_me_tell_you",
+                  "label": {
+                    "en-GB": "Let me tell you..."
+                  }
+                }
               ],
               "followups": [
                 {
-                  "id": "cr3_specific_countries_detail",
                   "kind": "question",
-                  "answerType": "text",
+                  "id": "cr3_specific_countries_detail",
                   "label": {
                     "en-GB": "List countries"
                   },
+                  "answerType": "text",
                   "visibleWhen": {
                     "field": "cr3",
                     "equals": "specific_countries"
                   }
                 },
                 {
-                  "id": "cr3_specific_institutions_detail",
                   "kind": "question",
-                  "answerType": "text",
+                  "id": "cr3_specific_institutions_detail",
                   "label": {
                     "en-GB": "List institutions"
                   },
+                  "answerType": "text",
                   "visibleWhen": {
                     "field": "cr3",
                     "equals": "specific_institutions"
                   }
                 },
                 {
-                  "id": "cr3_let_me_tell_you_detail",
                   "kind": "question",
-                  "answerType": "textarea",
+                  "id": "cr3_let_me_tell_you_detail",
                   "label": {
                     "en-GB": "Tell us more"
                   },
+                  "answerType": "textarea",
                   "visibleWhen": {
                     "field": "cr3",
                     "equals": "let_me_tell_you"
@@ -645,35 +907,59 @@
           ]
         },
         {
-          "id": "copy_right_physical",
           "kind": "group",
+          "id": "copy_right_physical",
           "visibleWhen": {
             "ref": "material_is_physical_or_both"
           },
           "items": [
             {
-              "id": "cr4",
               "kind": "question",
-              "answerType": "radio",
-              "displayCode": "CR4",
+              "id": "cr4",
               "label": {
                 "en-GB": "Should this be digitised?"
               },
+              "answerType": "radio",
               "options": [
-                { "value": "yes_please", "label": { "en-GB": "Yes, please" } },
-                { "value": "qualified_institution_only", "label": { "en-GB": "Yes, but only by a qualified institution" } },
-                { "value": "yes_but", "label": { "en-GB": "Yes, but..." } },
-                { "value": "no", "label": { "en-GB": "No" } },
-                { "value": "do_not_mind", "label": { "en-GB": "Don't mind" } }
+                {
+                  "value": "yes_please",
+                  "label": {
+                    "en-GB": "Yes, please"
+                  }
+                },
+                {
+                  "value": "qualified_institution_only",
+                  "label": {
+                    "en-GB": "Yes, but only by a qualified institution"
+                  }
+                },
+                {
+                  "value": "yes_but",
+                  "label": {
+                    "en-GB": "Yes, but..."
+                  }
+                },
+                {
+                  "value": "no",
+                  "label": {
+                    "en-GB": "No"
+                  }
+                },
+                {
+                  "value": "do_not_mind",
+                  "label": {
+                    "en-GB": "Don't mind"
+                  }
+                }
               ],
               "followups": [
                 {
-                  "id": "cr4_yes_but_detail",
                   "kind": "question",
-                  "answerType": "textarea",
+                  "id": "cr4_yes_but_detail",
                   "label": {
                     "en-GB": "Tell us more"
                   },
+                  "answerType": "textarea",
                   "visibleWhen": {
                     "field": "cr4",
                     "equals": "yes_but"
@@ -685,29 +971,58 @@
               ]
             },
             {
-              "id": "cr5",
               "kind": "question",
-              "answerType": "checkboxes",
-              "displayCode": "CR5",
+              "id": "cr5",
               "label": {
                 "en-GB": "What must a digitised version preserve?"
               },
+              "answerType": "checkboxes",
               "options": [
-                { "value": "original_colours", "label": { "en-GB": "Original colours" } },
-                { "value": "full_resolution", "label": { "en-GB": "Full resolution" } },
-                { "value": "both_sides", "label": { "en-GB": "Both sides" } },
-                { "value": "physical_scale", "label": { "en-GB": "Physical scale" } },
-                { "value": "all_accompanying_materials", "label": { "en-GB": "All accompanying materials (e.g. notes, packaging)" } },
-                { "value": "let_me_tell_you", "label": { "en-GB": "Let me tell you..." } }
+                {
+                  "value": "original_colours",
+                  "label": {
+                    "en-GB": "Original colours"
+                  }
+                },
+                {
+                  "value": "full_resolution",
+                  "label": {
+                    "en-GB": "Full resolution"
+                  }
+                },
+                {
+                  "value": "both_sides",
+                  "label": {
+                    "en-GB": "Both sides"
+                  }
+                },
+                {
+                  "value": "physical_scale",
+                  "label": {
+                    "en-GB": "Physical scale"
+                  }
+                },
+                {
+                  "value": "all_accompanying_materials",
+                  "label": {
+                    "en-GB": "All accompanying materials (e.g. notes, packaging)"
+                  }
+                },
+                {
+                  "value": "let_me_tell_you",
+                  "label": {
+                    "en-GB": "Let me tell you..."
+                  }
+                }
               ],
               "followups": [
                 {
-                  "id": "cr5_let_me_tell_you_detail",
                   "kind": "question",
-                  "answerType": "textarea",
+                  "id": "cr5_let_me_tell_you_detail",
                   "label": {
                     "en-GB": "Tell us more"
                   },
+                  "answerType": "textarea",
                   "visibleWhen": {
                     "field": "cr5",
                     "contains": "let_me_tell_you"
@@ -719,52 +1034,76 @@
               ]
             },
             {
-              "id": "cr6",
               "kind": "question",
-              "answerType": "radio",
-              "displayCode": "CR6",
+              "id": "cr6",
               "label": {
                 "en-GB": "Where can digital copies live?"
               },
+              "answerType": "radio",
               "options": [
-                { "value": "anywhere", "label": { "en-GB": "Anywhere" } },
-                { "value": "specific_countries", "label": { "en-GB": "Only in specific countries" } },
-                { "value": "specific_institutions", "label": { "en-GB": "Only with specific institutions" } },
-                { "value": "distributed_widely", "label": { "en-GB": "Distributed as widely as possible for safety" } },
-                { "value": "it_depends", "label": { "en-GB": "It depends..." } }
+                {
+                  "value": "anywhere",
+                  "label": {
+                    "en-GB": "Anywhere"
+                  }
+                },
+                {
+                  "value": "specific_countries",
+                  "label": {
+                    "en-GB": "Only in specific countries"
+                  }
+                },
+                {
+                  "value": "specific_institutions",
+                  "label": {
+                    "en-GB": "Only with specific institutions"
+                  }
+                },
+                {
+                  "value": "distributed_widely",
+                  "label": {
+                    "en-GB": "Distributed as widely as possible for safety"
+                  }
+                },
+                {
+                  "value": "it_depends",
+                  "label": {
+                    "en-GB": "It depends..."
+                  }
+                }
               ],
               "followups": [
                 {
-                  "id": "cr6_specific_countries_detail",
                   "kind": "question",
-                  "answerType": "text",
+                  "id": "cr6_specific_countries_detail",
                   "label": {
                     "en-GB": "List countries"
                   },
+                  "answerType": "text",
                   "visibleWhen": {
                     "field": "cr6",
                     "equals": "specific_countries"
                   }
                 },
                 {
-                  "id": "cr6_specific_institutions_detail",
                   "kind": "question",
-                  "answerType": "text",
+                  "id": "cr6_specific_institutions_detail",
                   "label": {
                     "en-GB": "List institutions"
                   },
+                  "answerType": "text",
                   "visibleWhen": {
                     "field": "cr6",
                     "equals": "specific_institutions"
                   }
                 },
                 {
-                  "id": "cr6_it_depends_detail",
                   "kind": "question",
-                  "answerType": "textarea",
+                  "id": "cr6_it_depends_detail",
                   "label": {
                     "en-GB": "Tell us more"
                   },
+                  "answerType": "textarea",
                   "visibleWhen": {
                     "field": "cr6",
                     "equals": "it_depends"
@@ -780,40 +1119,60 @@
       ]
     },
     {
+      "kind": "section",
       "id": "machine_right",
       "title": {
         "en-GB": "Machine Right"
       },
       "items": [
         {
-          "id": "machine_right_note",
           "kind": "note",
+          "id": "machine_right_note",
           "text": {
             "en-GB": "Needs to be written."
           }
         },
         {
-          "id": "mr1",
           "kind": "question",
-          "answerType": "radio",
-          "displayCode": "MR1",
+          "id": "mr1",
           "label": {
             "en-GB": "Can machines analyse or index this material?"
           },
+          "answerType": "radio",
           "options": [
-            { "value": "yes_freely", "label": { "en-GB": "Yes, freely" } },
-            { "value": "preservation_only", "label": { "en-GB": "Yes, for preservation purposes only" } },
-            { "value": "yes_but", "label": { "en-GB": "Yes, but..." } },
-            { "value": "no", "label": { "en-GB": "No" } }
+            {
+              "value": "yes_freely",
+              "label": {
+                "en-GB": "Yes, freely"
+              }
+            },
+            {
+              "value": "preservation_only",
+              "label": {
+                "en-GB": "Yes, for preservation purposes only"
+              }
+            },
+            {
+              "value": "yes_but",
+              "label": {
+                "en-GB": "Yes, but..."
+              }
+            },
+            {
+              "value": "no",
+              "label": {
+                "en-GB": "No"
+              }
+            }
           ],
           "followups": [
             {
-              "id": "mr1_yes_but_detail",
               "kind": "question",
-              "answerType": "textarea",
+              "id": "mr1_yes_but_detail",
               "label": {
                 "en-GB": "Tell us more"
               },
+              "answerType": "textarea",
               "visibleWhen": {
                 "field": "mr1",
                 "equals": "yes_but"
@@ -825,28 +1184,52 @@
           ]
         },
         {
-          "id": "mr2",
           "kind": "question",
-          "answerType": "radio",
-          "displayCode": "MR2",
+          "id": "mr2",
           "label": {
             "en-GB": "Can this material be used to train AI?"
           },
+          "answerType": "radio",
           "options": [
-            { "value": "yes", "label": { "en-GB": "Yes" } },
-            { "value": "non_commercial_only", "label": { "en-GB": "Yes, but not for commercial purposes" } },
-            { "value": "yes_but", "label": { "en-GB": "Yes, but..." } },
-            { "value": "no", "label": { "en-GB": "No" } },
-            { "value": "do_not_mind", "label": { "en-GB": "Don't mind" } }
+            {
+              "value": "yes",
+              "label": {
+                "en-GB": "Yes"
+              }
+            },
+            {
+              "value": "non_commercial_only",
+              "label": {
+                "en-GB": "Yes, but not for commercial purposes"
+              }
+            },
+            {
+              "value": "yes_but",
+              "label": {
+                "en-GB": "Yes, but..."
+              }
+            },
+            {
+              "value": "no",
+              "label": {
+                "en-GB": "No"
+              }
+            },
+            {
+              "value": "do_not_mind",
+              "label": {
+                "en-GB": "Don't mind"
+              }
+            }
           ],
           "followups": [
             {
-              "id": "mr2_yes_but_detail",
               "kind": "question",
-              "answerType": "textarea",
+              "id": "mr2_yes_but_detail",
               "label": {
                 "en-GB": "Tell us more"
               },
+              "answerType": "textarea",
               "visibleWhen": {
                 "field": "mr2",
                 "equals": "yes_but"
@@ -858,28 +1241,52 @@
           ]
         },
         {
-          "id": "mr3",
           "kind": "question",
-          "answerType": "checkboxes",
-          "displayCode": "MR3",
+          "id": "mr3",
           "label": {
             "en-GB": "If this material is used by an AI, what matters to you?"
           },
+          "answerType": "checkboxes",
           "options": [
-            { "value": "attribution", "label": { "en-GB": "Attribution (I want to be credited)" } },
-            { "value": "transparency", "label": { "en-GB": "Transparency (I want to know how it was used)" } },
-            { "value": "copy_of_outputs", "label": { "en-GB": "A copy of anything produced using it" } },
-            { "value": "nothing_in_particular", "label": { "en-GB": "Nothing in particular" } },
-            { "value": "complicated", "label": { "en-GB": "It's complicated..." } }
+            {
+              "value": "attribution",
+              "label": {
+                "en-GB": "Attribution (I want to be credited)"
+              }
+            },
+            {
+              "value": "transparency",
+              "label": {
+                "en-GB": "Transparency (I want to know how it was used)"
+              }
+            },
+            {
+              "value": "copy_of_outputs",
+              "label": {
+                "en-GB": "A copy of anything produced using it"
+              }
+            },
+            {
+              "value": "nothing_in_particular",
+              "label": {
+                "en-GB": "Nothing in particular"
+              }
+            },
+            {
+              "value": "complicated",
+              "label": {
+                "en-GB": "It's complicated..."
+              }
+            }
           ],
           "followups": [
             {
-              "id": "mr3_complicated_detail",
               "kind": "question",
-              "answerType": "textarea",
+              "id": "mr3_complicated_detail",
               "label": {
                 "en-GB": "Tell us more"
               },
+              "answerType": "textarea",
               "visibleWhen": {
                 "field": "mr3",
                 "contains": "complicated"

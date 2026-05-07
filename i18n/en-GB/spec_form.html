@@ -25,21 +25,21 @@
 <body>
   <main>
     <h1>KeepRight Spec</h1>
-    <p>Release: pre-alpha; Spec version: 0.0.2; Schema version: 0.0.1</p>
+    <p>Release: pre-alpha; Spec version: 0.0.2; Schema version: 0.1.0</p>
     <form id="keepright-form">
     <section class="field" data-spec-id="about_you">
   <h2>About You</h2>
   <p>Optional information about the responsible party.</p>
-<div class="field" data-spec-id="a1" data-display-code="A1">
-  <label id="a1-label" class="question-label" for="a1">A1. Name</label>
+<div class="field" data-spec-id="a1">
+  <label id="a1-label" class="question-label" for="a1">Name</label>
   <input type="text" id="a1" name="a1">
 </div>
-<div class="field" data-spec-id="a2" data-display-code="A2">
-  <label id="a2-label" class="question-label" for="a2">A2. Email</label>
+<div class="field" data-spec-id="a2">
+  <label id="a2-label" class="question-label" for="a2">Email</label>
   <input type="email" id="a2" name="a2">
 </div>
-<div class="field" data-spec-id="a3" data-display-code="A3">
-  <label id="a3-label" class="question-label" for="a3">A3. Country</label>
+<div class="field" data-spec-id="a3">
+  <label id="a3-label" class="question-label" for="a3">Country</label>
   <select id="a3" name="a3">
     <option value="">Select an option</option>
     <option value="Afghanistan">Afghanistan</option>
@@ -242,8 +242,8 @@
   <h2>The Material</h2>
 <fieldset class="field" data-spec-id="material_crux">
   <legend>Crux</legend>
-  <div class="field" data-spec-id="m1" data-display-code="M1">
-    <label id="m1-label" class="question-label" for="m1">M1. Is this digital, physical, or both?</label>
+  <div class="field" data-spec-id="m1">
+    <label id="m1-label" class="question-label" for="m1">Is this digital, physical, or both?</label>
     <div class="options" role="group" aria-labelledby="m1-label">
       <label>
         <input type="radio" id="m1-digital" name="m1" value="digital">
@@ -259,8 +259,8 @@
       </label>
     </div>
   </div>
-  <div class="field" data-spec-id="m2" data-display-code="M2">
-    <label id="m2-label" class="question-label" for="m2">M2. Are you the copyright holder?</label>
+  <div class="field" data-spec-id="m2">
+    <label id="m2-label" class="question-label" for="m2">Are you the copyright holder?</label>
     <div class="options" role="group" aria-labelledby="m2-label">
       <label>
         <input type="radio" id="m2-yes" name="m2" value="yes">
@@ -279,16 +279,16 @@
 </fieldset>
 <fieldset class="field" data-spec-id="material_details">
   <legend>Details</legend>
-  <div class="field" data-spec-id="m3" data-display-code="M3">
-    <label id="m3-label" class="question-label" for="m3">M3. What should we call this material?</label>
+  <div class="field" data-spec-id="m3">
+    <label id="m3-label" class="question-label" for="m3">What should we call this material?</label>
     <input type="text" id="m3" name="m3">
   </div>
-  <div class="field" data-spec-id="m4" data-display-code="M4">
-    <label id="m4-label" class="question-label" for="m4">M4. What is it?</label>
+  <div class="field" data-spec-id="m4">
+    <label id="m4-label" class="question-label" for="m4">What is it?</label>
     <textarea id="m4" name="m4" rows="3"></textarea>
   </div>
-  <div class="field" data-spec-id="m4_1" data-display-code="M4.1" data-visible-when='{&quot;ref&quot;: &quot;material_is_digital_or_both&quot;}'>
-    <label id="m4_1-label" class="question-label" for="m4_1">M4.1. Does it live online?</label>
+  <div class="field" data-spec-id="m4_1" data-visible-when='{&quot;ref&quot;: &quot;material_is_digital_or_both&quot;}'>
+    <label id="m4_1-label" class="question-label" for="m4_1">Does it live online?</label>
     <div class="options" role="group" aria-labelledby="m4_1-label">
       <label>
         <input type="radio" id="m4_1-urls" name="m4_1" value="urls">
@@ -312,12 +312,12 @@
       <input type="text" id="m4_1_ids" name="m4_1_ids">
     </div>
   </div>
-  <div class="field" data-spec-id="m4_2" data-display-code="M4.2" data-visible-when='{&quot;ref&quot;: &quot;material_is_digital_or_both&quot;}'>
-    <label id="m4_2-label" class="question-label" for="m4_2">M4.2. Which file formats or file extensions are involved?</label>
+  <div class="field" data-spec-id="m4_2" data-visible-when='{&quot;ref&quot;: &quot;material_is_digital_or_both&quot;}'>
+    <label id="m4_2-label" class="question-label" for="m4_2">Which file formats or file extensions are involved?</label>
     <input type="text" id="m4_2" name="m4_2">
   </div>
-  <div class="field" data-spec-id="m5" data-display-code="M5">
-    <label id="m5-label" class="question-label" for="m5">M5. What&#x27;s your relationship to it?</label>
+  <div class="field" data-spec-id="m5">
+    <label id="m5-label" class="question-label" for="m5">What&#x27;s your relationship to it?</label>
     <div class="options" role="group" aria-labelledby="m5-label">
       <label>
         <input type="checkbox" id="m5-made" name="m5" value="made">
@@ -349,12 +349,12 @@
       <textarea id="m5_let_me_tell_you_detail" name="m5_let_me_tell_you_detail" rows="2"></textarea>
     </div>
   </div>
-  <div class="field" data-spec-id="m6" data-display-code="M6">
-    <label id="m6-label" class="question-label" for="m6">M6. Who made this, and who owns it now?</label>
+  <div class="field" data-spec-id="m6">
+    <label id="m6-label" class="question-label" for="m6">Who made this, and who owns it now?</label>
     <textarea id="m6" name="m6" rows="3"></textarea>
   </div>
-  <div class="field" data-spec-id="m7" data-display-code="M7">
-    <label id="m7-label" class="question-label" for="m7">M7. What&#x27;s its copyright or licensing status, if you know?</label>
+  <div class="field" data-spec-id="m7">
+    <label id="m7-label" class="question-label" for="m7">What&#x27;s its copyright or licensing status, if you know?</label>
     <div class="options" role="group" aria-labelledby="m7-label">
       <label>
         <input type="radio" id="m7-all_rights_reserved" name="m7" value="all_rights_reserved">
@@ -382,8 +382,8 @@
       <textarea id="m7_complicated_detail" name="m7_complicated_detail" rows="2"></textarea>
     </div>
   </div>
-  <div class="field" data-spec-id="m8" data-display-code="M8">
-    <label id="m8-label" class="question-label" for="m8">M8. Can you add any background on how, why, or when it was made? This will help future stewards understand the material. (optional)</label>
+  <div class="field" data-spec-id="m8">
+    <label id="m8-label" class="question-label" for="m8">Can you add any background on how, why, or when it was made? This will help future stewards understand the material. (optional)</label>
     <textarea id="m8" name="m8" rows="5"></textarea>
   </div>
 </fieldset>
@@ -391,8 +391,8 @@
     <section class="field" data-spec-id="keep_right">
   <h2>Keep Right</h2>
 <p class="field" data-spec-id="machine_right_note">One line description for a facet.</p>
-<div class="field" data-spec-id="kr1" data-display-code="KR1">
-  <label id="kr1-label" class="question-label" for="kr1">KR1. Who would you like to take care of this?</label>
+<div class="field" data-spec-id="kr1">
+  <label id="kr1-label" class="question-label" for="kr1">Who would you like to take care of this?</label>
   <div class="options" role="group" aria-labelledby="kr1-label">
     <label>
       <input type="checkbox" id="kr1-person" name="kr1" value="person">
@@ -428,12 +428,12 @@
     <textarea id="kr1_it_depends_detail" name="kr1_it_depends_detail" rows="2"></textarea>
   </div>
 </div>
-<div class="field" data-spec-id="kr1_1" data-display-code="KR1.1" data-visible-when='{&quot;ref&quot;: &quot;material_is_physical_or_both&quot;}'>
-  <label id="kr1_1-label" class="question-label" for="kr1_1">KR1.1. And where should it live?</label>
+<div class="field" data-spec-id="kr1_1" data-visible-when='{&quot;ref&quot;: &quot;material_is_physical_or_both&quot;}'>
+  <label id="kr1_1-label" class="question-label" for="kr1_1">And where should it live?</label>
   <input type="text" id="kr1_1" name="kr1_1">
 </div>
-<div class="field" data-spec-id="kr2" data-display-code="KR2">
-  <label id="kr2-label" class="question-label" for="kr2">KR2. Who should be able to see it, and are there any conditions?</label>
+<div class="field" data-spec-id="kr2">
+  <label id="kr2-label" class="question-label" for="kr2">Who should be able to see it, and are there any conditions?</label>
   <div class="options" role="group" aria-labelledby="kr2-label">
     <label>
       <input type="radio" id="kr2-anyone" name="kr2" value="anyone">
@@ -461,12 +461,12 @@
     <textarea id="kr2_complicated_detail" name="kr2_complicated_detail" rows="2"></textarea>
   </div>
 </div>
-<div class="field" data-spec-id="kr2_1" data-display-code="KR2.1">
-  <label id="kr2_1-label" class="question-label" for="kr2_1">KR2.1. Until when? (optional)</label>
+<div class="field" data-spec-id="kr2_1">
+  <label id="kr2_1-label" class="question-label" for="kr2_1">Until when? (optional)</label>
   <input type="text" id="kr2_1" name="kr2_1">
 </div>
-<div class="field" data-spec-id="kr3" data-display-code="KR3" data-visible-when='{&quot;ref&quot;: &quot;copyright_holder_yes_or_unsure&quot;}' data-label-variants='[{&quot;label&quot;: {&quot;en-GB&quot;: &quot;What would you wish for a caretaker to do with it?&quot;}, &quot;when&quot;: {&quot;equals&quot;: &quot;not_sure&quot;, &quot;field&quot;: &quot;m2&quot;}}]'>
-  <label id="kr3-label" class="question-label" for="kr3">KR3. What can your caretaker do with it?</label>
+<div class="field" data-spec-id="kr3" data-visible-when='{&quot;ref&quot;: &quot;copyright_holder_yes_or_unsure&quot;}' data-label-variants='[{&quot;label&quot;: {&quot;en-GB&quot;: &quot;What would you wish for a caretaker to do with it?&quot;}, &quot;when&quot;: {&quot;equals&quot;: &quot;not_sure&quot;, &quot;field&quot;: &quot;m2&quot;}}]'>
+  <label id="kr3-label" class="question-label" for="kr3">What can your caretaker do with it?</label>
   <div class="options" role="group" aria-labelledby="kr3-label">
     <label>
       <input type="checkbox" id="kr3-preserve_only" name="kr3" value="preserve_only">
@@ -511,8 +511,8 @@
   <h2>Copy Right</h2>
 <p class="field" data-spec-id="copy_right_note">Needs to be written.</p>
 <fieldset class="field" data-spec-id="copy_right_digital" data-visible-when='{&quot;ref&quot;: &quot;material_is_digital_or_both&quot;}'>
-  <div class="field" data-spec-id="cr1" data-display-code="CR1">
-    <label id="cr1-label" class="question-label" for="cr1">CR1. Can copies be made?</label>
+  <div class="field" data-spec-id="cr1">
+    <label id="cr1-label" class="question-label" for="cr1">Can copies be made?</label>
     <div class="options" role="group" aria-labelledby="cr1-label">
       <label>
         <input type="radio" id="cr1-yes_freely" name="cr1" value="yes_freely">
@@ -536,8 +536,8 @@
       <textarea id="cr1_yes_but_detail" name="cr1_yes_but_detail" rows="2"></textarea>
     </div>
   </div>
-  <div class="field" data-spec-id="cr2" data-display-code="CR2">
-    <label id="cr2-label" class="question-label" for="cr2">CR2. What must copies preserve?</label>
+  <div class="field" data-spec-id="cr2">
+    <label id="cr2-label" class="question-label" for="cr2">What must copies preserve?</label>
     <div class="options" role="group" aria-labelledby="cr2-label">
       <label>
         <input type="checkbox" id="cr2-original_file_format" name="cr2" value="original_file_format">
@@ -569,8 +569,8 @@
       <textarea id="cr2_it_depends_detail" name="cr2_it_depends_detail" rows="2"></textarea>
     </div>
   </div>
-  <div class="field" data-spec-id="cr3" data-display-code="CR3">
-    <label id="cr3-label" class="question-label" for="cr3">CR3. Where can copies live?</label>
+  <div class="field" data-spec-id="cr3">
+    <label id="cr3-label" class="question-label" for="cr3">Where can copies live?</label>
     <div class="options" role="group" aria-labelledby="cr3-label">
       <label>
         <input type="radio" id="cr3-anywhere" name="cr3" value="anywhere">
@@ -608,8 +608,8 @@
   </div>
 </fieldset>
 <fieldset class="field" data-spec-id="copy_right_physical" data-visible-when='{&quot;ref&quot;: &quot;material_is_physical_or_both&quot;}'>
-  <div class="field" data-spec-id="cr4" data-display-code="CR4">
-    <label id="cr4-label" class="question-label" for="cr4">CR4. Should this be digitised?</label>
+  <div class="field" data-spec-id="cr4">
+    <label id="cr4-label" class="question-label" for="cr4">Should this be digitised?</label>
     <div class="options" role="group" aria-labelledby="cr4-label">
       <label>
         <input type="radio" id="cr4-yes_please" name="cr4" value="yes_please">
@@ -637,8 +637,8 @@
       <textarea id="cr4_yes_but_detail" name="cr4_yes_but_detail" rows="2"></textarea>
     </div>
   </div>
-  <div class="field" data-spec-id="cr5" data-display-code="CR5">
-    <label id="cr5-label" class="question-label" for="cr5">CR5. What must a digitised version preserve?</label>
+  <div class="field" data-spec-id="cr5">
+    <label id="cr5-label" class="question-label" for="cr5">What must a digitised version preserve?</label>
     <div class="options" role="group" aria-labelledby="cr5-label">
       <label>
         <input type="checkbox" id="cr5-original_colours" name="cr5" value="original_colours">
@@ -670,8 +670,8 @@
       <textarea id="cr5_let_me_tell_you_detail" name="cr5_let_me_tell_you_detail" rows="2"></textarea>
     </div>
   </div>
-  <div class="field" data-spec-id="cr6" data-display-code="CR6">
-    <label id="cr6-label" class="question-label" for="cr6">CR6. Where can digital copies live?</label>
+  <div class="field" data-spec-id="cr6">
+    <label id="cr6-label" class="question-label" for="cr6">Where can digital copies live?</label>
     <div class="options" role="group" aria-labelledby="cr6-label">
       <label>
         <input type="radio" id="cr6-anywhere" name="cr6" value="anywhere">
@@ -712,8 +712,8 @@
     <section class="field" data-spec-id="machine_right">
   <h2>Machine Right</h2>
 <p class="field" data-spec-id="machine_right_note">Needs to be written.</p>
-<div class="field" data-spec-id="mr1" data-display-code="MR1">
-  <label id="mr1-label" class="question-label" for="mr1">MR1. Can machines analyse or index this material?</label>
+<div class="field" data-spec-id="mr1">
+  <label id="mr1-label" class="question-label" for="mr1">Can machines analyse or index this material?</label>
   <div class="options" role="group" aria-labelledby="mr1-label">
     <label>
       <input type="radio" id="mr1-yes_freely" name="mr1" value="yes_freely">
@@ -737,8 +737,8 @@
     <textarea id="mr1_yes_but_detail" name="mr1_yes_but_detail" rows="2"></textarea>
   </div>
 </div>
-<div class="field" data-spec-id="mr2" data-display-code="MR2">
-  <label id="mr2-label" class="question-label" for="mr2">MR2. Can this material be used to train AI?</label>
+<div class="field" data-spec-id="mr2">
+  <label id="mr2-label" class="question-label" for="mr2">Can this material be used to train AI?</label>
   <div class="options" role="group" aria-labelledby="mr2-label">
     <label>
       <input type="radio" id="mr2-yes" name="mr2" value="yes">
@@ -766,8 +766,8 @@
     <textarea id="mr2_yes_but_detail" name="mr2_yes_but_detail" rows="2"></textarea>
   </div>
 </div>
-<div class="field" data-spec-id="mr3" data-display-code="MR3">
-  <label id="mr3-label" class="question-label" for="mr3">MR3. If this material is used by an AI, what matters to you?</label>
+<div class="field" data-spec-id="mr3">
+  <label id="mr3-label" class="question-label" for="mr3">If this material is used by an AI, what matters to you?</label>
   <div class="options" role="group" aria-labelledby="mr3-label">
     <label>
       <input type="checkbox" id="mr3-attribution" name="mr3" value="attribution">
@@ -866,9 +866,8 @@ function applyLabelVariants() {
     if (!label.dataset.defaultText) label.dataset.defaultText = label.textContent;
     const match = variants.find((variant) => evaluateCondition(variant.when));
     if (match) {
-      const code = element.dataset.displayCode;
       const variantLabel = localized(match.label);
-      label.textContent = code ? `${code}. ${variantLabel}` : variantLabel;
+      label.textContent = variantLabel;
     } else {
       label.textContent = label.dataset.defaultText;
     }

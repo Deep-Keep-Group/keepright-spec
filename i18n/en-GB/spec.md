@@ -1,20 +1,20 @@
 # KeepRight Spec
 
-Release: pre-alpha; Spec version: 0.0.2; Schema version: 0.0.1
+Release: pre-alpha; Spec version: 0.0.2; Schema version: 0.1.0
 
 ## About You
 
 Optional information about the responsible party.
 
-**A1. Name**
+**Name**
 
 - Answer type: `text`
 
-**A2. Email**
+**Email**
 
 - Answer type: `email`
 
-**A3. Country**
+**Country**
 
 - Answer type: `select`
 - Option source: countries; ISO 3166-1 country list
@@ -23,7 +23,7 @@ Optional information about the responsible party.
 
 ### Crux
 
-**M1. Is this digital, physical, or both?**
+**Is this digital, physical, or both?**
 
 - Answer type: `radio`
 - Options:
@@ -31,7 +31,7 @@ Optional information about the responsible party.
   - `physical`: Physical
   - `both`: Both
 
-**M2. Are you the copyright holder?**
+**Are you the copyright holder?**
 
 - Answer type: `radio`
 - Options:
@@ -41,15 +41,15 @@ Optional information about the responsible party.
 
 ### Details
 
-**M3. What should we call this material?**
+**What should we call this material?**
 
 - Answer type: `text`
 
-**M4. What is it?**
+**What is it?**
 
 - Answer type: `textarea`
 
-**M4.1. Does it live online?**
+**Does it live online?**
 
 - Answer type: `radio`
 - Shown when: condition `material_is_digital_or_both`
@@ -61,12 +61,12 @@ Optional information about the responsible party.
   - URL or URLs (`text`), shown when `m4_1` equals `urls`
   - IDs (`text`), shown when `m4_1` equals `ids`
 
-**M4.2. Which file formats or file extensions are involved?**
+**Which file formats or file extensions are involved?**
 
 - Answer type: `text`
 - Shown when: condition `material_is_digital_or_both`
 
-**M5. What's your relationship to it?**
+**What's your relationship to it?**
 
 - Answer type: `checkboxes`
 - Options:
@@ -79,11 +79,11 @@ Optional information about the responsible party.
 - Follow-ups:
   - Tell us more (`textarea`), shown when `m5` contains `let_me_tell_you`
 
-**M6. Who made this, and who owns it now?**
+**Who made this, and who owns it now?**
 
 - Answer type: `textarea`
 
-**M7. What's its copyright or licensing status, if you know?**
+**What's its copyright or licensing status, if you know?**
 
 - Answer type: `radio`
 - Options:
@@ -95,7 +95,7 @@ Optional information about the responsible party.
 - Follow-ups:
   - Tell us more (`textarea`), shown when `m7` equals `complicated`
 
-**M8. Can you add any background on how, why, or when it was made? This will help future stewards understand the material. (optional)**
+**Can you add any background on how, why, or when it was made? This will help future stewards understand the material. (optional)**
 
 - Answer type: `textarea`
 
@@ -103,7 +103,7 @@ Optional information about the responsible party.
 
 One line description for a facet.
 
-**KR1. Who would you like to take care of this?**
+**Who would you like to take care of this?**
 
 - Answer type: `checkboxes`
 - Options:
@@ -117,12 +117,12 @@ One line description for a facet.
   - Name it (`text`), shown when `kr1` contains `institution`
   - Tell us more (`textarea`), shown when `kr1` contains `it_depends`
 
-**KR1.1. And where should it live?**
+**And where should it live?**
 
 - Answer type: `text`
 - Shown when: condition `material_is_physical_or_both`
 
-**KR2. Who should be able to see it, and are there any conditions?**
+**Who should be able to see it, and are there any conditions?**
 
 - Answer type: `radio`
 - Options:
@@ -134,11 +134,11 @@ One line description for a facet.
 - Follow-ups:
   - Tell us more (`textarea`), shown when `kr2` equals `complicated`
 
-**KR2.1. Until when? (optional)**
+**Until when? (optional)**
 
 - Answer type: `text`
 
-**KR3. What can your caretaker do with it?**
+**What can your caretaker do with it?**
 
 - Answer type: `checkboxes`
 - Shown when: condition `copyright_holder_yes_or_unsure`
@@ -160,7 +160,7 @@ Needs to be written.
 
 _Shown when: condition `material_is_digital_or_both`_
 
-**CR1. Can copies be made?**
+**Can copies be made?**
 
 - Answer type: `radio`
 - Options:
@@ -171,7 +171,7 @@ _Shown when: condition `material_is_digital_or_both`_
 - Follow-ups:
   - Tell us more (`textarea`), shown when `cr1` equals `yes_but`
 
-**CR2. What must copies preserve?**
+**What must copies preserve?**
 
 - Answer type: `checkboxes`
 - Options:
@@ -184,7 +184,7 @@ _Shown when: condition `material_is_digital_or_both`_
 - Follow-ups:
   - Tell us more (`textarea`), shown when `cr2` contains `it_depends`
 
-**CR3. Where can copies live?**
+**Where can copies live?**
 
 - Answer type: `radio`
 - Options:
@@ -200,7 +200,7 @@ _Shown when: condition `material_is_digital_or_both`_
 
 _Shown when: condition `material_is_physical_or_both`_
 
-**CR4. Should this be digitised?**
+**Should this be digitised?**
 
 - Answer type: `radio`
 - Options:
@@ -212,7 +212,7 @@ _Shown when: condition `material_is_physical_or_both`_
 - Follow-ups:
   - Tell us more (`textarea`), shown when `cr4` equals `yes_but`
 
-**CR5. What must a digitised version preserve?**
+**What must a digitised version preserve?**
 
 - Answer type: `checkboxes`
 - Options:
@@ -225,7 +225,7 @@ _Shown when: condition `material_is_physical_or_both`_
 - Follow-ups:
   - Tell us more (`textarea`), shown when `cr5` contains `let_me_tell_you`
 
-**CR6. Where can digital copies live?**
+**Where can digital copies live?**
 
 - Answer type: `radio`
 - Options:
@@ -243,7 +243,7 @@ _Shown when: condition `material_is_physical_or_both`_
 
 Needs to be written.
 
-**MR1. Can machines analyse or index this material?**
+**Can machines analyse or index this material?**
 
 - Answer type: `radio`
 - Options:
@@ -254,7 +254,7 @@ Needs to be written.
 - Follow-ups:
   - Tell us more (`textarea`), shown when `mr1` equals `yes_but`
 
-**MR2. Can this material be used to train AI?**
+**Can this material be used to train AI?**
 
 - Answer type: `radio`
 - Options:
@@ -266,7 +266,7 @@ Needs to be written.
 - Follow-ups:
   - Tell us more (`textarea`), shown when `mr2` equals `yes_but`
 
-**MR3. If this material is used by an AI, what matters to you?**
+**If this material is used by an AI, what matters to you?**
 
 - Answer type: `checkboxes`
 - Options:
