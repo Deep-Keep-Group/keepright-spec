@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": "0.1.0",
-    "specVersion": "0.0.2",
+    "specVersion": "0.0.3",
     "release": "pre-alpha",
     "defaultLocale": "en-GB",
     "supportedLocales": [
@@ -72,7 +72,7 @@
         "en-GB": "About You"
       },
       "description": {
-        "en-GB": "Optional information about the responsible party."
+        "en-GB": "Your contact details are optional. We recommend including some contact info if you’re the responsible party. Anything you add will be visible to anyone who can see this declaration."
       },
       "items": [
         {
@@ -108,13 +108,13 @@
       "title": {
         "en-GB": "The Material"
       },
+      "description": {
+        "en-GB": "Here is where you describe what you’re making the declaration for as well as you can. There are two basic questions to start:"
+      },
       "items": [
         {
           "kind": "group",
           "id": "material_crux",
-          "title": {
-            "en-GB": "Crux"
-          },
           "items": [
             {
               "kind": "question",
@@ -423,14 +423,10 @@
       "title": {
         "en-GB": "Keep Right"
       },
+      "description": {
+        "en-GB": "Who can keep or see this?"
+      },
       "items": [
-        {
-          "kind": "note",
-          "id": "machine_right_note",
-          "text": {
-            "en-GB": "One line description for a facet."
-          }
-        },
         {
           "kind": "question",
           "id": "kr1",
@@ -694,14 +690,10 @@
       "title": {
         "en-GB": "Copy Right"
       },
+      "description": {
+        "en-GB": "Who can make or keep copies?"
+      },
       "items": [
-        {
-          "kind": "note",
-          "id": "copy_right_note",
-          "text": {
-            "en-GB": "Needs to be written."
-          }
-        },
         {
           "kind": "group",
           "id": "copy_right_digital",
@@ -1124,14 +1116,10 @@
       "title": {
         "en-GB": "Machine Right"
       },
+      "description": {
+        "en-GB": "Can machines use this?"
+      },
       "items": [
-        {
-          "kind": "note",
-          "id": "machine_right_note",
-          "text": {
-            "en-GB": "Needs to be written."
-          }
-        },
         {
           "kind": "question",
           "id": "mr1",

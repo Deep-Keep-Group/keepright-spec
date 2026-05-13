@@ -1,10 +1,10 @@
 KeepRight Spec
 ==============
-Release: pre-alpha; Spec version: 0.0.2; Schema version: 0.1.0
+Release: pre-alpha; Spec version: 0.0.3; Schema version: 0.1.0
 
 About You
 ---------
-Optional information about the responsible party.
+Your contact details are optional. We recommend including some contact info if you’re the responsible party. Anything you add will be visible to anyone who can see this declaration.
 
 Name
 Answer type: text
@@ -18,8 +18,7 @@ Option source: countries; ISO 3166-1 country list
 
 The Material
 ------------
-Crux
-----
+Here is where you describe what you’re making the declaration for as well as you can. There are two basic questions to start:
 
   Is this digital, physical, or both?
   Answer type: radio
@@ -90,7 +89,7 @@ Details
 
 Keep Right
 ----------
-One line description for a facet.
+Who can keep or see this?
 
 Who would you like to take care of this?
 Answer type: checkboxes
@@ -140,7 +139,7 @@ Follow-ups:
 
 Copy Right
 ----------
-Needs to be written.
+Who can make or keep copies?
 
 Shown when: condition `material_is_digital_or_both`
 
@@ -219,7 +218,7 @@ Shown when: condition `material_is_physical_or_both`
 
 Machine Right
 -------------
-Needs to be written.
+Can machines use this?
 
 Can machines analyse or index this material?
 Answer type: radio

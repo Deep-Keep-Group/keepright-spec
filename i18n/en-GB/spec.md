@@ -1,10 +1,10 @@
 # KeepRight Spec
 
-Release: pre-alpha; Spec version: 0.0.2; Schema version: 0.1.0
+Release: pre-alpha; Spec version: 0.0.3; Schema version: 0.1.0
 
 ## About You
 
-Optional information about the responsible party.
+Your contact details are optional. We recommend including some contact info if you’re the responsible party. Anything you add will be visible to anyone who can see this declaration.
 
 **Name**
 
@@ -21,7 +21,7 @@ Optional information about the responsible party.
 
 ## The Material
 
-### Crux
+Here is where you describe what you’re making the declaration for as well as you can. There are two basic questions to start:
 
 **Is this digital, physical, or both?**
 
@@ -101,7 +101,7 @@ Optional information about the responsible party.
 
 ## Keep Right
 
-One line description for a facet.
+Who can keep or see this?
 
 **Who would you like to take care of this?**
 
@@ -156,7 +156,7 @@ One line description for a facet.
 
 ## Copy Right
 
-Needs to be written.
+Who can make or keep copies?
 
 _Shown when: condition `material_is_digital_or_both`_
 
@@ -241,7 +241,7 @@ _Shown when: condition `material_is_physical_or_both`_
 
 ## Machine Right
 
-Needs to be written.
+Can machines use this?
 
 **Can machines analyse or index this material?**
 

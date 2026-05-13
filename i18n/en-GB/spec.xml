@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<keepRightSpec schemaVersion="0.1.0" specVersion="0.0.2" release="pre-alpha" locale="en-GB">
+<keepRightSpec schemaVersion="0.1.0" specVersion="0.0.3" release="pre-alpha" locale="en-GB">
   <title>KeepRight Spec</title>
   <logic>
     <conditions>
@@ -38,7 +38,7 @@
   <items>
     <item id="about_you" kind="section">
       <title>About You</title>
-      <description>Optional information about the responsible party.</description>
+      <description>Your contact details are optional. We recommend including some contact info if you’re the responsible party. Anything you add will be visible to anyone who can see this declaration.</description>
       <items>
         <item id="a1" kind="question" answerType="text">
           <label>Name</label>
@@ -634,9 +634,9 @@
     </item>
     <item id="material" kind="section">
       <title>The Material</title>
+      <description>Here is where you describe what you’re making the declaration for as well as you can. There are two basic questions to start:</description>
       <items>
         <item id="material_crux" kind="group">
-          <title>Crux</title>
           <items>
             <item id="m1" kind="question" answerType="radio">
               <label>Is this digital, physical, or both?</label>
@@ -801,10 +801,8 @@
     </item>
     <item id="keep_right" kind="section">
       <title>Keep Right</title>
+      <description>Who can keep or see this?</description>
       <items>
-        <item id="machine_right_note" kind="note">
-          <text>One line description for a facet.</text>
-        </item>
         <item id="kr1" kind="question" answerType="checkboxes">
           <label>Who would you like to take care of this?</label>
           <options>
@@ -947,10 +945,8 @@
     </item>
     <item id="copy_right" kind="section">
       <title>Copy Right</title>
+      <description>Who can make or keep copies?</description>
       <items>
-        <item id="copy_right_note" kind="note">
-          <text>Needs to be written.</text>
-        </item>
         <item id="copy_right_digital" kind="group">
           <visibleWhen>
             <ref>material_is_digital_or_both</ref>
@@ -1182,10 +1178,8 @@
     </item>
     <item id="machine_right" kind="section">
       <title>Machine Right</title>
+      <description>Can machines use this?</description>
       <items>
-        <item id="machine_right_note" kind="note">
-          <text>Needs to be written.</text>
-        </item>
         <item id="mr1" kind="question" answerType="radio">
           <label>Can machines analyse or index this material?</label>
           <options>

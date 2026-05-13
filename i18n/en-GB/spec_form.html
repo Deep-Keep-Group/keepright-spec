@@ -25,11 +25,11 @@
 <body>
   <main>
     <h1>KeepRight Spec</h1>
-    <p>Release: pre-alpha; Spec version: 0.0.2; Schema version: 0.1.0</p>
+    <p>Release: pre-alpha; Spec version: 0.0.3; Schema version: 0.1.0</p>
     <form id="keepright-form">
     <section class="field" data-spec-id="about_you">
   <h2>About You</h2>
-  <p>Optional information about the responsible party.</p>
+  <p>Your contact details are optional. We recommend including some contact info if you’re the responsible party. Anything you add will be visible to anyone who can see this declaration.</p>
 <div class="field" data-spec-id="a1">
   <label id="a1-label" class="question-label" for="a1">Name</label>
   <input type="text" id="a1" name="a1">
@@ -240,8 +240,8 @@
 </section>
     <section class="field" data-spec-id="material">
   <h2>The Material</h2>
+  <p>Here is where you describe what you’re making the declaration for as well as you can. There are two basic questions to start:</p>
 <fieldset class="field" data-spec-id="material_crux">
-  <legend>Crux</legend>
   <div class="field" data-spec-id="m1">
     <label id="m1-label" class="question-label" for="m1">Is this digital, physical, or both?</label>
     <div class="options" role="group" aria-labelledby="m1-label">
@@ -390,7 +390,7 @@
 </section>
     <section class="field" data-spec-id="keep_right">
   <h2>Keep Right</h2>
-<p class="field" data-spec-id="machine_right_note">One line description for a facet.</p>
+  <p>Who can keep or see this?</p>
 <div class="field" data-spec-id="kr1">
   <label id="kr1-label" class="question-label" for="kr1">Who would you like to take care of this?</label>
   <div class="options" role="group" aria-labelledby="kr1-label">
@@ -509,7 +509,7 @@
 </section>
     <section class="field" data-spec-id="copy_right">
   <h2>Copy Right</h2>
-<p class="field" data-spec-id="copy_right_note">Needs to be written.</p>
+  <p>Who can make or keep copies?</p>
 <fieldset class="field" data-spec-id="copy_right_digital" data-visible-when='{&quot;ref&quot;: &quot;material_is_digital_or_both&quot;}'>
   <div class="field" data-spec-id="cr1">
     <label id="cr1-label" class="question-label" for="cr1">Can copies be made?</label>
@@ -711,7 +711,7 @@
 </section>
     <section class="field" data-spec-id="machine_right">
   <h2>Machine Right</h2>
-<p class="field" data-spec-id="machine_right_note">Needs to be written.</p>
+  <p>Can machines use this?</p>
 <div class="field" data-spec-id="mr1">
   <label id="mr1-label" class="question-label" for="mr1">Can machines analyse or index this material?</label>
   <div class="options" role="group" aria-labelledby="mr1-label">
