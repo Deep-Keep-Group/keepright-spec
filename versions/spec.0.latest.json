@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": "0.1.0",
-    "specVersion": "0.0.3",
+    "specVersion": "0.0.4",
     "release": "pre-alpha",
     "defaultLocale": "en-GB",
     "supportedLocales": [
@@ -761,9 +761,15 @@
               "answerType": "checkboxes",
               "options": [
                 {
-                  "value": "original_file_format",
+                  "value": "original_file",
                   "label": {
-                    "en-GB": "Original file format"
+                    "en-GB": "Original file"
+                  }
+                },
+                {
+                  "value": "original_format",
+                  "label": {
+                    "en-GB": "Original format"
                   }
                 },
                 {

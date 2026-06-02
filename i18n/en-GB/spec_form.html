@@ -25,7 +25,7 @@
 <body>
   <main>
     <h1>KeepRight Spec</h1>
-    <p>Release: pre-alpha; Spec version: 0.0.3; Schema version: 0.1.0</p>
+    <p>Release: pre-alpha; Spec version: 0.0.4; Schema version: 0.1.0</p>
     <form id="keepright-form">
     <section class="field" data-spec-id="about_you">
   <h2>About You</h2>
@@ -540,8 +540,12 @@
     <label id="cr2-label" class="question-label" for="cr2">What must copies preserve?</label>
     <div class="options" role="group" aria-labelledby="cr2-label">
       <label>
-        <input type="checkbox" id="cr2-original_file_format" name="cr2" value="original_file_format">
-        Original file format
+        <input type="checkbox" id="cr2-original_file" name="cr2" value="original_file">
+        Original file
+      </label>
+      <label>
+        <input type="checkbox" id="cr2-original_format" name="cr2" value="original_format">
+        Original format
       </label>
       <label>
         <input type="checkbox" id="cr2-all_metadata" name="cr2" value="all_metadata">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<keepRightSpec schemaVersion="0.1.0" specVersion="0.0.3" release="pre-alpha" locale="en-GB">
+<keepRightSpec schemaVersion="0.1.0" specVersion="0.0.4" release="pre-alpha" locale="en-GB">
   <title>KeepRight Spec</title>
   <logic>
     <conditions>
@@ -983,8 +983,11 @@
             <item id="cr2" kind="question" answerType="checkboxes">
               <label>What must copies preserve?</label>
               <options>
-                <option value="original_file_format">
-                  <label>Original file format</label>
+                <option value="original_file">
+                  <label>Original file</label>
+                </option>
+                <option value="original_format">
+                  <label>Original format</label>
                 </option>
                 <option value="all_metadata">
                   <label>All metadata</label>

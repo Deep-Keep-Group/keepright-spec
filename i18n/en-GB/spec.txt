@@ -1,6 +1,6 @@
 KeepRight Spec
 ==============
-Release: pre-alpha; Spec version: 0.0.3; Schema version: 0.1.0
+Release: pre-alpha; Spec version: 0.0.4; Schema version: 0.1.0
 
 About You
 ---------
@@ -156,7 +156,8 @@ Shown when: condition `material_is_digital_or_both`
   What must copies preserve?
   Answer type: checkboxes
   Options:
-  - Original file format [original_file_format]
+  - Original file [original_file]
+  - Original format [original_format]
   - All metadata [all_metadata]
   - Folder structure [folder_structure]
   - File names [file_names]

@@ -1,6 +1,6 @@
 # KeepRight Spec
 
-Release: pre-alpha; Spec version: 0.0.3; Schema version: 0.1.0
+Release: pre-alpha; Spec version: 0.0.4; Schema version: 0.1.0
 
 ## About You
 
@@ -175,7 +175,8 @@ _Shown when: condition `material_is_digital_or_both`_
 
 - Answer type: `checkboxes`
 - Options:
-  - `original_file_format`: Original file format
+  - `original_file`: Original file
+  - `original_format`: Original format
   - `all_metadata`: All metadata
   - `folder_structure`: Folder structure
   - `file_names`: File names
