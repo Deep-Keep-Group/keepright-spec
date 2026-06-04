@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<keepRightSpec schemaVersion="0.1.0" specVersion="0.0.4" release="pre-alpha" locale="en-GB">
+<keepRightSpec schemaVersion="0.1.1" specVersion="0.0.5" release="pre-alpha" locale="en-GB">
   <title>KeepRight Spec</title>
   <logic>
     <conditions>
@@ -676,9 +676,6 @@
             </item>
             <item id="m4" kind="question" answerType="textarea">
               <label>What is it?</label>
-              <ui>
-                <rows>3</rows>
-              </ui>
             </item>
             <item id="m4_1" kind="question" answerType="radio">
               <label>Does it live online?</label>
@@ -745,17 +742,11 @@
                   <visibleWhen>
                     <fieldCondition field="m5" contains="let_me_tell_you"/>
                   </visibleWhen>
-                  <ui>
-                    <rows>2</rows>
-                  </ui>
                 </item>
               </followups>
             </item>
             <item id="m6" kind="question" answerType="textarea">
               <label>Who made this, and who owns it now?</label>
-              <ui>
-                <rows>3</rows>
-              </ui>
             </item>
             <item id="m7" kind="question" answerType="radio">
               <label>What's its copyright or licensing status, if you know?</label>
@@ -782,18 +773,11 @@
                   <visibleWhen>
                     <fieldCondition field="m7" equals="complicated"/>
                   </visibleWhen>
-                  <ui>
-                    <rows>2</rows>
-                  </ui>
                 </item>
               </followups>
             </item>
             <item id="m8" kind="question" answerType="textarea">
               <label>Can you add any background on how, why, or when it was made? This will help future stewards understand the material.</label>
-              <optionalLabel>optional</optionalLabel>
-              <ui>
-                <rows>5</rows>
-              </ui>
             </item>
           </items>
         </item>
@@ -840,9 +824,6 @@
               <visibleWhen>
                 <fieldCondition field="kr1" contains="it_depends"/>
               </visibleWhen>
-              <ui>
-                <rows>2</rows>
-              </ui>
             </item>
           </followups>
         </item>
@@ -877,15 +858,11 @@
               <visibleWhen>
                 <fieldCondition field="kr2" equals="complicated"/>
               </visibleWhen>
-              <ui>
-                <rows>2</rows>
-              </ui>
             </item>
           </followups>
         </item>
         <item id="kr2_1" kind="question" answerType="text">
           <label>Until when?</label>
-          <optionalLabel>optional</optionalLabel>
         </item>
         <item id="kr3" kind="question" answerType="checkboxes">
           <label>What can your caretaker do with it?</label>
@@ -935,9 +912,6 @@
               <visibleWhen>
                 <fieldCondition field="kr3" contains="it_depends"/>
               </visibleWhen>
-              <ui>
-                <rows>2</rows>
-              </ui>
             </item>
           </followups>
         </item>
@@ -974,9 +948,6 @@
                   <visibleWhen>
                     <fieldCondition field="cr1" equals="yes_but"/>
                   </visibleWhen>
-                  <ui>
-                    <rows>2</rows>
-                  </ui>
                 </item>
               </followups>
             </item>
@@ -1011,9 +982,6 @@
                   <visibleWhen>
                     <fieldCondition field="cr2" contains="it_depends"/>
                   </visibleWhen>
-                  <ui>
-                    <rows>2</rows>
-                  </ui>
                 </item>
               </followups>
             </item>
@@ -1054,9 +1022,6 @@
                   <visibleWhen>
                     <fieldCondition field="cr3" equals="let_me_tell_you"/>
                   </visibleWhen>
-                  <ui>
-                    <rows>2</rows>
-                  </ui>
                 </item>
               </followups>
             </item>
@@ -1092,9 +1057,6 @@
                   <visibleWhen>
                     <fieldCondition field="cr4" equals="yes_but"/>
                   </visibleWhen>
-                  <ui>
-                    <rows>2</rows>
-                  </ui>
                 </item>
               </followups>
             </item>
@@ -1126,9 +1088,6 @@
                   <visibleWhen>
                     <fieldCondition field="cr5" contains="let_me_tell_you"/>
                   </visibleWhen>
-                  <ui>
-                    <rows>2</rows>
-                  </ui>
                 </item>
               </followups>
             </item>
@@ -1169,9 +1128,6 @@
                   <visibleWhen>
                     <fieldCondition field="cr6" equals="it_depends"/>
                   </visibleWhen>
-                  <ui>
-                    <rows>2</rows>
-                  </ui>
                 </item>
               </followups>
             </item>
@@ -1205,9 +1161,6 @@
               <visibleWhen>
                 <fieldCondition field="mr1" equals="yes_but"/>
               </visibleWhen>
-              <ui>
-                <rows>2</rows>
-              </ui>
             </item>
           </followups>
         </item>
@@ -1236,9 +1189,6 @@
               <visibleWhen>
                 <fieldCondition field="mr2" equals="yes_but"/>
               </visibleWhen>
-              <ui>
-                <rows>2</rows>
-              </ui>
             </item>
           </followups>
         </item>
@@ -1267,9 +1217,6 @@
               <visibleWhen>
                 <fieldCondition field="mr3" contains="complicated"/>
               </visibleWhen>
-              <ui>
-                <rows>2</rows>
-              </ui>
             </item>
           </followups>
         </item>

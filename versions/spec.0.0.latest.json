@@ -1,7 +1,7 @@
 {
   "meta": {
-    "schemaVersion": "0.1.0",
-    "specVersion": "0.0.4",
+    "schemaVersion": "0.1.1",
+    "specVersion": "0.0.5",
     "release": "pre-alpha",
     "defaultLocale": "en-GB",
     "supportedLocales": [
@@ -195,10 +195,7 @@
               "label": {
                 "en-GB": "What is it?"
               },
-              "answerType": "textarea",
-              "ui": {
-                "rows": 3
-              }
+              "answerType": "textarea"
             },
             {
               "kind": "question",
@@ -324,9 +321,6 @@
                   "visibleWhen": {
                     "field": "m5",
                     "contains": "let_me_tell_you"
-                  },
-                  "ui": {
-                    "rows": 2
                   }
                 }
               ]
@@ -337,10 +331,7 @@
               "label": {
                 "en-GB": "Who made this, and who owns it now?"
               },
-              "answerType": "textarea",
-              "ui": {
-                "rows": 3
-              }
+              "answerType": "textarea"
             },
             {
               "kind": "question",
@@ -392,9 +383,6 @@
                   "visibleWhen": {
                     "field": "m7",
                     "equals": "complicated"
-                  },
-                  "ui": {
-                    "rows": 2
                   }
                 }
               ]
@@ -405,13 +393,7 @@
               "label": {
                 "en-GB": "Can you add any background on how, why, or when it was made? This will help future stewards understand the material."
               },
-              "answerType": "textarea",
-              "optionalLabel": {
-                "en-GB": "optional"
-              },
-              "ui": {
-                "rows": 5
-              }
+              "answerType": "textarea"
             }
           ]
         }
@@ -501,9 +483,6 @@
               "visibleWhen": {
                 "field": "kr1",
                 "contains": "it_depends"
-              },
-              "ui": {
-                "rows": 2
               }
             }
           ]
@@ -569,9 +548,6 @@
               "visibleWhen": {
                 "field": "kr2",
                 "equals": "complicated"
-              },
-              "ui": {
-                "rows": 2
               }
             }
           ]
@@ -582,10 +558,7 @@
           "label": {
             "en-GB": "Until when?"
           },
-          "answerType": "text",
-          "optionalLabel": {
-            "en-GB": "optional"
-          }
+          "answerType": "text"
         },
         {
           "kind": "question",
@@ -675,9 +648,6 @@
               "visibleWhen": {
                 "field": "kr3",
                 "contains": "it_depends"
-              },
-              "ui": {
-                "rows": 2
               }
             }
           ]
@@ -745,9 +715,6 @@
                   "visibleWhen": {
                     "field": "cr1",
                     "equals": "yes_but"
-                  },
-                  "ui": {
-                    "rows": 2
                   }
                 }
               ]
@@ -814,9 +781,6 @@
                   "visibleWhen": {
                     "field": "cr2",
                     "contains": "it_depends"
-                  },
-                  "ui": {
-                    "rows": 2
                   }
                 }
               ]
@@ -895,9 +859,6 @@
                   "visibleWhen": {
                     "field": "cr3",
                     "equals": "let_me_tell_you"
-                  },
-                  "ui": {
-                    "rows": 2
                   }
                 }
               ]
@@ -961,9 +922,6 @@
                   "visibleWhen": {
                     "field": "cr4",
                     "equals": "yes_but"
-                  },
-                  "ui": {
-                    "rows": 2
                   }
                 }
               ]
@@ -1024,9 +982,6 @@
                   "visibleWhen": {
                     "field": "cr5",
                     "contains": "let_me_tell_you"
-                  },
-                  "ui": {
-                    "rows": 2
                   }
                 }
               ]
@@ -1105,9 +1060,6 @@
                   "visibleWhen": {
                     "field": "cr6",
                     "equals": "it_depends"
-                  },
-                  "ui": {
-                    "rows": 2
                   }
                 }
               ]
@@ -1170,9 +1122,6 @@
               "visibleWhen": {
                 "field": "mr1",
                 "equals": "yes_but"
-              },
-              "ui": {
-                "rows": 2
               }
             }
           ]
@@ -1227,9 +1176,6 @@
               "visibleWhen": {
                 "field": "mr2",
                 "equals": "yes_but"
-              },
-              "ui": {
-                "rows": 2
               }
             }
           ]
@@ -1284,9 +1230,6 @@
               "visibleWhen": {
                 "field": "mr3",
                 "contains": "complicated"
-              },
-              "ui": {
-                "rows": 2
               }
             }
           ]

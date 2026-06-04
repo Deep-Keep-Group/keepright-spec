@@ -1,6 +1,6 @@
 # KeepRight Spec
 
-Release: pre-alpha; Spec version: 0.0.4; Schema version: 0.1.0
+Release: pre-alpha; Spec version: 0.0.5; Schema version: 0.1.1
 
 ## About You
 
@@ -95,7 +95,7 @@ Here is where you describe what you’re making the declaration for as well as y
 - Follow-ups:
   - Tell us more (`textarea`), shown when `m7` equals `complicated`
 
-**Can you add any background on how, why, or when it was made? This will help future stewards understand the material. (optional)**
+**Can you add any background on how, why, or when it was made? This will help future stewards understand the material.**
 
 - Answer type: `textarea`
 
@@ -134,7 +134,7 @@ Who can keep or see this?
 - Follow-ups:
   - Tell us more (`textarea`), shown when `kr2` equals `complicated`
 
-**Until when? (optional)**
+**Until when?**
 
 - Answer type: `text`
 
