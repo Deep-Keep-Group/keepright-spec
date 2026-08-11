@@ -1,6 +1,6 @@
 KeepRight Spec
 ==============
-Release: pre-alpha; Spec version: 0.0.5; Schema version: 0.1.1
+Release: alpha; Spec version: 0.0.6; Schema version: 0.1.1
 
 About You
 ---------
